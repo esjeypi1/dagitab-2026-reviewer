@@ -21,26 +21,27 @@ export function mock(root, items) {
     <div class="mock">
       <div class="mock-main">
         <div class="mock-tools">
-          <button type="button" class="btn btn-ghost btn-sm nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav">Question list</button>
-          <span class="muted" id="answered"></span>
+          <span id="answered"></span>
+          <button type="button" class="btn nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav">All items</button>
         </div>
         <div id="q"></div>
         <div class="mock-actions">
-          <button type="button" class="btn btn-ghost btn-sm" id="flag" aria-pressed="false">Flag</button>
-          <button type="button" class="btn btn-ghost btn-sm" id="clear">Clear answer</button>
+          <button type="button" class="btn btn-ghost" id="flag" aria-pressed="false">Flag</button>
+          <button type="button" class="btn btn-ghost" id="clear">Clear</button>
           <span class="grow"></span>
-          <button type="button" class="btn btn-ghost" id="prev">Previous</button>
+          <button type="button" class="btn" id="prev">Back</button>
           <button type="button" class="btn btn-primary" id="next">Next</button>
         </div>
       </div>
       <aside class="mock-nav" id="nav">
         <div class="nav-head">
-          <div class="nav-title"><h2>Questions</h2><button type="button" class="btn btn-ghost btn-sm nav-close" id="nav-close">Close</button></div>
-          <div class="legend"><span class="lg lg-ans"></span>Answered <span class="lg lg-flag"></span>Flagged <span class="lg lg-empty"></span>Not answered</div>
+          <div class="nav-title"><h2>Items</h2><button type="button" class="btn btn-ghost nav-close" id="nav-close">Close</button></div>
+          <div class="legend"><span class="lg lg-ans"></span>Answered <span class="lg lg-flag"></span>Flagged <span class="lg"></span>Blank</div>
         </div>
         <div class="nav-grid" id="nav-grid"></div>
-        <button type="button" class="btn btn-primary btn-block" id="submit">Submit exam</button>
+        <div class="nav-foot"><button type="button" class="btn btn-primary btn-block" id="submit">Submit exam</button></div>
       </aside>
+      <div class="scrim" id="scrim"></div>
     </div>`;
 
   const $ = (s) => root.querySelector(s);
@@ -52,13 +53,13 @@ export function mock(root, items) {
       return `<button type="button" class="nav-btn ${cls}" data-i="${i}" aria-label="${label}"${i === idx ? ' aria-current="true"' : ''}>${i + 1}</button>`;
     }).join('');
     const done = answers.filter((a) => a != null).length;
-    $('#answered').textContent = `${done} of ${n} answered`;
+    $('#answered').innerHTML = `<span class="num">${done}</span> of <span class="num">${n}</span> answered`;
   }
 
   function show() {
     const item = items[idx];
     $('#q').innerHTML = questionHtml(item, {
-      label: `Question ${idx + 1} of ${n}`,
+      label: `${idx + 1}`,
       state: (k) => ({ cls: answers[idx] === k ? 'is-picked' : '', pressed: answers[idx] === k }),
     });
     $('#q').querySelectorAll('.choice').forEach((b) => b.addEventListener('click', () => {
@@ -70,7 +71,7 @@ export function mock(root, items) {
     $('#flag').classList.toggle('on', flags.has(idx));
     $('#clear').disabled = answers[idx] == null;
     $('#prev').disabled = idx === 0;
-    $('#next').textContent = idx === n - 1 ? 'Review and submit' : answers[idx] == null ? 'Skip' : 'Next';
+    $('#next').textContent = idx === n - 1 ? 'Submit' : answers[idx] == null ? 'Skip' : 'Next';
     drawNav();
   }
 
@@ -93,12 +94,12 @@ export function mock(root, items) {
       const left = answers.filter((a) => a == null).length;
       const flagged = flags.size;
       const notes = [
-        left ? `<li><b>${left}</b> item${left === 1 ? ' is' : 's are'} not answered. ${left === 1 ? 'It counts' : 'They count'} as wrong.</li>` : '',
-        flagged ? `<li><b>${flagged}</b> item${flagged === 1 ? ' is' : 's are'} flagged.</li>` : '',
+        left ? `<li><b>${left}</b> blank (counted as wrong)</li>` : '',
+        flagged ? `<li><b>${flagged}</b> flagged</li>` : '',
       ].join('');
       const ok = await ask({
         title: 'Submit your exam?',
-        body: notes ? `<ul>${notes}</ul><p>You cannot change your answers after submitting.</p>` : '<p>All items are answered. You cannot change your answers after submitting.</p>',
+        body: `${notes ? `<ul>${notes}</ul>` : ''}<p>You cannot change answers after this.</p>`,
         buttons: [{ label: 'Keep answering', value: false }, { label: 'Submit', value: true, primary: true }],
       });
       if (!ok || finished) return;
@@ -109,7 +110,6 @@ export function mock(root, items) {
     const dlg = document.getElementById('dialog');
     if (dlg.open) dlg.close();
     go(mockResults, { items, answers, flags, usedMs: Math.min(Date.now(), deadline) - started, timeUp });
-    if (timeUp) ask({ title: 'Time is up', body: '<p>Your exam was submitted automatically. Here are your results.</p>' });
   }
 
   function tick(left) {
@@ -127,7 +127,7 @@ export function mock(root, items) {
     }
   }
 
-  setTopbar(`<div class="timer-wrap" aria-label="Time left"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 9v4l2 2M9 2h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="timer" id="timer" role="timer">--:--</span></div>`);
+  setTopbar(`<span class="timer" id="timer" role="timer" aria-label="Time left">--:--</span>`);
   const stopTimer = startCountdown(deadline, tick, () => submit(true));
 
   $('#prev').addEventListener('click', () => goTo(idx - 1));
@@ -140,6 +140,7 @@ export function mock(root, items) {
   $('#clear').addEventListener('click', () => { answers[idx] = null; show(); });
   $('#submit').addEventListener('click', () => submit());
   $('#nav-close').addEventListener('click', closeNav);
+  $('#scrim').addEventListener('click', closeNav);
   $('#nav-grid').addEventListener('click', (e) => {
     const b = e.target.closest('[data-i]');
     if (b) goTo(Number(b.dataset.i));
@@ -150,6 +151,7 @@ export function mock(root, items) {
   });
 
   function onKey(e) {
+    if (e.key === 'Escape' && $('#nav').classList.contains('open')) { closeNav(); return; }
     if (e.target.closest('input, textarea, dialog') || e.ctrlKey || e.metaKey || e.altKey) return;
     const k = { 1: 0, 2: 1, 3: 2, 4: 3, a: 0, b: 1, c: 2, d: 3 }[e.key.toLowerCase()];
     if (k != null) { answers[idx] = k; show(); }

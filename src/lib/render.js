@@ -13,13 +13,35 @@ function formatPlain(s) {
     .replace(/\n/g, '<br>');
 }
 
+// A bare number in math ($10$, $-2.5$) is set in the mono numeral face, like every other number on the site.
+const BARE_NUMBER = /^-?\d+(\.\d+)?$/;
+
 // Renders one paragraph: text with $inline$ and $$display$$ math.
 function renderInline(src) {
   return splitMath(src)
-    .map((p) => (p.type === 'math'
-      ? katex.renderToString(p.value, { displayMode: p.display, throwOnError: false, output: 'html' })
-      : formatPlain(p.value)))
+    .map((p) => {
+      if (p.type !== 'math') return formatPlain(p.value);
+      if (!p.display && BARE_NUMBER.test(p.value.trim())) return `<span class="mnum">${escapeHtml(p.value.trim())}</span>`;
+      return katex.renderToString(p.value, { displayMode: p.display, throwOnError: false, output: 'html' });
+    })
     .join('');
+}
+
+// Renders one paragraph. Lines that start with "- " become a list.
+function renderBlock(src) {
+  const out = [];
+  let text = [];
+  let list = [];
+  const flushText = () => { if (text.length) out.push(`<p>${renderInline(text.join('\n'))}</p>`); text = []; };
+  const flushList = () => { if (list.length) out.push(`<ul>${list.map((li) => `<li>${renderInline(li)}</li>`).join('')}</ul>`); list = []; };
+  for (const line of src.split('\n')) {
+    const m = line.match(/^\s*-\s+(.*)$/);
+    if (m) { flushText(); list.push(m[1]); }
+    else { flushList(); text.push(line); }
+  }
+  flushText();
+  flushList();
+  return out.join('');
 }
 
 // Removes anything outside the whitelist from figure markup.
@@ -47,7 +69,7 @@ export function rich(text, { block = true } = {}) {
   if (!block) return renderInline(text);
   return String(text)
     .split(/\n\s*\n/)
-    .map((p) => `<p>${renderInline(p.trim())}</p>`)
+    .map((p) => renderBlock(p.trim()))
     .join('');
 }
 

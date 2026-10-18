@@ -3,7 +3,7 @@ import { tally, pct } from '../lib/session.js';
 import { shuffle } from '../lib/shuffle.js';
 import { DOMAINS, domainById } from '../lib/bank.js';
 import { PASS_RATE } from '../config.js';
-import { reviewHtml, bindReviewFilters, breakdownTable } from './parts.js';
+import { reviewHtml, bindReviewFilters, breakdownPanel } from './parts.js';
 import { practice } from './practice.js';
 import { practiceSetup } from './practice-setup.js';
 import { home } from './home.js';
@@ -29,25 +29,25 @@ export function practiceSummary(root, results, planned) {
     for (const s of subs) groups.push({ label: s.key, correct: s.correct, total: s.total, sub: domains.length > 1 });
   }
 
-  const msg = p >= 85 ? 'Excellent work!' : p >= PASS_RATE * 100 ? 'Good job. Keep it up!' : p >= 40 ? 'Nice try. Review the explanations and try again.' : 'Keep practicing. Read each explanation carefully.';
+  const msg = p >= 85 ? 'Excellent work.' : p >= PASS_RATE * 100 ? 'Good job. Keep it up.' : 'Read the explanations below, then try again.';
 
   root.innerHTML = `
-  <section class="card result-card">
-    <p class="eyebrow">Practice results</p>
-    <div class="score-row">
-      <div class="score-big"><b>${correct}</b><span>/ ${total}</span></div>
-      <div>
-        <div class="score-pct">${p}%</div>
-        <p class="muted">${msg}${total < planned ? ` You answered ${total} of ${planned} questions.` : ''}</p>
-      </div>
+  <header class="page-head">
+    <h1>Practice results</h1>
+  </header>
+  <section class="panel"><div class="panel-body">
+    <div class="score-line">
+      <span class="score-big">${correct}<span class="of">/${total}</span></span>
+      <span class="score-pct">${p}%</span>
     </div>
+    <p class="score-msg">${msg}${total < planned ? ` You answered <span class="num">${total}</span> of <span class="num">${planned}</span>.` : ''}</p>
     <div class="actions">
-      ${missed.length ? `<button type="button" class="btn btn-primary" id="retry">Practice the ${missed.length} missed item${missed.length === 1 ? '' : 's'}</button>` : ''}
-      <button type="button" class="btn ${missed.length ? 'btn-ghost' : 'btn-primary'}" id="new">New practice set</button>
+      ${missed.length ? `<button type="button" class="btn btn-primary" id="retry">Retry <span class="num">${missed.length}</span> missed</button>` : ''}
+      <button type="button" class="btn${missed.length ? '' : ' btn-primary'}" id="new">New set</button>
       <button type="button" class="btn btn-ghost" id="home">Home</button>
     </div>
-  </section>
-  ${total ? `<section class="card"><h2>Score by subtopic</h2>${breakdownTable(groups, domains.length > 1 ? 'Domain / subtopic' : 'Subtopic')}</section>` : ''}
+  </div></section>
+  ${total ? breakdownPanel(groups, 'By topic') : ''}
   ${total ? reviewHtml(results.map((r) => ({ item: r.item, pick: r.pick }))) : ''}`;
 
   root.querySelector('#retry')?.addEventListener('click', () => go(practice, shuffle(missed)));

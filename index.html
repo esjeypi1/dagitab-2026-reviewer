@@ -4,16 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Free practice reviewer for the Dagitab 2026 qualifying exam. Practice by topic or take a timed 50-item mock exam." />
-    <meta name="theme-color" content="#14213d" />
+    <meta name="theme-color" content="#f6f6f7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0d0d10" media="(prefers-color-scheme: dark)" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Dagitab 2026 Reviewer</title>
   </head>
   <body>
     <header class="topbar">
       <div class="topbar-inner">
-        <button class="brand" id="brand" type="button" aria-label="Go to home page">
-          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z" fill="currentColor"/></svg>
-          <span>Dagitab 2026 <b>Reviewer</b></span>
+        <button class="brand" id="brand" type="button" aria-label="Dagitab 2026 Reviewer, go to home page">
+          <span class="brand-mark"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M13.5 2 6 13h5l-1 9 8-12h-5l.5-8z" fill="currentColor"/></svg></span>
+          <span class="brand-text">Dagitab 2026 <span class="brand-sub">Reviewer</span></span>
         </button>
         <div class="topbar-slot" id="topbar-slot"></div>
       </div>
@@ -22,11 +23,7 @@
       <noscript><p style="padding: 24px">This reviewer needs JavaScript. Please turn it on in your browser settings.</p></noscript>
     </main>
     <footer class="footer">
-      <p>
-        This is an <b>unofficial</b> practice reviewer made for students. It is not affiliated with or endorsed by the
-        UP Engineering Radio Guild, and the questions are not actual exam items.
-      </p>
-      <p>Nothing you do here is saved. Closing or reloading the page clears your progress.</p>
+      <p>Unofficial reviewer. Not affiliated with or endorsed by the UP Engineering Radio Guild. Questions are not actual exam items.</p>
     </footer>
     <dialog id="dialog" class="dialog"></dialog>
     <script type="module" src="/src/main.js"></script>

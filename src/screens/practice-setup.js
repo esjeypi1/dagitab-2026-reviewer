@@ -1,6 +1,7 @@
 import { go } from '../lib/router.js';
 import { loadBank, DOMAINS, domainById } from '../lib/bank.js';
 import { escapeHtml } from '../lib/render.js';
+import { icons } from '../lib/icons.js';
 import { buildPractice } from '../lib/session.js';
 import { PRACTICE_COUNTS } from '../config.js';
 import { practice } from './practice.js';
@@ -21,55 +22,48 @@ function render(root, bank) {
   const pool = () => bank.filter((q) => state.domain === 'all' || (q.domain === state.domain && state.subs.has(q.subtopic)));
 
   root.innerHTML = `
-  <section class="card setup">
+  <header class="page-head">
     <h1>Practice</h1>
-    <p class="muted">No timer. You get feedback and an explanation after every answer.</p>
+    <p>No timer. You see the answer after each item.</p>
+  </header>
 
-    <fieldset>
-      <legend>1. Choose a domain</legend>
-      <div class="options" id="domains">
-        <label class="opt"><input type="radio" name="domain" value="all"><span>All domains <small>${countOf('all')}</small></span></label>
-        ${DOMAINS.map((d) => `<label class="opt"><input type="radio" name="domain" value="${d.id}"><span>${escapeHtml(d.name)} <small>${countOf(d.id)}</small></span></label>`).join('')}
+  <section class="panel"><div class="panel-body">
+    <div class="field" role="radiogroup" aria-labelledby="l-domain">
+      <div class="field-label" id="l-domain">Domain</div>
+      <div class="chips">
+        <label class="chip"><input type="radio" name="domain" value="all"><span>All <small>${countOf('all')}</small></span></label>
+        ${DOMAINS.map((d) => `<label class="chip"><input type="radio" name="domain" value="${d.id}"><span>${escapeHtml(d.name)} <small>${countOf(d.id)}</small></span></label>`).join('')}
       </div>
-    </fieldset>
-
-    <fieldset id="subs-box" hidden>
-      <legend>2. Choose subtopics <span class="muted">(optional)</span></legend>
-      <div class="sub-actions">
-        <button type="button" class="link" id="subs-all">Select all</button>
-        <button type="button" class="link" id="subs-none">Clear</button>
-      </div>
-      <div class="options subs" id="subs"></div>
-    </fieldset>
-
-    <fieldset>
-      <legend id="count-legend">2. How many questions?</legend>
-      <div class="options counts" id="counts">
-        ${PRACTICE_COUNTS.map((c) => `<label class="opt opt-sm"><input type="radio" name="count" value="${c}"><span>${c === 'all' ? 'All' : c}</span></label>`).join('')}
-      </div>
-    </fieldset>
-
-    <p class="summary" id="summary" aria-live="polite"></p>
-    <div class="actions">
-      <button type="button" class="btn btn-primary btn-lg" id="start">Start practice</button>
     </div>
-  </section>`;
+
+    <div class="field" id="subs-box" hidden>
+      <div class="field-label"><span id="l-subs">Topics</span><button type="button" class="link" id="subs-toggle"></button></div>
+      <div class="checks" id="subs" role="group" aria-labelledby="l-subs"></div>
+    </div>
+
+    <div class="field" role="radiogroup" aria-labelledby="l-count">
+      <div class="field-label" id="l-count">Number of items</div>
+      <div class="chips">
+        ${PRACTICE_COUNTS.map((c) => `<label class="chip wide"><input type="radio" name="count" value="${c}"><span>${c === 'all' ? 'All' : `<span class="num">${c}</span>`}</span></label>`).join('')}
+      </div>
+    </div>
+
+    <div class="start-bar">
+      <p class="summary" id="summary" aria-live="polite"></p>
+      <button type="button" class="btn btn-primary" id="start">Start</button>
+    </div>
+  </div></section>`;
 
   const $ = (s) => root.querySelector(s);
 
   function drawSubs() {
     const box = $('#subs-box');
-    if (state.domain === 'all') {
-      box.hidden = true;
-      $('#count-legend').textContent = '2. How many questions?';
-      return;
-    }
-    box.hidden = false;
-    $('#count-legend').textContent = '3. How many questions?';
+    box.hidden = state.domain === 'all';
+    if (box.hidden) return;
     const d = domainById[state.domain];
     $('#subs').innerHTML = d.subtopics.map((s) => {
       const n = bank.filter((q) => q.domain === d.id && q.subtopic === s).length;
-      return `<label class="opt opt-check"><input type="checkbox" value="${escapeHtml(s)}" ${state.subs.has(s) ? 'checked' : ''}><span>${escapeHtml(s)} <small>${n}</small></span></label>`;
+      return `<label class="check"><input type="checkbox" value="${escapeHtml(s)}" ${state.subs.has(s) ? 'checked' : ''}><span class="box">${icons.check(14)}</span><span class="grow">${escapeHtml(s)}</span><span class="num">${n}</span></label>`;
     }).join('');
     $('#subs').querySelectorAll('input').forEach((inp) => inp.addEventListener('change', () => {
       if (inp.checked) state.subs.add(inp.value);
@@ -81,10 +75,11 @@ function render(root, bank) {
   function update() {
     const n = pool().length;
     const want = state.count === 'all' ? n : Math.min(state.count, n);
-    $('#summary').innerHTML = n
-      ? `You will get <b>${want}</b> question${want === 1 ? '' : 's'} from <b>${n}</b> available.`
-      : 'Choose at least one subtopic.';
+    $('#summary').innerHTML = n ? `<span class="num">${want}</span> item${want === 1 ? '' : 's'}` : 'Pick at least one topic.';
     $('#start').disabled = n === 0;
+    if (state.domain !== 'all') {
+      $('#subs-toggle').textContent = state.subs.size === domainById[state.domain].subtopics.length ? 'Clear all' : 'Select all';
+    }
   }
 
   root.querySelectorAll('input[name=domain]').forEach((inp) => {
@@ -103,8 +98,12 @@ function render(root, bank) {
       update();
     });
   });
-  $('#subs-all').addEventListener('click', () => { state.subs = new Set(domainById[state.domain].subtopics); drawSubs(); update(); });
-  $('#subs-none').addEventListener('click', () => { state.subs.clear(); drawSubs(); update(); });
+  $('#subs-toggle').addEventListener('click', () => {
+    const all = domainById[state.domain].subtopics;
+    state.subs = state.subs.size === all.length ? new Set() : new Set(all);
+    drawSubs();
+    update();
+  });
   $('#start').addEventListener('click', () => {
     Object.assign(last, { domain: state.domain, subs: [...state.subs], count: state.count });
     const items = buildPractice(pool(), state.count);

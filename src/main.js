@@ -1,3 +1,5 @@
+import '@fontsource-variable/geist';
+import '@fontsource-variable/geist-mono';
 import 'katex/dist/katex.min.css';
 import './styles/main.css';
 import { go, isGuarded, setGuard } from './lib/router.js';

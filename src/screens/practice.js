@@ -2,6 +2,7 @@ import { go, setGuard, setTopbar } from '../lib/router.js';
 import { present } from '../lib/session.js';
 import { LETTERS } from '../lib/render.js';
 import { confirmLeave } from '../lib/ui.js';
+import { icons } from '../lib/icons.js';
 import { questionHtml, explanationHtml } from './parts.js';
 import { practiceSummary } from './practice-summary.js';
 import { practiceSetup } from './practice-setup.js';
@@ -17,7 +18,7 @@ export function practice(root, questions) {
   const score = () => results.filter((r) => r.pick === r.item.correct).length;
 
   function bar() {
-    setTopbar(`<div class="progress-mini"><span>${Math.min(idx + 1, questions.length)} / ${questions.length}</span><span class="sep"></span><span>Score: ${score()}</span></div>`);
+    setTopbar(`<span><span class="num">${Math.min(idx + 1, questions.length)}</span> of <span class="num">${questions.length}</span></span><span>Score <span class="num">${score()}</span></span>`);
   }
 
   function show() {
@@ -27,11 +28,11 @@ export function practice(root, questions) {
     root.innerHTML = `
       <div class="runner">
         <div class="progress" aria-hidden="true"><span style="transform:scaleX(${idx / questions.length})"></span></div>
-        ${questionHtml(item, { label: `Question ${idx + 1} of ${questions.length}` })}
+        ${questionHtml(item, { label: `${idx + 1}` })}
         <div id="feedback" aria-live="polite"></div>
         <div class="runner-actions">
-          <button type="button" class="btn btn-ghost" id="end">End practice</button>
-          <button type="button" class="btn btn-primary" id="next" hidden>${idx + 1 < questions.length ? 'Next question' : 'See results'}</button>
+          <button type="button" class="btn btn-ghost" id="end">End</button>
+          <button type="button" class="btn btn-primary" id="next" hidden>${idx + 1 < questions.length ? 'Next' : 'See results'}</button>
         </div>
       </div>`;
     root.querySelectorAll('.choice').forEach((b) => b.addEventListener('click', () => pick(Number(b.dataset.k))));
@@ -54,8 +55,8 @@ export function practice(root, questions) {
     });
     root.querySelector('#feedback').innerHTML = `
       <div class="verdict ${ok ? 'ok' : 'no'}">
-        <b>${ok ? 'Correct!' : 'Not quite.'}</b>
-        ${ok ? '' : `The correct answer is <b>${LETTERS[item.correct]}</b>.`}
+        ${ok ? icons.check() : icons.x()}
+        <span>${ok ? 'Correct' : `Not quite. <span class="muted">The answer is <span class="num">${LETTERS[item.correct]}</span>.</span>`}</span>
       </div>
       ${explanationHtml(item.q)}`;
     bar();

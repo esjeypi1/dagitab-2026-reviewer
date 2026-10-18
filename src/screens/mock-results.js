@@ -2,7 +2,7 @@ import { go } from '../lib/router.js';
 import { tally, pct } from '../lib/session.js';
 import { DOMAINS } from '../lib/bank.js';
 import { PASS_RATE } from '../config.js';
-import { reviewHtml, bindReviewFilters, breakdownTable } from './parts.js';
+import { reviewHtml, bindReviewFilters, breakdownPanel } from './parts.js';
 import { mockIntro } from './mock-intro.js';
 import { home } from './home.js';
 
@@ -24,21 +24,23 @@ export function mockResults(root, { items, answers, flags, usedMs, timeUp }) {
   }).filter((g) => g.total);
 
   root.innerHTML = `
-  <section class="card result-card ${pass ? 'is-pass' : 'is-fail'}">
-    <p class="eyebrow">Mock exam results${timeUp ? ' (time ran out)' : ''}</p>
-    <div class="score-row">
-      <div class="score-big"><b>${correct}</b><span>/ ${n}</span></div>
-      <div>
-        <div class="score-pct">${p}% <span class="pf ${pass ? 'pass' : 'fail'}">${pass ? 'PASSED' : 'NOT YET PASSED'}</span></div>
-        <p class="muted">Passing score: ${Math.round(PASS_RATE * 100)}% (${need} of ${n}). Time used: ${mins} min ${secs} s.${skipped ? ` Unanswered: ${skipped}.` : ''}</p>
-      </div>
+  <header class="page-head">
+    <h1>Mock exam results</h1>
+    ${timeUp ? '<p>Time ran out, so your exam was submitted.</p>' : ''}
+  </header>
+  <section class="panel"><div class="panel-body">
+    <div class="score-line">
+      <span class="score-big">${correct}<span class="of">/${n}</span></span>
+      <span class="score-pct">${p}%</span>
+      <span class="pf ${pass ? 'pass' : 'fail'}">${pass ? 'Passed' : 'Not yet passed'}</span>
     </div>
+    <p class="score-meta">Pass mark <span class="num">${need}</span><span class="dot-sep">&middot;</span>Time <span class="num">${mins}:${String(secs).padStart(2, '0')}</span>${skipped ? `<span class="dot-sep">&middot;</span>Unanswered <span class="num">${skipped}</span>` : ''}</p>
     <div class="actions">
-      <button type="button" class="btn btn-primary" id="again">Take another mock exam</button>
+      <button type="button" class="btn btn-primary" id="again">Try another</button>
       <button type="button" class="btn btn-ghost" id="home">Home</button>
     </div>
-  </section>
-  <section class="card"><h2>Score by domain</h2>${breakdownTable(groups, 'Domain')}</section>
+  </div></section>
+  ${breakdownPanel(groups, 'By domain')}
   ${reviewHtml(rows, { showFlags: true })}`;
 
   root.querySelector('#again').addEventListener('click', () => go(mockIntro));
