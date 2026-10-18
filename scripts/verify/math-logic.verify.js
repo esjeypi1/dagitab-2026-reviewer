@@ -165,4 +165,201 @@ export default {
         const cand = [(a, b, c) => NOT(c), (a, b, c) => AND(NOT(a), NOT(c)), (a, b, c) => NOT(b), (a, b, c) => OR(NOT(a), NOT(c))];
         return { index: onlyMatch(cand, (g) => sameFn(g, f, 3)) };
       }),
+  'ML-FUN-006': withOrder([0,1,3,2], () => { const g = (x) => 5 - 2 * x; return { value: g(g(1)) }; }),
+  'ML-FUN-007': withOrder([2,1,0,3], () => {
+        const f = (x) => 3 * x + 2;
+        const cand = [(x) => (x - 2) / 3, (x) => (x + 2) / 3, (x) => 1 / (3 * x + 2), (x) => 3 * x - 2];
+        return { index: onlyMatch(cand, (g) => [0, 1, 5, -4].every((x) => Math.abs(g(f(x)) - x) < 1e-9)) };
+      }),
+  'ML-FUN-008': withOrder([1,0,3,2], () => {
+        let m = Infinity;
+        for (let x = -50; x <= 50; x += 0.001) m = Math.min(m, x * x - 6 * x + 11);
+        return { index: Math.abs(m - 2) < 1e-6 ? 0 : -1 };
+      }),
+  'ML-FUN-009': withOrder([0,1,3,2], () => { const f = (x) => 2 ** x; const g = (x) => x - 1; return { value: f(g(4)) + g(f(1)) }; }),
+  'ML-FUN-010': withOrder([3,1,2,0], () => {
+        const cand = [(x) => x ** 3 - x, (x) => x ** 2 + 1, (x) => x ** 3 + 1, (x) => Math.abs(x)];
+        return { index: onlyMatch(cand, (f) => [0.5, 1, 2, 3].every((x) => Math.abs(f(-x) + f(x)) < 1e-9)) };
+      }),
+  'ML-FUN-011': withOrder([3,0,2,1], () => { const f = (x) => (x < 1 ? x * x : 3 * x - 1); return { value: f(-2) + f(2) }; }),
+  'ML-FUN-013': withOrder([1,2,0,3], () => { const a = Math.sqrt(4); const b = 9 / (a + 1); return { value: a * 1 + b }; }),
+  'ML-FUN-014': withOrder([1,3,0,2], () => {
+        const ok = (x) => x * x - 5 * x + 6 > 0;
+        const cand = [(x) => x < 2 || x > 3, (x) => x > 2 && x < 3, (x) => x >= 2 && x <= 3, (x) => x <= 2 || x >= 3];
+        const pts = [-5, 0, 1.9, 2, 2.5, 3, 3.1, 10];
+        return { index: onlyMatch(cand, (p) => pts.every((x) => p(x) === ok(x))) };
+      }),
+  'ML-ALG-007': withOrder([2,3,1,0], () => ({ value: (5 + 6) / (3 - 2) })),
+  'ML-ALG-008': withOrder([0,2,1,3], () => {
+        const det = 2 * -1 - 3 * 1;
+        const x = (12 * -1 - 3 * 1) / det;
+        const y = (2 * 1 - 12 * 1) / det;
+        return { value: x * y };
+      }),
+  'ML-ALG-009': withOrder([1,3,0,2], () => {
+        const P = (x) => x ** 3 - 2 * x ** 2 - 5 * x + 6;
+        return { index: onlyMatch([1, -1, 2, -3], (r) => P(r) === 0) };
+      }),
+  'ML-ALG-010': withOrder([2,1,0,3], () => ({ value: -(9 + 12) / 3 })),
+  'ML-ALG-011': withOrder([2,1,0,3], () => {
+        const F = (x) => (x * x - 4) / (x * x + x - 6);
+        const cand = [(x) => (x + 2) / (x + 3), (x) => (x - 2) / (x - 3), (x) => (x + 2) / (x - 3), (x) => -4 / (x - 6)];
+        return { index: onlyMatch(cand, (g) => [5, 7, -1].every((x) => Math.abs(g(x) - F(x)) < 1e-9)) };
+      }),
+  'ML-ALG-012': withOrder([1,3,2,0], () => ({ value: (2 ** 5 * 4 ** 3) / 8 ** 3 })),
+  'ML-ALG-013': withOrder([0,2,1,3], () => {
+        const d = (27 - 11) / 4;
+        const a1 = 11 - 2 * d;
+        let s = 0;
+        for (let n = 0; n < 10; n++) s += a1 + n * d;
+        return { value: s };
+      }),
+  'ML-ALG-014': withOrder([0,2,3,1], () => ({ value: 18 / (1 - -1 / 3) })),
+  'ML-GEN-007': withOrder([2,1,0,3], () => ({ value: (1500 / 5) * 3 })),
+  'ML-GEN-008': withOrder([1,3,0,2], () => ({ value: 45 / 0.15 })),
+  'ML-GEN-009': withOrder([3,0,1,2], () => ({ value: 240 / (120 / 60 + 120 / 40) })),
+  'ML-GEN-010': withOrder([0,1,2,3], () => ({ value: (6 * 10) / 4 })),
+  'ML-GEN-012': withOrder([2,0,3,1], () => ({ value: 8000 * (1 + 0.05 * 3) })),
+  'ML-GEN-013': withOrder([1,0,3,2], () => ({ value: (0.3 * 10) / 0.2 - 10 })),
+  'ML-GEO-007': withOrder([2,1,0,3], () => ({ value: 0.5 * (8 + 12) * 5 })),
+  'ML-GEO-008': withOrder([2,1,0,3], () => ({ value: Math.hypot(7 - 1, 10 - 2) })),
+  'ML-GEO-009': withOrder([0,1,2,3], () => ({ value: (180 / 6) * 3 })),
+  'ML-GEO-010': withOrder([3,1,2,0], () => ({ value: 100 / 2 })),
+  'ML-GEO-011': withOrder([2,0,3,1], () => ({ value: Math.PI * 3 ** 2 * 10 })),
+  'ML-GEO-012': withOrder([3,0,1,2], () => ({ value: 20 * (3 / 2) ** 2 })),
+  'ML-GEO-013': withOrder([2,0,3,1], () => {
+        const cand = [[-2, 7], [0.5, 2], [2, -1], [-2, 3]];
+        return { index: onlyMatch(cand, ([m, b]) => m === -2 && m * 2 + b === 3) };
+      }),
+  'ML-GEO-014': withOrder([2,3,0,1], () => ({ value: 6 * (Math.sqrt(3) / 4) * 16 })),
+  'ML-TRI-007': withOrder([0,3,1,2], () => ({ value: Math.cos(deg(60)) + Math.sin(deg(30)) })),
+  'ML-TRI-008': withOrder([0,1,2,3], () => ({ value: (150 * Math.PI) / 180 })),
+  'ML-TRI-009': withOrder([2,0,3,1], () => ({ value: 10 * Math.sin(deg(60)) })),
+  'ML-TRI-010': withOrder([2,0,1,3], () => {
+        const F = (t) => (1 - Math.cos(t) ** 2) / Math.sin(t);
+        const cand = [Math.sin, Math.cos, Math.tan, () => 1];
+        return { index: onlyMatch(cand, (g) => [0.4, 0.7, 2].every((t) => Math.abs(g(t) - F(t)) < 1e-9)) };
+      }),
+  'ML-TRI-011': withOrder([2,1,3,0], () => ({ value: Math.tan(deg(225)) })),
+  'ML-TRI-012': withOrder([3,0,2,1], () => ({ value: (10 * Math.sqrt(2) * Math.sin(deg(30))) / Math.sin(deg(45)) })),
+  'ML-TRI-013': withOrder([3,2,1,0], () => ({ value: (2 * Math.PI) / 4 })),
+  'ML-TRI-014': withOrder([0,2,1,3], () => { const s = 5 / 13; const c = Math.sqrt(1 - s * s); return { value: 2 * s * c }; }),
+  'ML-PRB-007': withOrder([1,2,0,3], () => ({ value: nCr(3, 2) / 2 ** 3 })),
+  'ML-PRB-008': withOrder([1,0,2,3], () => ({ value: 2 / 52 })),
+  'ML-PRB-009': withOrder([2,3,1,0], () => ({ value: nPr(5, 3) })),
+  'ML-PRB-010': withOrder([3,0,1,2], () => ({ value: fact(4) })),
+  'ML-PRB-011': withOrder([3,0,1,2], () => ({ value: 0.4 + 0.5 - 0.4 * 0.5 })),
+  'ML-PRB-012': withOrder([1,3,2,0], () => ({ value: 50 * (1 / 5) - 10 * (4 / 5) })),
+  'ML-PRB-013': withOrder([0,3,1,2], () => ({ value: nCr(6, 3) / nCr(10, 3) })),
+  'ML-PRB-014': withOrder([1,3,2,0], () => ({ value: 2 * fact(5) })),
+  'ML-GAT-007': withOrder([0,1,2,3], () => {
+        const Y = (a, b) => NOT(OR(a, b));
+        return { index: onlyMatch([NOR, NAND, OR, XNOR], (f) => sameFn(f, Y, 2)) };
+      }),
+  'ML-GAT-008': withOrder([1,0,3,2], () => {
+        const Y = (a, b) => AND(a, NOT(b));
+        return { index: onlyMatch([[1, 0], [0, 1], [1, 1], [0, 0]], (r) => Y(...r) === 1) };
+      }),
+  'ML-GAT-009': withOrder([0,3,1,2], () => {
+        const Y = (a, b) => NOT(XOR(a, b));
+        const cand = [(a, b) => (a === b ? 1 : 0), (a, b) => (a !== b ? 1 : 0), (a, b) => OR(a, b), (a, b) => AND(a, b)];
+        return { index: onlyMatch(cand, (f) => sameFn(f, Y, 2)) };
+      }),
+  'ML-GAT-010': withOrder([0,3,2,1], () => {
+        const Y = (a, b, c) => OR(AND(a, b), AND(a, c));
+        const cand = [(a, b, c) => AND(a, OR(b, c)), (a, b, c) => OR(AND(a, b), c), (a, b, c) => OR(a, AND(b, c)), (a, b, c) => AND(OR(a, b), OR(a, c))];
+        return { index: onlyMatch(cand, (f) => sameFn(f, Y, 3)) };
+      }),
+  'ML-GAT-011': withOrder([3,1,0,2], () => {
+        const Y = (a, b) => NAND(NAND(a, b), NAND(a, b));
+        return { index: onlyMatch([AND, NAND, OR, NOR], (f) => sameFn(f, Y, 2)) };
+      }),
+  'ML-GAT-012': withOrder([3,0,2,1], () => { const P = NAND(1, 1); const Q = NOR(P, 0); return { choice: `$P = ${P},\\ Q = ${Q}$` }; }),
+  'ML-GAT-013': withOrder([3,0,1,2], () => {
+        const Y = (a, b) => NOR(NOR(a, a), NOR(b, b));
+        return { index: onlyMatch([AND, OR, NAND, NOR], (f) => sameFn(f, Y, 2)) };
+      }),
+  'ML-GAT-014': withOrder([0,3,1,2], () => {
+        const Y = (a, b, c) => OR(AND(a, b), AND(b, c), AND(a, c));
+        const cand = [(a, b, c) => (a + b + c >= 2 ? 1 : 0), (a, b, c) => (a + b + c === 1 ? 1 : 0), (a, b, c) => AND(a, b, c), (a, b, c) => OR(a, b, c)];
+        return { index: onlyMatch(cand, (f) => sameFn(f, Y, 3)) };
+      }),
+  'ML-CIR-009': withOrder([1,0,3,2], () => {
+        const lamp = (s1, s2, s3) => AND(OR(s1, s2), s3);
+        return { index: onlyMatch([[0, 1, 1], [1, 1, 0], [1, 0, 0], [0, 0, 1]], (r) => lamp(...r) === 1) };
+      }),
+  'ML-CIR-012': withOrder([1,0,2,3], () => {
+        const V = 1, Rb = 1;
+        const p1 = V ** 2 / Rb, p2 = (V / 2) ** 2 / Rb, p3 = (V / 2) ** 2 / Rb;
+        return { index: p1 > p2 && p2 === p3 ? 0 : -1 };
+      }),
+  'ML-TT-006': withOrder([3,2,1,0], () => {
+        const tbl = [[0, 0, 1], [0, 1, 1], [1, 0, 1], [1, 1, 0]];
+        return { index: onlyMatch([NAND, AND, NOR, XOR], (f) => tbl.every(([a, b, y]) => f(a, b) === y)) };
+      }),
+  'ML-TT-007': withOrder([0,3,1,2], () => ({ value: rows(2).filter(([a, b]) => OR(a, NOT(b)) === 0).length })),
+  'ML-TT-008': withOrder([2,3,1,0], () => {
+        const col = [0, 0, 0, 1, 0, 0, 0, 1];
+        const cand = [(a, b, c) => AND(b, c), (a, b, c) => AND(a, b), (a, b, c) => OR(a, AND(b, c)), (a, b, c) => AND(a, b, c)];
+        return { index: onlyMatch(cand, (f) => rows(3).every((r, i) => f(...r) === col[i])) };
+      }),
+  'ML-TT-009': withOrder([0,2,1,3], () => ({ choice: rows(3).map(([a, b, c]) => XOR(XOR(a, b), c)).join(', ') })),
+  'ML-TT-010': withOrder([2,3,1,0], () => {
+        const col = [1, 1, 0, 1];
+        const cand = [(a, b) => OR(NOT(a), b), (a, b) => OR(a, NOT(b)), (a, b) => AND(a, NOT(b)), (a, b) => AND(NOT(a), b)];
+        return { index: onlyMatch(cand, (f) => rows(2).every((r, i) => f(...r) === col[i])) };
+      }),
+  'ML-TT-011': withOrder([1,3,0,2], () => {
+        const col = [1, 1, 0, 1, 0, 0, 0, 1];
+        const cand = [
+          (a, b, c) => OR(AND(NOT(a), NOT(b)), AND(b, c)),
+          (a, b, c) => OR(NOT(a), AND(b, c)),
+          (a, b, c) => OR(AND(NOT(a), c), AND(b, NOT(c))),
+          (a, b, c) => OR(NOT(b), c),
+        ];
+        return { index: onlyMatch(cand, (f) => rows(3).every((r, i) => f(...r) === col[i])) };
+      }),
+  'ML-TT-012': withOrder([1,2,0,3], () => ({ value: 2 ** (2 ** 2) })),
+  'ML-TT-013': withOrder([1,3,0,2], () => {
+        const col = [0, 1, 1, 0, 0, 1, 0, 0];
+        const lists = [[1, 2, 5], [0, 3, 4, 6, 7], [1, 2, 6], [2, 3, 5]];
+        return { index: onlyMatch(lists, (L) => col.every((y, i) => y === (L.includes(i) ? 1 : 0))) };
+      }),
+  'ML-TT-014': withOrder([2,0,1,3], () => ({ value: rows(4).filter(([a, b]) => a === 1 && b === 0).length })),
+  'ML-BOOL-007': withOrder([2,0,3,1], () => {
+        const F = (a) => OR(AND(a, 1), AND(a, 0));
+        return { index: onlyMatch([(a) => a, () => 1, () => 0, (a) => NOT(a)], (f) => sameFn(f, F, 1)) };
+      }),
+  'ML-BOOL-008': withOrder([3,2,1,0], () => {
+        const F = (a, b) => OR(a, AND(a, b));
+        return { index: onlyMatch([(a) => a, (a, b) => AND(a, b), (a, b) => OR(a, b), (a, b) => b], (f) => sameFn(f, F, 2)) };
+      }),
+  'ML-BOOL-009': withOrder([2,3,1,0], () => {
+        const F = (a, b) => NOT(OR(a, NOT(b)));
+        const cand = [(a, b) => AND(NOT(a), b), (a, b) => OR(NOT(a), b), (a, b) => AND(a, NOT(b)), (a, b) => AND(NOT(a), NOT(b))];
+        return { index: onlyMatch(cand, (f) => sameFn(f, F, 2)) };
+      }),
+  'ML-BOOL-010': withOrder([3,2,0,1], () => {
+        const F = (a, b, c) => AND(OR(a, b), OR(a, c));
+        const cand = [(a, b, c) => OR(a, AND(b, c)), (a, b, c) => OR(AND(a, b), AND(a, c)), (a, b, c) => OR(a, b, c), (a, b, c) => AND(a, b, c)];
+        return { index: onlyMatch(cand, (f) => sameFn(f, F, 3)) };
+      }),
+  'ML-BOOL-011': withOrder([0,3,1,2], () => {
+        const F = (a, b) => OR(AND(NOT(a), NOT(b)), AND(NOT(a), b), AND(a, b));
+        const cand = [(a, b) => OR(NOT(a), b), (a, b) => OR(a, NOT(b)), (a, b) => b, (a) => NOT(a)];
+        return { index: onlyMatch(cand, (f) => sameFn(f, F, 2)) };
+      }),
+  'ML-BOOL-012': withOrder([1,0,2,3], () => {
+        const F = (a, b, c) => OR(AND(a, b, c), AND(a, b, NOT(c)), AND(a, NOT(b), c));
+        const cand = [(a, b, c) => AND(a, OR(b, c)), (a, b, c) => AND(a, b, c), (a, b, c) => OR(a, AND(b, c)), (a, b) => AND(a, b)];
+        return { index: onlyMatch(cand, (f) => sameFn(f, F, 3)) };
+      }),
+  'ML-BOOL-013': withOrder([3,2,1,0], () => {
+        const cand = [(a, b) => OR(AND(a, NOT(b)), AND(NOT(a), b)), (a, b) => OR(AND(a, b), AND(NOT(a), NOT(b))), (a, b) => AND(OR(a, b), AND(a, b)), (a, b) => OR(a, b)];
+        return { index: onlyMatch(cand, (f) => sameFn(f, XOR, 2)) };
+      }),
+  'ML-BOOL-014': withOrder([3,1,2,0], () => {
+        const cand = [(a, b) => OR(NOT(a), NOT(b)), (a, b) => AND(NOT(a), NOT(b)), (a, b) => OR(NOT(a), b), (a, b) => NOT(OR(a, b))];
+        return { index: onlyMatch(cand, (f) => sameFn(f, NAND, 2)) };
+      }),
 };

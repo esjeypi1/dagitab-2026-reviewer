@@ -1028,5 +1028,1486 @@
     "answerIndex": 2,
     "explanation": "Write the minterms in binary ($ABC$): $0 = 000$, $2 = 010$, $4 = 100$, $6 = 110$. In all four, $C = 0$, while $A$ and $B$ take every combination. So $F = \\overline{C}$.\nOn a K-map these four cells form one group of 4 where only $C$ stays constant. $\\overline{A}\\,\\overline{C}$ covers only minterms 0 and 2.",
     "verified": true
+  },
+  {
+    "id": "ML-FUN-006",
+    "domain": "math-logic",
+    "subtopic": "Functions",
+    "difficulty": "easy",
+    "question": "If $g(x) = 5 - 2x$, what is $g(g(1))$?",
+    "choices": [
+      "$-1$",
+      "$3$",
+      "$1$",
+      "$9$"
+    ],
+    "answerIndex": 0,
+    "explanation": "Work from the inside out. First $g(1) = 5 - 2(1) = 3$. Then $g(3) = 5 - 2(3) = -1$.\nThe choice $3$ stops after the inner step. The choice $9$ multiplies $g(1) \\cdot g(1)$ instead of putting $g(1)$ back into $g$.",
+    "verified": true
+  },
+  {
+    "id": "ML-FUN-007",
+    "domain": "math-logic",
+    "subtopic": "Functions",
+    "difficulty": "easy",
+    "question": "If $f(x) = 3x + 2$, which of the following is $f^{-1}(x)$?",
+    "choices": [
+      "$\\dfrac{1}{3x + 2}$",
+      "$\\dfrac{x + 2}{3}$",
+      "$\\dfrac{x - 2}{3}$",
+      "$3x - 2$"
+    ],
+    "answerIndex": 2,
+    "explanation": "Write $y = 3x + 2$, swap $x$ and $y$, then solve for $y$:\n$$x = 3y + 2 \\;\\Rightarrow\\; y = \\frac{x - 2}{3}$$\nCheck: $f\\left(\\frac{x-2}{3}\\right) = (x - 2) + 2 = x$. The inverse undoes the steps in reverse order: subtract 2 first, then divide by 3. The choice $\\frac{1}{3x+2}$ is the reciprocal, which is not the inverse.",
+    "verified": true
+  },
+  {
+    "id": "ML-FUN-008",
+    "domain": "math-logic",
+    "subtopic": "Functions",
+    "difficulty": "medium",
+    "question": "What is the range of $f(x) = x^2 - 6x + 11$?",
+    "choices": [
+      "$[3, \\infty)$",
+      "$[2, \\infty)$",
+      "$(-\\infty, 2]$",
+      "$[11, \\infty)$"
+    ],
+    "answerIndex": 1,
+    "explanation": "Complete the square: $x^2 - 6x + 11 = (x - 3)^2 + 2$. Since $(x-3)^2 \\ge 0$, the smallest value is $2$ (at $x = 3$), and the parabola opens upward, so the range is $[2, \\infty)$.\nThe choice $[3, \\infty)$ uses the $x$-coordinate of the vertex instead of the $y$-coordinate. The choice $[11, \\infty)$ uses the $y$-intercept, which is not the lowest point.",
+    "verified": true
+  },
+  {
+    "id": "ML-FUN-009",
+    "domain": "math-logic",
+    "subtopic": "Functions",
+    "difficulty": "medium",
+    "question": "Let $f(x) = 2^x$ and $g(x) = x - 1$. What is $f(g(4)) + g(f(1))$?",
+    "choices": [
+      "$9$",
+      "$16$",
+      "$8$",
+      "$10$"
+    ],
+    "answerIndex": 0,
+    "explanation": "Do each composition from the inside out.\n$$f(g(4)) = f(3) = 2^3 = 8, \\qquad g(f(1)) = g(2) = 1$$\nSo the total is $8 + 1 = 9$. The choice $16$ swaps the order in both parts: $g(f(4)) + f(g(1)) = 15 + 1$. The choice $10$ forgets to apply $g$ in the second part and adds $f(1) = 2$.",
+    "verified": true
+  },
+  {
+    "id": "ML-FUN-010",
+    "domain": "math-logic",
+    "subtopic": "Functions",
+    "difficulty": "medium",
+    "question": "Which of the following is an **odd** function?",
+    "choices": [
+      "$f(x) = |x|$",
+      "$f(x) = x^2 + 1$",
+      "$f(x) = x^3 + 1$",
+      "$f(x) = x^3 - x$"
+    ],
+    "answerIndex": 3,
+    "explanation": "A function is odd when $f(-x) = -f(x)$ for every $x$.\nFor $x^3 - x$: $f(-x) = -x^3 + x = -(x^3 - x)$, so it is odd.\n$x^2 + 1$ and $|x|$ are **even** because $f(-x) = f(x)$. $x^3 + 1$ is neither: the $+1$ does not change sign, so $f(-1) = 0$ but $-f(1) = -2$.",
+    "verified": true
+  },
+  {
+    "id": "ML-FUN-011",
+    "domain": "math-logic",
+    "subtopic": "Functions",
+    "difficulty": "medium",
+    "question": "A function is defined by\n$$f(x) = \\begin{cases} x^2 & \\text{if } x < 1 \\\\ 3x - 1 & \\text{if } x \\ge 1 \\end{cases}$$\nWhat is $f(-2) + f(2)$?",
+    "choices": [
+      "$-3$",
+      "$9$",
+      "$8$",
+      "$-2$"
+    ],
+    "answerIndex": 1,
+    "explanation": "Pick the rule that matches each input.\nSince $-2 < 1$, use $x^2$: $f(-2) = 4$. Since $2 \\ge 1$, use $3x - 1$: $f(2) = 5$. The sum is $9$.\nThe choice $-2$ uses $3x - 1$ for $-2$ (giving $-7$). The choice $8$ uses $x^2$ for $2$ (giving $4$). The choice $-3$ swaps both rules.",
+    "verified": true
+  },
+  {
+    "id": "ML-FUN-012",
+    "domain": "math-logic",
+    "subtopic": "Functions",
+    "difficulty": "medium",
+    "question": "What are the vertical and horizontal asymptotes of $f(x) = \\dfrac{x + 1}{x - 2}$?",
+    "choices": [
+      "$x = 1$ and $y = 2$",
+      "$x = 2$ and $y = 1$",
+      "$x = -1$ and $y = 1$",
+      "$x = 2$ and $y = 0$"
+    ],
+    "answerIndex": 1,
+    "explanation": "**Vertical asymptote:** the denominator is zero at $x = 2$ (and the numerator is not zero there), so $x = 2$.\n**Horizontal asymptote:** the top and bottom have the same degree, so $y$ approaches the ratio of the leading coefficients, $\\frac{1}{1} = 1$.\nThe choice with $x = -1$ uses the zero of the numerator, which is an $x$-intercept, not an asymptote. $y = 0$ would be correct only if the bottom had a higher degree than the top.",
+    "verified": true
+  },
+  {
+    "id": "ML-FUN-013",
+    "domain": "math-logic",
+    "subtopic": "Functions",
+    "difficulty": "hard",
+    "question": "A linear function $f(x) = ax + b$ with $a > 0$ satisfies $f(f(x)) = 4x + 9$ for all $x$. What is $f(1)$?",
+    "choices": [
+      "$-11$",
+      "$3$",
+      "$5$",
+      "$13$"
+    ],
+    "answerIndex": 2,
+    "explanation": "Compute the composition:\n$$f(f(x)) = a(ax + b) + b = a^2x + ab + b$$\nMatch it with $4x + 9$: $a^2 = 4$, so $a = 2$ (since $a > 0$). Then $2b + b = 9$, so $b = 3$. So $f(x) = 2x + 3$ and $f(1) = 5$.\nThe choice $-11$ comes from $a = -2$, which the condition $a > 0$ rules out. The choice $13$ is $f(f(1))$, not $f(1)$. The choice $3$ is $b$.",
+    "verified": true
+  },
+  {
+    "id": "ML-FUN-014",
+    "domain": "math-logic",
+    "subtopic": "Functions",
+    "difficulty": "hard",
+    "question": "What is the domain of $f(x) = \\log(x^2 - 5x + 6)$?",
+    "choices": [
+      "$(2, 3)$",
+      "$(-\\infty, 2] \\cup [3, \\infty)$",
+      "$(-\\infty, 2) \\cup (3, \\infty)$",
+      "$[2, 3]$"
+    ],
+    "answerIndex": 2,
+    "explanation": "A logarithm needs a **positive** input: $x^2 - 5x + 6 > 0$, which factors as $(x - 2)(x - 3) > 0$.\nThe product is positive when both factors have the same sign: $x < 2$ or $x > 3$.\nThe choice with closed brackets includes $x = 2$ and $x = 3$, but there the input is $0$, and $\\log 0$ is undefined. The interval $(2, 3)$ is where the input is negative.",
+    "verified": true
+  },
+  {
+    "id": "ML-ALG-007",
+    "domain": "math-logic",
+    "subtopic": "Advanced algebra",
+    "difficulty": "easy",
+    "question": "Solve for $x$: $3(x - 2) = 2x + 5$",
+    "choices": [
+      "$-1$",
+      "$\\frac{11}{5}$",
+      "$7$",
+      "$11$"
+    ],
+    "answerIndex": 3,
+    "explanation": "Distribute first: $3x - 6 = 2x + 5$. Subtract $2x$ and add $6$ to both sides: $x = 11$.\nThe choice $7$ forgets to multiply the $2$ by $3$ (writing $3x - 2$). The choice $\\frac{11}{5}$ adds $2x$ to both sides instead of subtracting it.",
+    "verified": true
+  },
+  {
+    "id": "ML-ALG-008",
+    "domain": "math-logic",
+    "subtopic": "Advanced algebra",
+    "difficulty": "medium",
+    "question": "If $2x + 3y = 12$ and $x - y = 1$, what is the value of $xy$?",
+    "choices": [
+      "$6$",
+      "$8$",
+      "$5$",
+      "$12$"
+    ],
+    "answerIndex": 0,
+    "explanation": "From the second equation, $x = y + 1$. Substitute into the first:\n$$2(y + 1) + 3y = 12 \\;\\Rightarrow\\; 5y = 10 \\;\\Rightarrow\\; y = 2$$\nSo $x = 3$ and $xy = 6$. The choice $5$ is $x + y$, which answers a different question.",
+    "verified": true
+  },
+  {
+    "id": "ML-ALG-009",
+    "domain": "math-logic",
+    "subtopic": "Advanced algebra",
+    "difficulty": "medium",
+    "question": "Which of the following is a factor of $x^3 - 2x^2 - 5x + 6$?",
+    "choices": [
+      "$x + 1$",
+      "$x + 3$",
+      "$x - 1$",
+      "$x - 2$"
+    ],
+    "answerIndex": 2,
+    "explanation": "By the Factor Theorem, $x - r$ is a factor exactly when $P(r) = 0$.\n$P(1) = 1 - 2 - 5 + 6 = 0$, so $x - 1$ is a factor.\nFor the others: $P(-1) = 8$, $P(2) = -4$, and $P(-3) = -24$. None is zero. (The full factorization is $(x - 1)(x + 2)(x - 3)$.) A common slip is testing $r = 3$ for the factor $x + 3$: the root of $x + 3$ is $-3$.",
+    "verified": true
+  },
+  {
+    "id": "ML-ALG-010",
+    "domain": "math-logic",
+    "subtopic": "Advanced algebra",
+    "difficulty": "medium",
+    "question": "One root of $x^2 + kx + 12 = 0$ is $3$. What is $k$?",
+    "choices": [
+      "$4$",
+      "$7$",
+      "$-7$",
+      "$-5$"
+    ],
+    "answerIndex": 2,
+    "explanation": "Substitute $x = 3$: $9 + 3k + 12 = 0$, so $3k = -21$ and $k = -7$.\nCheck with the roots: the product of the roots is $12$, so the other root is $4$. The sum of the roots is $3 + 4 = 7 = -k$, so $k = -7$. The choice $7$ forgets the minus sign in \"sum of roots $= -k$\". The choice $4$ is the other root, not $k$.",
+    "verified": true
+  },
+  {
+    "id": "ML-ALG-011",
+    "domain": "math-logic",
+    "subtopic": "Advanced algebra",
+    "difficulty": "medium",
+    "question": "Simplify: $\\dfrac{x^2 - 4}{x^2 + x - 6}$",
+    "choices": [
+      "$\\dfrac{x + 2}{x - 3}$",
+      "$\\dfrac{x - 2}{x - 3}$",
+      "$\\dfrac{x + 2}{x + 3}$",
+      "$\\dfrac{-4}{x - 6}$"
+    ],
+    "answerIndex": 2,
+    "explanation": "Factor the top and bottom, then cancel the common factor:\n$$\\frac{(x - 2)(x + 2)}{(x + 3)(x - 2)} = \\frac{x + 2}{x + 3} \\quad (x \\ne 2)$$\nThe choice $\\frac{-4}{x-6}$ \"cancels\" the $x^2$ terms, which is not allowed: you can only cancel **factors**, not terms that are added. The choice $\\frac{x+2}{x-3}$ factors the bottom with the wrong signs.",
+    "verified": true
+  },
+  {
+    "id": "ML-ALG-012",
+    "domain": "math-logic",
+    "subtopic": "Advanced algebra",
+    "difficulty": "medium",
+    "question": "What is the value of $\\dfrac{2^5 \\cdot 4^3}{8^3}$?",
+    "choices": [
+      "$32$",
+      "$16$",
+      "$1$",
+      "$4$"
+    ],
+    "answerIndex": 3,
+    "explanation": "Write everything as a power of $2$: $4^3 = (2^2)^3 = 2^6$ and $8^3 = (2^3)^3 = 2^9$.\n$$\\frac{2^5 \\cdot 2^6}{2^9} = 2^{5 + 6 - 9} = 2^2 = 4$$\nThe choice $32$ treats $4^3$ and $8^3$ as if they were both $2^3$ and cancels them. Remember $(a^m)^n = a^{mn}$.",
+    "verified": true
+  },
+  {
+    "id": "ML-ALG-013",
+    "domain": "math-logic",
+    "subtopic": "Advanced algebra",
+    "difficulty": "hard",
+    "question": "In an arithmetic sequence, the 3rd term is $11$ and the 7th term is $27$. What is the sum of the first 10 terms?",
+    "choices": [
+      "$210$",
+      "$250$",
+      "$39$",
+      "$190$"
+    ],
+    "answerIndex": 0,
+    "explanation": "From the 3rd term to the 7th term there are 4 steps: $4d = 27 - 11 = 16$, so $d = 4$. Then $a_1 = 11 - 2(4) = 3$.\n$$S_{10} = \\frac{10}{2}\\left[2(3) + 9(4)\\right] = 5(42) = 210$$\nThe choice $39$ is the 10th term, not the sum. The choice $190$ uses $8d$ instead of $9d$ (an off-by-one slip).",
+    "verified": true
+  },
+  {
+    "id": "ML-ALG-014",
+    "domain": "math-logic",
+    "subtopic": "Advanced algebra",
+    "difficulty": "hard",
+    "question": "What is the sum of the infinite geometric series $18 - 6 + 2 - \\dfrac{2}{3} + \\cdots$?",
+    "choices": [
+      "$\\frac{27}{2}$",
+      "$12$",
+      "$9$",
+      "$27$"
+    ],
+    "answerIndex": 0,
+    "explanation": "The first term is $a = 18$ and the ratio is $r = \\frac{-6}{18} = -\\frac{1}{3}$. Since $|r| < 1$, the sum is\n$$S = \\frac{a}{1 - r} = \\frac{18}{1 + \\frac{1}{3}} = \\frac{18}{\\frac{4}{3}} = \\frac{27}{2}$$\nThe choice $27$ uses $r = +\\frac{1}{3}$ and ignores the alternating signs.",
+    "verified": true
+  },
+  {
+    "id": "ML-GEN-007",
+    "domain": "math-logic",
+    "subtopic": "General mathematics",
+    "difficulty": "easy",
+    "question": "Ben and Carla share ₱1,500 in the ratio $2 : 3$. How much does Carla get?",
+    "choices": [
+      "₱500",
+      "₱600",
+      "₱900",
+      "₱750"
+    ],
+    "answerIndex": 2,
+    "explanation": "The ratio has $2 + 3 = 5$ parts, so one part is $1500 \\div 5 = 300$. Carla gets $3$ parts: $3 \\times 300 = 900$, so ₱900.\n₱600 is Ben's share. ₱500 divides by 3 instead of by the total number of parts.",
+    "verified": true
+  },
+  {
+    "id": "ML-GEN-008",
+    "domain": "math-logic",
+    "subtopic": "General mathematics",
+    "difficulty": "easy",
+    "question": "$15\\%$ of what number is $45$?",
+    "choices": [
+      "$6.75$",
+      "$675$",
+      "$300$",
+      "$30$"
+    ],
+    "answerIndex": 2,
+    "explanation": "Let the number be $n$. Then $0.15n = 45$, so $n = \\frac{45}{0.15} = 300$.\nCheck: $10\\%$ of $300$ is $30$ and $5\\%$ is $15$, so $15\\%$ is $45$. The choice $6.75$ finds $15\\%$ **of** $45$, which answers a different question.",
+    "verified": true
+  },
+  {
+    "id": "ML-GEN-009",
+    "domain": "math-logic",
+    "subtopic": "General mathematics",
+    "difficulty": "medium",
+    "question": "A jeepney travels 120 km from town A to town B at 60 km/h and returns along the same road at 40 km/h. What is its average speed for the whole round trip?",
+    "choices": [
+      "$52$ km/h",
+      "$48$ km/h",
+      "$50$ km/h",
+      "$45$ km/h"
+    ],
+    "answerIndex": 1,
+    "explanation": "Average speed is **total distance divided by total time**.\nGoing takes $\\frac{120}{60} = 2$ h and returning takes $\\frac{120}{40} = 3$ h. Total distance is $240$ km and total time is $5$ h:\n$$\\frac{240}{5} = 48 \\text{ km/h}$$\nThe choice $50$ km/h averages the two speeds, which is wrong because the jeepney spends more time at the slower speed.",
+    "verified": true
+  },
+  {
+    "id": "ML-GEN-010",
+    "domain": "math-logic",
+    "subtopic": "General mathematics",
+    "difficulty": "medium",
+    "question": "Six workers can finish a job in 10 days. Working at the same rate, how many days would 4 workers need?",
+    "choices": [
+      "$15$",
+      "$\\frac{20}{3}$",
+      "$8$",
+      "$12$"
+    ],
+    "answerIndex": 0,
+    "explanation": "The job takes $6 \\times 10 = 60$ worker-days. With 4 workers: $\\frac{60}{4} = 15$ days.\nFewer workers need **more** days, so this is inverse proportion. The choice $\\frac{20}{3}$ treats it as direct proportion ($10 \\times \\frac{4}{6}$), which would mean fewer workers finish faster.",
+    "verified": true
+  },
+  {
+    "id": "ML-GEN-011",
+    "domain": "math-logic",
+    "subtopic": "General mathematics",
+    "difficulty": "medium",
+    "question": "What is the **contrapositive** of \"If a number is divisible by 4, then it is even\"?",
+    "choices": [
+      "A number is divisible by 4 and it is not even.",
+      "If a number is not even, then it is not divisible by 4.",
+      "If a number is even, then it is divisible by 4.",
+      "If a number is not divisible by 4, then it is not even."
+    ],
+    "answerIndex": 1,
+    "explanation": "For \"If $P$, then $Q$\", the contrapositive is \"If not $Q$, then not $P$\". It swaps **and** negates both parts, and it is always equivalent to the original.\n\"If a number is even, then it is divisible by 4\" is the **converse** (swap only). It is false: 6 is even but not divisible by 4. \"If not divisible by 4, then not even\" is the **inverse** (negate only), also false for 6. \"Divisible by 4 and not even\" is the negation of the statement.",
+    "verified": true
+  },
+  {
+    "id": "ML-GEN-012",
+    "domain": "math-logic",
+    "subtopic": "General mathematics",
+    "difficulty": "medium",
+    "question": "Lea borrows ₱8,000 at $5\\%$ **simple** interest per year. How much does she owe in total after 3 years?",
+    "choices": [
+      "₱9,261",
+      "₱9,200",
+      "₱8,400",
+      "₱1,200"
+    ],
+    "answerIndex": 1,
+    "explanation": "Simple interest is $I = Prt = 8000 \\times 0.05 \\times 3 = 1200$. The total owed is the principal plus interest: $8000 + 1200 = 9200$, so ₱9,200.\n₱1,200 is only the interest. ₱9,261 uses compound interest, which this loan does not use. ₱8,400 counts only one year.",
+    "verified": true
+  },
+  {
+    "id": "ML-GEN-013",
+    "domain": "math-logic",
+    "subtopic": "General mathematics",
+    "difficulty": "hard",
+    "question": "A beaker holds 10 L of a solution that is $30\\%$ acid. How many liters of pure water must be added to make the solution $20\\%$ acid?",
+    "choices": [
+      "$10$ L",
+      "$5$ L",
+      "$15$ L",
+      "$2$ L"
+    ],
+    "answerIndex": 1,
+    "explanation": "Adding water does not change the amount of acid: $0.30 \\times 10 = 3$ L of acid.\nAfter adding $w$ liters of water, the acid must be $20\\%$ of the new total:\n$$3 = 0.20(10 + w) \\;\\Rightarrow\\; 15 = 10 + w \\;\\Rightarrow\\; w = 5$$\nThe choice $10$ L doubles the volume, which would make the solution $15\\%$ acid, too weak. Always set up the \"amount of acid stays the same\" equation.",
+    "verified": true
+  },
+  {
+    "id": "ML-GEN-014",
+    "domain": "math-logic",
+    "subtopic": "General mathematics",
+    "difficulty": "medium",
+    "question": "\"If the battery is charged, then the robot turns on.\" The robot did **not** turn on. Which conclusion follows?",
+    "choices": [
+      "The robot is broken.",
+      "No conclusion can be drawn about the battery.",
+      "The battery is charged.",
+      "The battery is not charged."
+    ],
+    "answerIndex": 3,
+    "explanation": "This is the form \"If $P$, then $Q$. Not $Q$. Therefore not $P$.\" (called *modus tollens*). If the battery were charged, the robot would have turned on. It did not, so the battery is not charged.\n\"The robot is broken\" may be possible in real life, but it does not follow from the given statements. With the given facts, a conclusion **can** be drawn.",
+    "verified": true
+  },
+  {
+    "id": "ML-GEO-007",
+    "domain": "math-logic",
+    "subtopic": "Geometry",
+    "difficulty": "easy",
+    "question": "A trapezoid has parallel sides of 8 cm and 12 cm and a height of 5 cm. What is its area?",
+    "choices": [
+      "$60\\text{ cm}^2$",
+      "$100\\text{ cm}^2$",
+      "$50\\text{ cm}^2$",
+      "$40\\text{ cm}^2$"
+    ],
+    "answerIndex": 2,
+    "explanation": "Area of a trapezoid $= \\frac{1}{2}(b_1 + b_2)h = \\frac{1}{2}(8 + 12)(5) = 50\\text{ cm}^2$.\nThe choice $100$ forgets the $\\frac{1}{2}$. The choices $60$ and $40$ use only one of the parallel sides.",
+    "verified": true
+  },
+  {
+    "id": "ML-GEO-008",
+    "domain": "math-logic",
+    "subtopic": "Geometry",
+    "difficulty": "easy",
+    "question": "What is the distance between the points $(1, 2)$ and $(7, 10)$?",
+    "choices": [
+      "$2\\sqrt{7}$",
+      "$14$",
+      "$10$",
+      "$100$"
+    ],
+    "answerIndex": 2,
+    "explanation": "Use the distance formula:\n$$d = \\sqrt{(7 - 1)^2 + (10 - 2)^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10$$\nThe choice $14$ adds the differences $6 + 8$ without squaring. The choice $100$ forgets the square root.",
+    "verified": true
+  },
+  {
+    "id": "ML-GEO-009",
+    "domain": "math-logic",
+    "subtopic": "Geometry",
+    "difficulty": "easy",
+    "question": "The angles of a triangle measure $x$, $2x$, and $3x$. What is the measure of the largest angle?",
+    "choices": [
+      "$90^\\circ$",
+      "$60^\\circ$",
+      "$30^\\circ$",
+      "$120^\\circ$"
+    ],
+    "answerIndex": 0,
+    "explanation": "The angles of a triangle add up to $180^\\circ$: $x + 2x + 3x = 6x = 180^\\circ$, so $x = 30^\\circ$.\nThe largest angle is $3x = 90^\\circ$. The choice $30^\\circ$ is $x$ itself, the smallest angle.",
+    "verified": true
+  },
+  {
+    "id": "ML-GEO-010",
+    "domain": "math-logic",
+    "subtopic": "Geometry",
+    "difficulty": "medium",
+    "question": "In a circle, a central angle measures $100^\\circ$. An inscribed angle intercepts the same arc. What is the measure of the inscribed angle?",
+    "choices": [
+      "$80^\\circ$",
+      "$100^\\circ$",
+      "$200^\\circ$",
+      "$50^\\circ$"
+    ],
+    "answerIndex": 3,
+    "explanation": "An inscribed angle is **half** the central angle that intercepts the same arc: $\\frac{100^\\circ}{2} = 50^\\circ$.\nThe choice $200^\\circ$ doubles instead of halving. The choice $80^\\circ$ is the supplement of $100^\\circ$, which has nothing to do with this rule.",
+    "verified": true
+  },
+  {
+    "id": "ML-GEO-011",
+    "domain": "math-logic",
+    "subtopic": "Geometry",
+    "difficulty": "medium",
+    "question": "A cylindrical water tank has a radius of 3 m and a height of 10 m. What is its volume?",
+    "choices": [
+      "$60\\pi\\text{ m}^3$",
+      "$90\\pi\\text{ m}^3$",
+      "$360\\pi\\text{ m}^3$",
+      "$30\\pi\\text{ m}^3$"
+    ],
+    "answerIndex": 1,
+    "explanation": "$V = \\pi r^2 h = \\pi (3)^2 (10) = 90\\pi\\text{ m}^3$.\nThe choice $30\\pi$ forgets to square the radius. The choice $60\\pi$ is the curved surface area $2\\pi r h$, not the volume. The choice $360\\pi$ uses the diameter $6$ in place of the radius.",
+    "verified": true
+  },
+  {
+    "id": "ML-GEO-012",
+    "domain": "math-logic",
+    "subtopic": "Geometry",
+    "difficulty": "medium",
+    "question": "Two similar triangles have corresponding sides in the ratio $2 : 3$. The smaller triangle has an area of $20\\text{ cm}^2$. What is the area of the larger triangle?",
+    "choices": [
+      "$\\frac{40}{3}\\text{ cm}^2$",
+      "$45\\text{ cm}^2$",
+      "$30\\text{ cm}^2$",
+      "$60\\text{ cm}^2$"
+    ],
+    "answerIndex": 1,
+    "explanation": "For similar figures, areas scale by the **square** of the side ratio: $\\left(\\frac{3}{2}\\right)^2 = \\frac{9}{4}$.\n$$20 \\times \\frac{9}{4} = 45\\text{ cm}^2$$\nThe choice $30$ scales by the side ratio $\\frac{3}{2}$ only. The choice $\\frac{40}{3}$ scales the wrong way, making the larger triangle smaller.",
+    "verified": true
+  },
+  {
+    "id": "ML-GEO-013",
+    "domain": "math-logic",
+    "subtopic": "Geometry",
+    "difficulty": "hard",
+    "question": "Which line passes through $(2, 3)$ and is **parallel** to $y = -2x + 5$?",
+    "choices": [
+      "$y = 2x - 1$",
+      "$y = -2x + 7$",
+      "$y = -2x + 3$",
+      "$y = \\frac{1}{2}x + 2$"
+    ],
+    "answerIndex": 1,
+    "explanation": "Parallel lines have the same slope, so $m = -2$. Use the point $(2, 3)$: $3 = -2(2) + b$, so $b = 7$. The line is $y = -2x + 7$.\n$y = \\frac{1}{2}x + 2$ also passes through $(2, 3)$, but its slope is the negative reciprocal, which makes it **perpendicular**. $y = -2x + 3$ has the right slope but does not pass through $(2, 3)$.",
+    "verified": true
+  },
+  {
+    "id": "ML-GEO-014",
+    "domain": "math-logic",
+    "subtopic": "Geometry",
+    "difficulty": "hard",
+    "question": "What is the area of a regular hexagon with side length 4 cm?",
+    "choices": [
+      "$12\\sqrt{3}\\text{ cm}^2$",
+      "$96\\text{ cm}^2$",
+      "$24\\sqrt{3}\\text{ cm}^2$",
+      "$48\\sqrt{3}\\text{ cm}^2$"
+    ],
+    "answerIndex": 2,
+    "explanation": "A regular hexagon splits into 6 equilateral triangles with side 4. Each has area $\\frac{\\sqrt{3}}{4}(4)^2 = 4\\sqrt{3}$.\n$$6 \\times 4\\sqrt{3} = 24\\sqrt{3}\\text{ cm}^2$$\nThe choice $48\\sqrt{3}$ uses $\\frac{\\sqrt{3}}{2}s^2$ for each triangle instead of $\\frac{\\sqrt{3}}{4}s^2$. The choice $96$ uses $6 \\times 4^2$, treating each triangle like a square.",
+    "verified": true
+  },
+  {
+    "id": "ML-TRI-007",
+    "domain": "math-logic",
+    "subtopic": "Trigonometry",
+    "difficulty": "easy",
+    "question": "What is the value of $\\cos 60^\\circ + \\sin 30^\\circ$?",
+    "choices": [
+      "$1$",
+      "$\\frac{1 + \\sqrt{3}}{2}$",
+      "$\\sqrt{3}$",
+      "$\\frac{1}{2}$"
+    ],
+    "answerIndex": 0,
+    "explanation": "$\\cos 60^\\circ = \\frac{1}{2}$ and $\\sin 30^\\circ = \\frac{1}{2}$, so the sum is $1$.\nThe choice $\\sqrt{3}$ uses $\\frac{\\sqrt{3}}{2}$ for both values, which are $\\sin 60^\\circ$ and $\\cos 30^\\circ$. The choice $\\frac{1+\\sqrt{3}}{2}$ mixes up one of them.",
+    "verified": true
+  },
+  {
+    "id": "ML-TRI-008",
+    "domain": "math-logic",
+    "subtopic": "Trigonometry",
+    "difficulty": "easy",
+    "question": "What is $150^\\circ$ in radians?",
+    "choices": [
+      "$\\frac{5\\pi}{6}$",
+      "$\\frac{5\\pi}{3}$",
+      "$\\frac{3\\pi}{5}$",
+      "$\\frac{2\\pi}{3}$"
+    ],
+    "answerIndex": 0,
+    "explanation": "Multiply by $\\frac{\\pi}{180^\\circ}$: $150 \\times \\frac{\\pi}{180} = \\frac{150\\pi}{180} = \\frac{5\\pi}{6}$.\nThe choice $\\frac{5\\pi}{3}$ is $300^\\circ$. The choice $\\frac{2\\pi}{3}$ is $120^\\circ$.",
+    "verified": true
+  },
+  {
+    "id": "ML-TRI-009",
+    "domain": "math-logic",
+    "subtopic": "Trigonometry",
+    "difficulty": "medium",
+    "question": "A 10-m ladder leans against a vertical wall and makes a $60^\\circ$ angle with the level ground. How high up the wall does the ladder reach?",
+    "choices": [
+      "$10\\sqrt{3}$ m",
+      "$5\\sqrt{3}$ m",
+      "$5\\sqrt{2}$ m",
+      "$5$ m"
+    ],
+    "answerIndex": 1,
+    "explanation": "The ladder is the hypotenuse, and the height on the wall is the side **opposite** the $60^\\circ$ angle:\n$$h = 10 \\sin 60^\\circ = 10 \\cdot \\frac{\\sqrt{3}}{2} = 5\\sqrt{3} \\text{ m}$$\nThe choice $5$ m uses cosine, which gives the distance from the wall to the foot of the ladder. The choice $5\\sqrt{2}$ m would be correct for a $45^\\circ$ angle.",
+    "verified": true
+  },
+  {
+    "id": "ML-TRI-010",
+    "domain": "math-logic",
+    "subtopic": "Trigonometry",
+    "difficulty": "medium",
+    "question": "For $\\sin\\theta \\ne 0$, which expression is equal to $\\dfrac{1 - \\cos^2\\theta}{\\sin\\theta}$?",
+    "choices": [
+      "$\\tan\\theta$",
+      "$\\sin\\theta$",
+      "$\\cos\\theta$",
+      "$1$"
+    ],
+    "answerIndex": 1,
+    "explanation": "From the identity $\\sin^2\\theta + \\cos^2\\theta = 1$, we get $1 - \\cos^2\\theta = \\sin^2\\theta$.\n$$\\frac{\\sin^2\\theta}{\\sin\\theta} = \\sin\\theta$$\nThe choice $1$ cancels the numerator and denominator as if they were equal, but the top is $\\sin^2\\theta$, not $\\sin\\theta$.",
+    "verified": true
+  },
+  {
+    "id": "ML-TRI-011",
+    "domain": "math-logic",
+    "subtopic": "Trigonometry",
+    "difficulty": "medium",
+    "question": "What is the exact value of $\\tan 225^\\circ$?",
+    "choices": [
+      "$\\frac{\\sqrt{3}}{3}$",
+      "$-1$",
+      "$-\\sqrt{3}$",
+      "$1$"
+    ],
+    "answerIndex": 3,
+    "explanation": "$225^\\circ$ is in Quadrant III, where both sine and cosine are negative, so tangent is **positive**. Its reference angle is $225^\\circ - 180^\\circ = 45^\\circ$, and $\\tan 45^\\circ = 1$. So $\\tan 225^\\circ = 1$.\nThe choice $-1$ forgets that tangent is positive in Quadrant III.",
+    "verified": true
+  },
+  {
+    "id": "ML-TRI-012",
+    "domain": "math-logic",
+    "subtopic": "Trigonometry",
+    "difficulty": "medium",
+    "question": "In triangle $ABC$, $\\angle A = 45^\\circ$, $\\angle B = 30^\\circ$, and side $a = 10\\sqrt{2}$ (opposite $\\angle A$). What is side $b$ (opposite $\\angle B$)?",
+    "choices": [
+      "$5$",
+      "$10$",
+      "$5\\sqrt{2}$",
+      "$20$"
+    ],
+    "answerIndex": 1,
+    "explanation": "Use the Law of Sines: $\\dfrac{a}{\\sin A} = \\dfrac{b}{\\sin B}$.\n$$b = \\frac{a \\sin B}{\\sin A} = \\frac{10\\sqrt{2} \\cdot \\frac{1}{2}}{\\frac{\\sqrt{2}}{2}} = 10$$\nThe choice $20$ flips the ratio and divides by $\\sin B$ instead of multiplying.",
+    "verified": true
+  },
+  {
+    "id": "ML-TRI-013",
+    "domain": "math-logic",
+    "subtopic": "Trigonometry",
+    "difficulty": "hard",
+    "question": "What is the period of $y = 3\\sin(4x) - 1$?",
+    "choices": [
+      "$8\\pi$",
+      "$\\frac{\\pi}{4}$",
+      "$2\\pi$",
+      "$\\frac{\\pi}{2}$"
+    ],
+    "answerIndex": 3,
+    "explanation": "For $y = A\\sin(Bx) + D$, the period is $\\frac{2\\pi}{|B|}$. Here $B = 4$, so the period is $\\frac{2\\pi}{4} = \\frac{\\pi}{2}$.\nThe amplitude $3$ and the shift $-1$ change the height of the graph, not its period. The choice $8\\pi$ multiplies by $B$ instead of dividing.",
+    "verified": true
+  },
+  {
+    "id": "ML-TRI-014",
+    "domain": "math-logic",
+    "subtopic": "Trigonometry",
+    "difficulty": "hard",
+    "question": "If $\\sin\\theta = \\frac{5}{13}$ and $\\theta$ is in Quadrant I, what is $\\sin 2\\theta$?",
+    "choices": [
+      "$\\frac{120}{169}$",
+      "$\\frac{60}{169}$",
+      "$\\frac{10}{13}$",
+      "$\\frac{119}{169}$"
+    ],
+    "answerIndex": 0,
+    "explanation": "First find $\\cos\\theta$: $\\cos\\theta = \\sqrt{1 - \\frac{25}{169}} = \\frac{12}{13}$ (positive in Quadrant I).\n$$\\sin 2\\theta = 2\\sin\\theta\\cos\\theta = 2 \\cdot \\frac{5}{13} \\cdot \\frac{12}{13} = \\frac{120}{169}$$\nThe choice $\\frac{10}{13}$ just doubles $\\sin\\theta$; $\\sin 2\\theta$ is not $2\\sin\\theta$. The choice $\\frac{119}{169}$ is $\\cos 2\\theta$.",
+    "verified": true
+  },
+  {
+    "id": "ML-PRB-007",
+    "domain": "math-logic",
+    "subtopic": "Probability",
+    "difficulty": "easy",
+    "question": "A fair coin is tossed 3 times. What is the probability of getting **exactly** 2 heads?",
+    "choices": [
+      "$\\frac{1}{4}$",
+      "$\\frac{1}{2}$",
+      "$\\frac{3}{8}$",
+      "$\\frac{2}{3}$"
+    ],
+    "answerIndex": 2,
+    "explanation": "There are $2^3 = 8$ equally likely outcomes. Exactly 2 heads happens in 3 of them: HHT, HTH, THH. So the probability is $\\frac{3}{8}$.\nThe choice $\\frac{1}{4}$ counts only 2 of the 3 arrangements. List all of them: the tail can be first, second, or third.",
+    "verified": true
+  },
+  {
+    "id": "ML-PRB-008",
+    "domain": "math-logic",
+    "subtopic": "Probability",
+    "difficulty": "easy",
+    "question": "One card is drawn from a standard deck of 52 cards. What is the probability that it is a **red king**?",
+    "choices": [
+      "$\\frac{1}{13}$",
+      "$\\frac{1}{26}$",
+      "$\\frac{1}{52}$",
+      "$\\frac{1}{2}$"
+    ],
+    "answerIndex": 1,
+    "explanation": "There are 2 red kings (hearts and diamonds) among 52 cards: $\\frac{2}{52} = \\frac{1}{26}$.\nThe choice $\\frac{1}{13}$ is the probability of any king (4 of 52). The choice $\\frac{1}{52}$ counts only one red king.",
+    "verified": true
+  },
+  {
+    "id": "ML-PRB-009",
+    "domain": "math-logic",
+    "subtopic": "Probability",
+    "difficulty": "medium",
+    "question": "How many 3-digit numbers can be formed from the digits 1, 2, 3, 4, 5 if no digit may be repeated?",
+    "choices": [
+      "$10$",
+      "$120$",
+      "$125$",
+      "$60$"
+    ],
+    "answerIndex": 3,
+    "explanation": "Order matters, and digits cannot repeat: $5 \\times 4 \\times 3 = 60$ (that is, $_5P_3$).\nThe choice $125 = 5^3$ allows repeated digits. The choice $10 = {}_5C_3$ ignores the order, but 123 and 321 are different numbers.",
+    "verified": true
+  },
+  {
+    "id": "ML-PRB-010",
+    "domain": "math-logic",
+    "subtopic": "Probability",
+    "difficulty": "medium",
+    "question": "In how many ways can 5 people be seated around a round table? (Arrangements that are rotations of each other count as the same.)",
+    "choices": [
+      "$12$",
+      "$24$",
+      "$120$",
+      "$5$"
+    ],
+    "answerIndex": 1,
+    "explanation": "For a circle, fix one person's seat to remove the rotations, then arrange the other 4 in a row: $(5 - 1)! = 4! = 24$.\nThe choice $120 = 5!$ counts each seating 5 times, once for each rotation.",
+    "verified": true
+  },
+  {
+    "id": "ML-PRB-011",
+    "domain": "math-logic",
+    "subtopic": "Probability",
+    "difficulty": "medium",
+    "question": "Events $A$ and $B$ are independent, with $P(A) = 0.4$ and $P(B) = 0.5$. What is $P(A \\text{ or } B)$?",
+    "choices": [
+      "$0.45$",
+      "$0.7$",
+      "$0.9$",
+      "$0.2$"
+    ],
+    "answerIndex": 1,
+    "explanation": "Since $A$ and $B$ are independent, $P(A \\text{ and } B) = 0.4 \\times 0.5 = 0.2$. Then\n$$P(A \\text{ or } B) = P(A) + P(B) - P(A \\text{ and } B) = 0.4 + 0.5 - 0.2 = 0.7$$\nThe choice $0.9$ just adds, which counts the overlap twice. The choice $0.2$ is $P(A \\text{ and } B)$.",
+    "verified": true
+  },
+  {
+    "id": "ML-PRB-012",
+    "domain": "math-logic",
+    "subtopic": "Probability",
+    "difficulty": "medium",
+    "question": "In a school fair game, you win ₱50 with probability $\\frac{1}{5}$. Otherwise, you lose ₱10. What is the expected value of one play?",
+    "choices": [
+      "₱10",
+      "−₱2",
+      "₱40",
+      "₱2"
+    ],
+    "answerIndex": 3,
+    "explanation": "Expected value $= (\\text{win}) \\times P(\\text{win}) + (\\text{loss}) \\times P(\\text{loss})$:\n$$50 \\cdot \\frac{1}{5} + (-10) \\cdot \\frac{4}{5} = 10 - 8 = 2$$\nSo on average you gain ₱2 per play. ₱10 forgets the losses. ₱40 subtracts the amounts ($50 - 10$) without using the probabilities.",
+    "verified": true
+  },
+  {
+    "id": "ML-PRB-013",
+    "domain": "math-logic",
+    "subtopic": "Probability",
+    "difficulty": "hard",
+    "question": "A box has 4 red and 6 blue balls. Three balls are drawn at the same time. What is the probability that **all three are blue**?",
+    "choices": [
+      "$\\frac{1}{6}$",
+      "$\\frac{1}{20}$",
+      "$\\frac{27}{125}$",
+      "$\\frac{1}{2}$"
+    ],
+    "answerIndex": 0,
+    "explanation": "Count the ways: $\\dfrac{_6C_3}{_{10}C_3} = \\dfrac{20}{120} = \\dfrac{1}{6}$.\nOr step by step: $\\frac{6}{10} \\cdot \\frac{5}{9} \\cdot \\frac{4}{8} = \\frac{120}{720} = \\frac{1}{6}$.\nThe choice $\\frac{27}{125} = \\left(\\frac{3}{5}\\right)^3$ treats the draws as **with** replacement, but drawing at the same time means no ball is put back.",
+    "verified": true
+  },
+  {
+    "id": "ML-PRB-014",
+    "domain": "math-logic",
+    "subtopic": "Probability",
+    "difficulty": "hard",
+    "question": "In how many ways can 6 different books be arranged on a shelf if 2 particular books must be next to each other?",
+    "choices": [
+      "$720$",
+      "$48$",
+      "$120$",
+      "$240$"
+    ],
+    "answerIndex": 3,
+    "explanation": "Tie the 2 books together and treat them as one block. Now there are 5 items to arrange: $5! = 120$ ways. The 2 books inside the block can be in either order: $\\times 2$.\n$$2 \\times 5! = 240$$\nThe choice $120$ forgets that the two books can switch places. The choice $720 = 6!$ ignores the condition.",
+    "verified": true
+  },
+  {
+    "id": "ML-RDG-007",
+    "domain": "math-logic",
+    "subtopic": "Reading comprehension",
+    "difficulty": "medium",
+    "passage": "When an ordinary vehicle slows down, its brake pads press against the wheels, and the vehicle's energy of motion is turned into heat that escapes into the air. Electric vehicles, including the newer electric jeepneys, can do better. Their motors can also run in reverse as generators. When the driver lifts off the accelerator, the turning wheels spin the motor, which produces electricity and sends it back to the battery. This process, called regenerative braking, slows the vehicle while recovering part of its energy.\n\nRegenerative braking is most useful in stop-and-go city traffic, where a vehicle brakes often. On a long, steady highway drive, there are few chances to recover energy. It also cannot fully replace ordinary brakes: in an emergency stop, the motor cannot slow the vehicle quickly enough on its own, so friction brakes are still needed.",
+    "question": "Which statement best expresses the main idea of the passage?",
+    "choices": [
+      "Electric jeepneys no longer need friction brakes.",
+      "Electric vehicles can recover some energy when slowing down by using their motors as generators, although this has limits.",
+      "Highway driving is the best way to recharge an electric vehicle's battery.",
+      "Ordinary brakes waste energy by turning it into heat."
+    ],
+    "answerIndex": 1,
+    "explanation": "The passage explains how regenerative braking recovers energy (first paragraph) and where it falls short (second paragraph). Only the choice that mentions both recovering energy and its limits covers the whole passage.\n\"Ordinary brakes waste energy as heat\" is a true detail, but too narrow. The claim that jeepneys no longer need friction brakes contradicts the passage, which says friction brakes are still needed in emergencies. The highway choice reverses the passage: steady highway driving gives **few** chances to recover energy.",
+    "verified": true
+  },
+  {
+    "id": "ML-RDG-008",
+    "domain": "math-logic",
+    "subtopic": "Reading comprehension",
+    "difficulty": "easy",
+    "passage": "Coastal towns face stronger storm surges as sea levels rise. Concrete seawalls are one answer, but they are expensive and can be damaged by large waves. Many communities are now replanting mangrove forests along their shores. The tangled roots of mangroves slow incoming waves and trap sediment, which helps the shoreline build up over time. Studies of past typhoons have found that villages behind wide mangrove belts often suffered less flooding than villages with bare shores. Mangroves cannot stop every storm, but they can **mitigate** the damage, and they also provide homes for fish and crabs that local fishers depend on.",
+    "question": "As used in the passage, the word \"mitigate\" most nearly means",
+    "choices": [
+      "cause",
+      "prevent completely",
+      "measure",
+      "lessen"
+    ],
+    "answerIndex": 3,
+    "explanation": "The sentence contrasts two ideas: mangroves \"cannot stop every storm, but they can mitigate the damage.\" So mitigate means something less than stopping: to **lessen** or reduce.\n\"Prevent completely\" is exactly what the first half of the sentence says mangroves **cannot** do. \"Cause\" is the opposite of the meaning.",
+    "verified": true
+  },
+  {
+    "id": "ML-RDG-009",
+    "domain": "math-logic",
+    "subtopic": "Reading comprehension",
+    "difficulty": "medium",
+    "passage": "An automatic rice cooker seems simple, but it relies on a clever bit of physics. Under the inner pot sits a heating plate and a small temperature sensor. While there is still water in the pot, the temperature of the contents cannot rise much above 100°C, the boiling point of water, because extra heat goes into turning water into steam. Once the rice has absorbed or boiled away the water, nothing is left to hold the temperature down, so it begins to climb quickly. When the sensor detects this rise, the cooker switches from \"cook\" to \"keep warm\" mode, which supplies only a little heat.",
+    "question": "Based on the passage, what would most likely happen if a user put rice in the cooker with **far more water** than usual?",
+    "choices": [
+      "The cooker would stay in \"cook\" mode longer before switching to \"keep warm.\"",
+      "The temperature inside the pot would rise far above 100°C while the water boils.",
+      "The sensor would stop working because it would be covered with water.",
+      "The cooker would switch to \"keep warm\" mode almost immediately."
+    ],
+    "answerIndex": 0,
+    "explanation": "The cooker switches modes only when the water is gone and the temperature starts to climb above about 100°C. With more water, it takes longer to absorb or boil it all away, so the cooker stays in \"cook\" mode longer.\nSwitching \"almost immediately\" would need the water to be gone right away. The temperature cannot rise far above 100°C **while water is boiling**, as the passage explains. Nothing in the passage suggests that water damages the sensor.",
+    "verified": true
+  },
+  {
+    "id": "ML-RDG-010",
+    "domain": "math-logic",
+    "subtopic": "Reading comprehension",
+    "difficulty": "medium",
+    "passage": "Most of the internet's data travels through optical fibers: strands of very pure glass about as thin as a human hair. Information is sent as rapid flashes of light. A fiber has a glass core surrounded by a layer called the cladding, which has a slightly lower refractive index. When light inside the core hits the boundary at a shallow enough angle, it does not pass into the cladding. Instead, it bounces back completely, an effect called total internal reflection. In this way, the light zigzags along the core for many kilometers, even around gentle bends. Compared with copper wires, fibers carry far more data, lose less signal over long distances, and are not affected by nearby electrical noise.",
+    "question": "According to the passage, what keeps the light inside the core of an optical fiber?",
+    "choices": [
+      "A thin layer of copper wrapped around the glass",
+      "The very small diameter of the fiber, which is too narrow for light to escape",
+      "Total internal reflection at the boundary between the core and the cladding",
+      "The electrical noise around the cable"
+    ],
+    "answerIndex": 2,
+    "explanation": "The passage says that when light hits the core-cladding boundary at a shallow angle, it \"bounces back completely, an effect called total internal reflection.\" This is what guides the light along the fiber.\nCopper is mentioned only as the older alternative. Electrical noise is something fibers are **not** affected by. The thinness of the fiber is described, but the passage does not say it traps the light.",
+    "verified": true
+  },
+  {
+    "id": "ML-RDG-011",
+    "domain": "math-logic",
+    "subtopic": "Reading comprehension",
+    "difficulty": "medium",
+    "passage": "Every year, households throw away old phones, chargers, and laptops. This electronic waste, or e-waste, contains valuable metals such as copper, silver, and gold, but also harmful substances such as lead and mercury. When e-waste is burned in open dumps to recover metals, those toxins enter the air, soil, and water, and the people doing the work are exposed to them.\n\nThere is a better path. Licensed recycling facilities can recover metals safely, and many phone makers and shops now accept old devices for proper disposal. Before buying a new gadget, consumers can also ask whether the old one could simply be repaired. Each device kept out of an open dump is a small but real gain for public health.",
+    "question": "What is the author's main purpose in writing the passage?",
+    "choices": [
+      "To argue that people should stop buying electronic devices",
+      "To compare the prices of different recycling facilities",
+      "To explain how gold is extracted from old phones",
+      "To encourage readers to dispose of or repair electronics responsibly"
+    ],
+    "answerIndex": 3,
+    "explanation": "The first paragraph describes the problem (toxins from burning e-waste), and the second offers what readers can do: use licensed recyclers, return devices to shops, and repair instead of replacing. This is persuasive writing that encourages responsible disposal.\nThe passage mentions metals but does not explain extraction. It never tells readers to stop buying devices. No prices are compared.",
+    "verified": true
+  },
+  {
+    "id": "ML-RDG-012",
+    "domain": "math-logic",
+    "subtopic": "Reading comprehension",
+    "difficulty": "hard",
+    "passage": "Many people notice that their phones lose signal inside elevators. The reason is that an elevator car is essentially a metal box. Radio waves, which carry phone signals, are a form of electromagnetic radiation. When they strike a continuous metal surface, they cause electrons in the metal to move, and this movement creates fields that cancel the waves inside the enclosure. A closed metal container that blocks outside electromagnetic fields in this way is called a Faraday cage.\n\nThe shielding does not have to be a solid sheet. A metal mesh works as well, as long as its holes are much smaller than the wavelength of the radiation. This is why the door of a microwave oven, which has a metal mesh behind its glass, keeps the oven's waves inside while still letting visible light, whose wavelength is far shorter, pass through so you can see your food.",
+    "question": "Based on the passage, why can visible light pass through a microwave oven's door while microwaves cannot?",
+    "choices": [
+      "Microwaves have a shorter wavelength than visible light.",
+      "The holes in the mesh are small compared with the wavelength of microwaves but large compared with the wavelength of visible light.",
+      "Visible light is not a form of electromagnetic radiation.",
+      "The glass in the door absorbs microwaves but not visible light."
+    ],
+    "answerIndex": 1,
+    "explanation": "The passage gives the rule: a mesh blocks radiation if its holes are **much smaller than the wavelength**. It also says visible light has a \"far shorter\" wavelength than the oven's waves. So the holes are tiny compared with microwaves (which get blocked) but large compared with visible light (which passes).\nThe claim that visible light is not electromagnetic is false, and the passage does not say it. The passage credits the **metal mesh**, not the glass. The wavelength choice reverses the fact stated in the passage.",
+    "verified": true
+  },
+  {
+    "id": "ML-RDG-013",
+    "domain": "math-logic",
+    "subtopic": "Reading comprehension",
+    "difficulty": "hard",
+    "passage": "A city council is debating whether to replace its old sodium street lamps with LED lamps. Supporters argue that the switch will save money. LED lamps use about half the electricity of sodium lamps for the same brightness, and they last several times longer, so the city would buy and install replacements less often. Opponents point out that each LED lamp costs more to buy. Supporters reply that the lower electricity bills and fewer replacements will more than make up for the higher price within a few years.",
+    "question": "Which of the following, if true, would most **weaken** the supporters' argument that the switch will save money?",
+    "choices": [
+      "Several nearby cities have already switched to LED street lamps.",
+      "In this city's humid climate, the LED lamps being considered fail much sooner than their rated lifetime.",
+      "LED lamps produce a whiter light than sodium lamps.",
+      "The price of electricity in the city is expected to rise next year."
+    ],
+    "answerIndex": 1,
+    "explanation": "The supporters' savings depend on two things: lower electricity use **and** fewer replacements. If the LEDs fail early in this climate, the \"fewer replacements\" part collapses, and the higher purchase price may never be paid back. This attacks a key assumption.\nWhiter light is about appearance, not cost. Rising electricity prices would make LED savings **larger**, which strengthens the argument. What other cities did does not show whether the switch saves money here.",
+    "verified": true
+  },
+  {
+    "id": "ML-RDG-014",
+    "domain": "math-logic",
+    "subtopic": "Reading comprehension",
+    "difficulty": "easy",
+    "passage": "A common type of 3D printer builds objects from melted plastic. First, a designer creates a 3D model on a computer. Software then \"slices\" the model into hundreds of thin horizontal layers and turns them into instructions for the printer. The printer heats a plastic filament until it softens and pushes it through a fine nozzle. The nozzle moves back and forth, drawing the bottom layer of the object onto a flat bed. When that layer is done, the bed lowers slightly, and the nozzle draws the next layer on top. The plastic cools and hardens quickly, so each new layer bonds to the one below. Layer by layer, the finished object rises from the bed.",
+    "question": "According to the passage, what happens right **after** the printer finishes drawing one layer?",
+    "choices": [
+      "The filament is heated for the first time.",
+      "The software slices the model into thin layers.",
+      "The designer creates a 3D model on a computer.",
+      "The bed lowers slightly so the next layer can be drawn on top."
+    ],
+    "answerIndex": 3,
+    "explanation": "The passage says: \"When that layer is done, the bed lowers slightly, and the nozzle draws the next layer on top.\"\nSlicing and designing the model happen **before** printing starts, and the filament is already being heated while the first layer is drawn.",
+    "verified": true
+  },
+  {
+    "id": "ML-GAT-007",
+    "domain": "math-logic",
+    "subtopic": "Logic gates",
+    "difficulty": "easy",
+    "question": "This circuit behaves exactly like which single gate?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-6 -6 292 87\" width=\"292\" height=\"87\" role=\"img\" aria-label=\"Logic circuit: A and B go into an OR gate. Its output goes through a NOT gate to give Y.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M 80 15 Q 92 35 80 55 Q 112 55 126 35 Q 112 15 80 15 Z\"/><polygon points=\"170,19 170,51 202,35\"/><circle cx=\"206.5\" cy=\"35\" r=\"4.5\"/><polyline points=\"30,25 84.5,25\"/><polyline points=\"30,45 84.5,45\"/><polyline points=\"126,35 170,35\"/><polyline points=\"211,35 250,35\"/><text x=\"24\" y=\"25\" font-size=\"15\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">A</text><text x=\"24\" y=\"45\" font-size=\"15\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">B</text><text x=\"256\" y=\"35\" font-size=\"15\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">Y</text></svg>",
+    "choices": [
+      "NOR",
+      "NAND",
+      "OR",
+      "XNOR"
+    ],
+    "answerIndex": 0,
+    "explanation": "The OR gate gives $A + B$, and the NOT gate inverts it: $Y = \\overline{A + B}$. An OR followed by a NOT is a **NOR** gate.\nNAND is $\\overline{AB}$, an inverted **AND**, so it gives a different output when exactly one input is 1.",
+    "verified": true
+  },
+  {
+    "id": "ML-GAT-008",
+    "domain": "math-logic",
+    "subtopic": "Logic gates",
+    "difficulty": "easy",
+    "question": "For which input combination is the output $Y = 1$?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-6 -6 292 112\" width=\"292\" height=\"112\" role=\"img\" aria-label=\"Logic circuit: B goes through a NOT gate. A and the NOT output go into an AND gate whose output is Y.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"60,54 60,86 92,70\"/><circle cx=\"96.5\" cy=\"70\" r=\"4.5\"/><path d=\"M 150 20 H 175 A 20 20 0 0 1 175 60 H 150 Z\"/><polyline points=\"30,30 150,30\"/><polyline points=\"30,70 60,70\"/><polyline points=\"101,70 120,70 120,50 150,50\"/><polyline points=\"195,40 250,40\"/><text x=\"24\" y=\"30\" font-size=\"15\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">A</text><text x=\"24\" y=\"70\" font-size=\"15\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">B</text><text x=\"256\" y=\"40\" font-size=\"15\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">Y</text></svg>",
+    "choices": [
+      "$A = 0,\\ B = 1$",
+      "$A = 1,\\ B = 0$",
+      "$A = 0,\\ B = 0$",
+      "$A = 1,\\ B = 1$"
+    ],
+    "answerIndex": 1,
+    "explanation": "$B$ is inverted before reaching the AND gate, so $Y = A\\overline{B}$. An AND gate outputs 1 only when both of its inputs are 1: $A = 1$ and $\\overline{B} = 1$, which means $B = 0$.\nWith $A = 1, B = 1$, the NOT gate sends a 0 into the AND gate, so $Y = 0$. This choice tempts students who skip the NOT gate.",
+    "verified": true
+  },
+  {
+    "id": "ML-GAT-009",
+    "domain": "math-logic",
+    "subtopic": "Logic gates",
+    "difficulty": "medium",
+    "question": "The output $Y$ of this circuit is 1 exactly when",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-6 -6 292 87\" width=\"292\" height=\"87\" role=\"img\" aria-label=\"Logic circuit: A and B go into an XOR gate. Its output goes through a NOT gate to give Y.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M 87 15 Q 99 35 87 55 Q 119 55 133 35 Q 119 15 87 15 Z\"/><path d=\"M 80 15 Q 92 35 80 55\"/><polygon points=\"170,19 170,51 202,35\"/><circle cx=\"206.5\" cy=\"35\" r=\"4.5\"/><polyline points=\"30,25 84.5,25\"/><polyline points=\"30,45 84.5,45\"/><polyline points=\"133,35 170,35\"/><polyline points=\"211,35 250,35\"/><text x=\"24\" y=\"25\" font-size=\"15\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">A</text><text x=\"24\" y=\"45\" font-size=\"15\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">B</text><text x=\"256\" y=\"35\" font-size=\"15\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">Y</text></svg>",
+    "choices": [
+      "$A$ and $B$ are equal",
+      "both inputs are 1",
+      "$A$ and $B$ are different",
+      "at least one input is 1"
+    ],
+    "answerIndex": 0,
+    "explanation": "XOR outputs 1 when its inputs are **different**. The NOT gate inverts this, so $Y = 1$ when the inputs are the **same** (both 0 or both 1). This is an XNOR gate, sometimes called an equality detector.\n\"$A$ and $B$ are different\" describes the XOR output before the NOT gate. \"Both inputs are 1\" misses the case $A = B = 0$, where $Y$ is also 1.",
+    "verified": true
+  },
+  {
+    "id": "ML-GAT-010",
+    "domain": "math-logic",
+    "subtopic": "Logic gates",
+    "difficulty": "medium",
+    "question": "Which Boolean expression is equal to the output $Y$ of this circuit?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-6 -6 332 162\" width=\"332\" height=\"162\" role=\"img\" aria-label=\"Logic circuit: A and B go into one AND gate. A and C go into a second AND gate. Both AND outputs go into an OR gate whose output is Y.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><text x=\"20\" y=\"10\" font-size=\"15\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">A</text><polyline points=\"20,18 20,140\"/><text x=\"40\" y=\"10\" font-size=\"15\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">B</text><polyline points=\"40,18 40,140\"/><text x=\"60\" y=\"10\" font-size=\"15\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">C</text><polyline points=\"60,18 60,140\"/><path d=\"M 100 20 H 125 A 20 20 0 0 1 125 60 H 100 Z\"/><path d=\"M 100 90 H 125 A 20 20 0 0 1 125 130 H 100 Z\"/><path d=\"M 200 55 Q 212 75 200 95 Q 232 95 246 75 Q 232 55 200 55 Z\"/><polyline points=\"20,30 100,30\"/><circle cx=\"20\" cy=\"30\" r=\"3.5\" fill=\"currentColor\"/><polyline points=\"40,50 100,50\"/><circle cx=\"40\" cy=\"50\" r=\"3.5\" fill=\"currentColor\"/><polyline points=\"20,100 100,100\"/><circle cx=\"20\" cy=\"100\" r=\"3.5\" fill=\"currentColor\"/><polyline points=\"60,120 100,120\"/><circle cx=\"60\" cy=\"120\" r=\"3.5\" fill=\"currentColor\"/><polyline points=\"145,40 170,40 170,65 204.5,65\"/><polyline points=\"145,110 170,110 170,85 204.5,85\"/><polyline points=\"246,75 280,75\"/><text x=\"286\" y=\"75\" font-size=\"15\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">Y</text></svg>",
+    "choices": [
+      "$A(B + C)$",
+      "$(A + B)(A + C)$",
+      "$A + BC$",
+      "$AB + C$"
+    ],
+    "answerIndex": 0,
+    "explanation": "The two AND gates give $AB$ and $AC$, and the OR gate combines them: $Y = AB + AC$. Factor out $A$:\n$$Y = AB + AC = A(B + C)$$\n$(A + B)(A + C)$ expands to $A + BC$, which is a different function: it gives $Y = 1$ for $A = 1, B = 0, C = 0$, but this circuit gives $0$ there. $AB + C$ forgets that $C$ also passes through an AND gate with $A$.",
+    "verified": true
+  },
+  {
+    "id": "ML-GAT-011",
+    "domain": "math-logic",
+    "subtopic": "Logic gates",
+    "difficulty": "medium",
+    "question": "This circuit behaves exactly like which single gate?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-6 -6 322 87\" width=\"322\" height=\"87\" role=\"img\" aria-label=\"Logic circuit: A and B go into a NAND gate. Its output feeds both inputs of a second NAND gate whose output is Y.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M 80 15 H 105 A 20 20 0 0 1 105 55 H 80 Z\"/><circle cx=\"129.5\" cy=\"35\" r=\"4.5\"/><path d=\"M 190 15 H 215 A 20 20 0 0 1 215 55 H 190 Z\"/><circle cx=\"239.5\" cy=\"35\" r=\"4.5\"/><polyline points=\"30,25 80,25\"/><polyline points=\"30,45 80,45\"/><polyline points=\"134,35 160,35\"/><polyline points=\"160,25 160,45\"/><polyline points=\"160,25 190,25\"/><polyline points=\"160,45 190,45\"/><circle cx=\"160\" cy=\"35\" r=\"3.5\" fill=\"currentColor\"/><polyline points=\"244,35 280,35\"/><text x=\"24\" y=\"25\" font-size=\"15\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">A</text><text x=\"24\" y=\"45\" font-size=\"15\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">B</text><text x=\"286\" y=\"35\" font-size=\"15\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">Y</text></svg>",
+    "choices": [
+      "NOR",
+      "NAND",
+      "AND",
+      "OR"
+    ],
+    "answerIndex": 2,
+    "explanation": "The first gate gives $\\overline{AB}$. When both inputs of a NAND gate are tied together, it acts as a NOT gate: $\\overline{X \\cdot X} = \\overline{X}$. So the second gate inverts $\\overline{AB}$ back to $AB$.\nTwo inversions cancel, so the circuit is an **AND** gate. This is how AND is built from NAND gates alone.",
+    "verified": true
+  },
+  {
+    "id": "ML-GAT-012",
+    "domain": "math-logic",
+    "subtopic": "Logic gates",
+    "difficulty": "hard",
+    "question": "The inputs are $A = 1$, $B = 1$, $C = 0$. What are the outputs $P$ and $Q$?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-6 -6 342 122\" width=\"342\" height=\"122\" role=\"img\" aria-label=\"Logic circuit with two outputs: A and B go into a NAND gate whose output is P. P and C go into a NOR gate whose output is Q.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M 80 10 H 105 A 20 20 0 0 1 105 50 H 80 Z\"/><circle cx=\"129.5\" cy=\"30\" r=\"4.5\"/><path d=\"M 190 60 Q 202 80 190 100 Q 222 100 236 80 Q 222 60 190 60 Z\"/><circle cx=\"240.5\" cy=\"80\" r=\"4.5\"/><polyline points=\"30,20 80,20\"/><polyline points=\"30,40 80,40\"/><polyline points=\"134,30 300,30\"/><polyline points=\"160,30 160,70 194.5,70\"/><circle cx=\"160\" cy=\"30\" r=\"3.5\" fill=\"currentColor\"/><polyline points=\"30,90 194.5,90\"/><polyline points=\"245,80 300,80\"/><text x=\"24\" y=\"20\" font-size=\"15\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">A</text><text x=\"24\" y=\"40\" font-size=\"15\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">B</text><text x=\"24\" y=\"90\" font-size=\"15\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">C</text><text x=\"306\" y=\"30\" font-size=\"15\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">P</text><text x=\"306\" y=\"80\" font-size=\"15\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">Q</text></svg>",
+    "choices": [
+      "$P = 1,\\ Q = 1$",
+      "$P = 0,\\ Q = 1$",
+      "$P = 0,\\ Q = 0$",
+      "$P = 1,\\ Q = 0$"
+    ],
+    "answerIndex": 1,
+    "explanation": "$P$ is the NAND of $A$ and $B$: since both are 1, $AB = 1$ and $P = \\overline{1} = 0$.\n$Q$ is the NOR of $P$ and $C$: $P + C = 0 + 0 = 0$, so $Q = \\overline{0} = 1$.\nThe choice $P = 1, Q = 0$ reads the first gate as AND and the second as OR, ignoring both inversion bubbles.",
+    "verified": true
+  },
+  {
+    "id": "ML-GAT-013",
+    "domain": "math-logic",
+    "subtopic": "Logic gates",
+    "difficulty": "hard",
+    "question": "This circuit uses only NOR gates. It behaves exactly like which single gate?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-6 -6 322 117\" width=\"322\" height=\"117\" role=\"img\" aria-label=\"Logic circuit made only of NOR gates: A feeds both inputs of the first NOR gate, B feeds both inputs of the second, and their outputs go into a third NOR gate whose output is Y.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M 80 0 Q 92 20 80 40 Q 112 40 126 20 Q 112 0 80 0 Z\"/><circle cx=\"130.5\" cy=\"20\" r=\"4.5\"/><path d=\"M 80 60 Q 92 80 80 100 Q 112 100 126 80 Q 112 60 80 60 Z\"/><circle cx=\"130.5\" cy=\"80\" r=\"4.5\"/><path d=\"M 190 30 Q 202 50 190 70 Q 222 70 236 50 Q 222 30 190 30 Z\"/><circle cx=\"240.5\" cy=\"50\" r=\"4.5\"/><polyline points=\"20,20 55,20\"/><polyline points=\"55,10 55,30\"/><polyline points=\"55,10 84.5,10\"/><polyline points=\"55,30 84.5,30\"/><circle cx=\"55\" cy=\"20\" r=\"3.5\" fill=\"currentColor\"/><polyline points=\"20,80 55,80\"/><polyline points=\"55,70 55,90\"/><polyline points=\"55,70 84.5,70\"/><polyline points=\"55,90 84.5,90\"/><circle cx=\"55\" cy=\"80\" r=\"3.5\" fill=\"currentColor\"/><polyline points=\"135,20 160,20 160,40 194.5,40\"/><polyline points=\"135,80 160,80 160,60 194.5,60\"/><polyline points=\"245,50 285,50\"/><text x=\"14\" y=\"20\" font-size=\"15\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">A</text><text x=\"14\" y=\"80\" font-size=\"15\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">B</text><text x=\"291\" y=\"50\" font-size=\"15\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">Y</text></svg>",
+    "choices": [
+      "NOR",
+      "AND",
+      "OR",
+      "NAND"
+    ],
+    "answerIndex": 1,
+    "explanation": "A NOR gate with both inputs tied together is a NOT gate, so the first two gates give $\\overline{A}$ and $\\overline{B}$. The last NOR gives\n$$Y = \\overline{\\overline{A} + \\overline{B}} = \\overline{\\overline{A}} \\cdot \\overline{\\overline{B}} = AB$$\nby De Morgan's law. So the circuit is an **AND** gate. Students who see three NOR gates often guess NOR or OR without working it out.",
+    "verified": true
+  },
+  {
+    "id": "ML-GAT-014",
+    "domain": "math-logic",
+    "subtopic": "Logic gates",
+    "difficulty": "medium",
+    "question": "The output $Y$ of this circuit is 1 exactly when",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-6 -6 342 222\" width=\"342\" height=\"222\" role=\"img\" aria-label=\"Logic circuit: three AND gates take A and B, B and C, and A and C. Their three outputs go into one 3-input OR gate whose output is Y.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><text x=\"20\" y=\"10\" font-size=\"15\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">A</text><polyline points=\"20,18 20,200\"/><text x=\"40\" y=\"10\" font-size=\"15\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">B</text><polyline points=\"40,18 40,200\"/><text x=\"60\" y=\"10\" font-size=\"15\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">C</text><polyline points=\"60,18 60,200\"/><path d=\"M 100 15 H 125 A 20 20 0 0 1 125 55 H 100 Z\"/><path d=\"M 100 80 H 125 A 20 20 0 0 1 125 120 H 100 Z\"/><path d=\"M 100 150 H 125 A 20 20 0 0 1 125 190 H 100 Z\"/><path d=\"M 210 80 Q 222 100 210 120 Q 242 120 256 100 Q 242 80 210 80 Z\"/><polyline points=\"20,25 100,25\"/><circle cx=\"20\" cy=\"25\" r=\"3.5\" fill=\"currentColor\"/><polyline points=\"40,45 100,45\"/><circle cx=\"40\" cy=\"45\" r=\"3.5\" fill=\"currentColor\"/><polyline points=\"40,90 100,90\"/><circle cx=\"40\" cy=\"90\" r=\"3.5\" fill=\"currentColor\"/><polyline points=\"60,110 100,110\"/><circle cx=\"60\" cy=\"110\" r=\"3.5\" fill=\"currentColor\"/><polyline points=\"20,160 100,160\"/><circle cx=\"20\" cy=\"160\" r=\"3.5\" fill=\"currentColor\"/><polyline points=\"60,180 100,180\"/><circle cx=\"60\" cy=\"180\" r=\"3.5\" fill=\"currentColor\"/><polyline points=\"145,35 175,35 175,88 213.84,88\"/><polyline points=\"145,100 216,100\"/><polyline points=\"145,170 175,170 175,112 213.84,112\"/><polyline points=\"256,100 295,100\"/><text x=\"301\" y=\"100\" font-size=\"15\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">Y</text></svg>",
+    "choices": [
+      "at least two of the inputs are 1",
+      "at least one input is 1",
+      "exactly one input is 1",
+      "all three inputs are 1"
+    ],
+    "answerIndex": 0,
+    "explanation": "$Y = AB + BC + AC$. Each AND gate checks one pair of inputs, so $Y = 1$ whenever **some pair** is 1, that is, whenever at least two inputs are 1. This is called a **majority** circuit, like a vote among three judges.\n\"All three inputs are 1\" is too strict: for $A = 1, B = 1, C = 0$, the gate for $AB$ already makes $Y = 1$.",
+    "verified": true
+  },
+  {
+    "id": "ML-CIR-006",
+    "domain": "math-logic",
+    "subtopic": "Basic circuitry",
+    "difficulty": "easy",
+    "question": "What is the main purpose of a fuse in a circuit?",
+    "choices": [
+      "To increase the voltage supplied to the devices",
+      "To store electric charge for later use",
+      "To make current flow in only one direction",
+      "To break the circuit when the current becomes too large"
+    ],
+    "answerIndex": 3,
+    "explanation": "A fuse contains a thin wire that melts when too much current flows through it. This opens the circuit and protects the wiring and devices from overheating or fire.\nStoring charge is the job of a **capacitor**. Letting current flow one way only is the job of a **diode**.",
+    "verified": true
+  },
+  {
+    "id": "ML-CIR-007",
+    "domain": "math-logic",
+    "subtopic": "Basic circuitry",
+    "difficulty": "easy",
+    "question": "In the circuit below, which LEDs light up?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-8 -8 336 216\" width=\"336\" height=\"216\" role=\"img\" aria-label=\"Circuit: the positive terminal of the battery is at the top. Current goes through resistor R and then splits into two branches. LED D1 points downward, away from the positive side. LED D2 points upward, toward the positive side.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"30\" y1=\"160\" x2=\"30\" y2=\"111\"/><line x1=\"30\" y1=\"99\" x2=\"30\" y2=\"50\"/><line x1=\"44\" y1=\"99\" x2=\"16\" y2=\"99\" stroke-width=\"2\"/><line x1=\"37\" y1=\"111\" x2=\"23\" y2=\"111\" stroke-width=\"4\"/><text x=\"14\" y=\"94\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">+</text><text x=\"14\" y=\"116\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">−</text><polyline points=\"30,50 30,20 60,20\"/><line x1=\"60\" y1=\"20\" x2=\"65\" y2=\"20\"/><line x1=\"105\" y1=\"20\" x2=\"110\" y2=\"20\"/><polyline points=\"65,20 68.33,27 75,13 81.67,27 88.33,13 95,27 101.67,13 105,20\"/><text x=\"85\" y=\"0\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">R</text><polyline points=\"110,20 240,20\"/><polyline points=\"140,20 140,55\"/><line x1=\"140\" y1=\"55\" x2=\"140\" y2=\"78\"/><line x1=\"140\" y1=\"102\" x2=\"140\" y2=\"125\"/><polygon points=\"130,78 150,78 140,98\"/><line x1=\"130\" y1=\"98\" x2=\"150\" y2=\"98\"/><line x1=\"140\" y1=\"78\" x2=\"140\" y2=\"98\"/><line x1=\"154\" y1=\"86\" x2=\"164\" y2=\"92\" stroke-width=\"1.5\"/><polygon points=\"166,93 160.02,92.53 162.65,88.02\" fill=\"currentColor\" stroke-width=\"1\"/><line x1=\"154\" y1=\"96\" x2=\"164\" y2=\"102\" stroke-width=\"1.5\"/><polygon points=\"166,103 160.02,102.53 162.65,98.02\" fill=\"currentColor\" stroke-width=\"1\"/><text x=\"126\" y=\"90\" font-size=\"13\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">D1</text><polyline points=\"140,125 140,180\"/><polyline points=\"240,20 240,55\"/><line x1=\"240\" y1=\"125\" x2=\"240\" y2=\"102\"/><line x1=\"240\" y1=\"78\" x2=\"240\" y2=\"55\"/><polygon points=\"250,102 230,102 240,82\"/><line x1=\"250\" y1=\"82\" x2=\"230\" y2=\"82\"/><line x1=\"240\" y1=\"102\" x2=\"240\" y2=\"82\"/><line x1=\"226\" y1=\"94\" x2=\"216\" y2=\"88\" stroke-width=\"1.5\"/><polygon points=\"214,87 219.98,87.47 217.35,91.98\" fill=\"currentColor\" stroke-width=\"1\"/><line x1=\"226\" y1=\"84\" x2=\"216\" y2=\"78\" stroke-width=\"1.5\"/><polygon points=\"214,77 219.98,77.47 217.35,81.98\" fill=\"currentColor\" stroke-width=\"1\"/><text x=\"254\" y=\"90\" font-size=\"13\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">D2</text><polyline points=\"240,125 240,180\"/><circle cx=\"140\" cy=\"20\" r=\"3.5\" fill=\"currentColor\"/><circle cx=\"140\" cy=\"180\" r=\"3.5\" fill=\"currentColor\"/><polyline points=\"240,180 30,180 30,160\"/></svg>",
+    "choices": [
+      "Only D2",
+      "Both D1 and D2",
+      "Only D1",
+      "Neither LED"
+    ],
+    "answerIndex": 2,
+    "explanation": "An LED lights only when current flows through it in the direction of its arrow (from the flat side of the triangle to its tip, toward the bar). Current leaves the positive terminal at the top, so it flows **downward** through both branches.\nD1 points downward, so it is forward-biased and lights. D2 points upward, against the current, so it is reverse-biased and stays off. Because the branches are in parallel, D2 being off does not stop D1.",
+    "verified": true
+  },
+  {
+    "id": "ML-CIR-008",
+    "domain": "math-logic",
+    "subtopic": "Basic circuitry",
+    "difficulty": "medium",
+    "question": "Two identical bulbs are connected to the same battery, first in series and then in parallel. How does the brightness of each bulb compare?",
+    "choices": [
+      "Each bulb is brighter in the series connection.",
+      "Each bulb has the same brightness in both connections.",
+      "Each bulb is brighter in the parallel connection.",
+      "The bulbs do not light in the parallel connection."
+    ],
+    "answerIndex": 2,
+    "explanation": "In **parallel**, each bulb is connected directly across the battery and gets the full battery voltage. In **series**, the two bulbs share the voltage, so each gets only half.\nA bulb's power is $P = \\frac{V^2}{R}$, so half the voltage gives one quarter of the power. Each bulb is much brighter in parallel.",
+    "verified": true
+  },
+  {
+    "id": "ML-CIR-009",
+    "domain": "math-logic",
+    "subtopic": "Basic circuitry",
+    "difficulty": "medium",
+    "question": "In the circuit, which set of closed switches makes the lamp light?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-6 -6 372 212\" width=\"372\" height=\"212\" role=\"img\" aria-label=\"Circuit: a battery, then switches S1 and S2 connected in parallel with each other, then switch S3 in series, then a lamp, back to the battery.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"30\" y1=\"170\" x2=\"30\" y2=\"111\"/><line x1=\"30\" y1=\"99\" x2=\"30\" y2=\"40\"/><line x1=\"44\" y1=\"99\" x2=\"16\" y2=\"99\" stroke-width=\"2\"/><line x1=\"37\" y1=\"111\" x2=\"23\" y2=\"111\" stroke-width=\"4\"/><text x=\"14\" y=\"94\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">+</text><text x=\"14\" y=\"116\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">−</text><polyline points=\"30,40 30,20 90,20\"/><line x1=\"90\" y1=\"20\" x2=\"110\" y2=\"20\"/><line x1=\"140\" y1=\"20\" x2=\"160\" y2=\"20\"/><circle cx=\"110\" cy=\"20\" r=\"2.5\" fill=\"currentColor\"/><circle cx=\"140\" cy=\"20\" r=\"2.5\" fill=\"currentColor\"/><line x1=\"110\" y1=\"20\" x2=\"138\" y2=\"8\"/><text x=\"125\" y=\"-2\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">S1</text><polyline points=\"160,20 180,20\"/><polyline points=\"70,20 70,75 90,75\"/><line x1=\"90\" y1=\"75\" x2=\"110\" y2=\"75\"/><line x1=\"140\" y1=\"75\" x2=\"160\" y2=\"75\"/><circle cx=\"110\" cy=\"75\" r=\"2.5\" fill=\"currentColor\"/><circle cx=\"140\" cy=\"75\" r=\"2.5\" fill=\"currentColor\"/><line x1=\"110\" y1=\"75\" x2=\"138\" y2=\"63\"/><text x=\"125\" y=\"97\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">S2</text><polyline points=\"160,75 180,75 180,20\"/><circle cx=\"70\" cy=\"20\" r=\"3.5\" fill=\"currentColor\"/><circle cx=\"180\" cy=\"20\" r=\"3.5\" fill=\"currentColor\"/><polyline points=\"180,20 200,20\"/><line x1=\"200\" y1=\"20\" x2=\"220\" y2=\"20\"/><line x1=\"250\" y1=\"20\" x2=\"270\" y2=\"20\"/><circle cx=\"220\" cy=\"20\" r=\"2.5\" fill=\"currentColor\"/><circle cx=\"250\" cy=\"20\" r=\"2.5\" fill=\"currentColor\"/><line x1=\"220\" y1=\"20\" x2=\"248\" y2=\"8\"/><text x=\"235\" y=\"-2\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">S3</text><polyline points=\"270,20 320,20 320,70\"/><line x1=\"320\" y1=\"70\" x2=\"320\" y2=\"88\"/><line x1=\"320\" y1=\"112\" x2=\"320\" y2=\"130\"/><circle cx=\"320\" cy=\"100\" r=\"12\"/><line x1=\"311.6\" y1=\"91.6\" x2=\"328.4\" y2=\"108.4\"/><line x1=\"311.6\" y1=\"108.4\" x2=\"328.4\" y2=\"91.6\"/><text x=\"306\" y=\"100\" font-size=\"13\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">Lamp</text><polyline points=\"320,130 320,190 30,190 30,170\"/></svg>",
+    "choices": [
+      "S1 and S2 closed, S3 open",
+      "S2 and S3 closed, S1 open",
+      "S3 closed, S1 and S2 open",
+      "S1 closed, S2 and S3 open"
+    ],
+    "answerIndex": 1,
+    "explanation": "Current must get through the parallel pair (S1 **or** S2) **and** then through S3. So the lamp lights when $(S_1 + S_2) \\cdot S_3 = 1$.\nWith S2 and S3 closed, current passes through S2 and then S3, so the lamp lights. Whenever S3 is open, the circuit is broken no matter what S1 and S2 do. With only S3 closed, both parallel paths are open.",
+    "verified": true
+  },
+  {
+    "id": "ML-CIR-010",
+    "domain": "math-logic",
+    "subtopic": "Basic circuitry",
+    "difficulty": "medium",
+    "question": "In the circuit, switch S is open. What does the voltmeter connected across the switch read?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-8 -8 356 206\" width=\"356\" height=\"206\" role=\"img\" aria-label=\"Circuit: a 6 V battery, an open switch S, and a lamp in series. A voltmeter is connected across the two ends of the open switch.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"30\" y1=\"150\" x2=\"30\" y2=\"106\"/><line x1=\"30\" y1=\"94\" x2=\"30\" y2=\"50\"/><line x1=\"44\" y1=\"94\" x2=\"16\" y2=\"94\" stroke-width=\"2\"/><line x1=\"37\" y1=\"106\" x2=\"23\" y2=\"106\" stroke-width=\"4\"/><text x=\"14\" y=\"89\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">+</text><text x=\"14\" y=\"111\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">−</text><text x=\"46\" y=\"100\" font-size=\"13\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">6 V</text><polyline points=\"30,50 30,30 110,30\"/><line x1=\"110\" y1=\"30\" x2=\"130\" y2=\"30\"/><line x1=\"160\" y1=\"30\" x2=\"180\" y2=\"30\"/><circle cx=\"130\" cy=\"30\" r=\"2.5\" fill=\"currentColor\"/><circle cx=\"160\" cy=\"30\" r=\"2.5\" fill=\"currentColor\"/><line x1=\"130\" y1=\"30\" x2=\"158\" y2=\"18\"/><text x=\"145\" y=\"8\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">S</text><polyline points=\"180,30 300,30 300,70\"/><line x1=\"300\" y1=\"70\" x2=\"300\" y2=\"88\"/><line x1=\"300\" y1=\"112\" x2=\"300\" y2=\"130\"/><circle cx=\"300\" cy=\"100\" r=\"12\"/><line x1=\"291.6\" y1=\"91.6\" x2=\"308.4\" y2=\"108.4\"/><line x1=\"291.6\" y1=\"108.4\" x2=\"308.4\" y2=\"91.6\"/><text x=\"286\" y=\"100\" font-size=\"13\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">Lamp</text><polyline points=\"300,130 300,170 30,170 30,150\"/><polyline points=\"90,30 90,95 115,95\"/><line x1=\"115\" y1=\"95\" x2=\"133\" y2=\"95\"/><line x1=\"157\" y1=\"95\" x2=\"175\" y2=\"95\"/><circle cx=\"145\" cy=\"95\" r=\"12\"/><text x=\"145\" y=\"95.5\" font-size=\"14\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">V</text><polyline points=\"175,95 200,95 200,30\"/><circle cx=\"90\" cy=\"30\" r=\"3.5\" fill=\"currentColor\"/><circle cx=\"200\" cy=\"30\" r=\"3.5\" fill=\"currentColor\"/></svg>",
+    "choices": [
+      "$0$ V",
+      "$3$ V",
+      "$12$ V",
+      "$6$ V"
+    ],
+    "answerIndex": 3,
+    "explanation": "With the switch open, almost no current flows, so there is no voltage drop across the lamp ($V = IR = 0$). One side of the switch is then at the battery's positive terminal and the other side is connected through the lamp to the negative terminal. The whole $6$ V appears across the gap in the open switch.\nMany students answer $0$ V because \"no current flows.\" That is true for the current, but not for the voltage across an open switch.",
+    "verified": true
+  },
+  {
+    "id": "ML-CIR-011",
+    "domain": "math-logic",
+    "subtopic": "Basic circuitry",
+    "difficulty": "easy",
+    "question": "In a series circuit of a battery and two lamps, ammeter A1 is placed before the first lamp and reads $0.3$ A. Ammeter A2 is placed after the second lamp. What does A2 read?",
+    "choices": [
+      "$0.6$ A",
+      "$0.3$ A",
+      "$0$ A",
+      "$0.15$ A"
+    ],
+    "answerIndex": 1,
+    "explanation": "In a series circuit there is only one path, so the **same current** flows through every part. Lamps do not \"use up\" current; they use energy. So A2 also reads $0.3$ A.\nThe choice $0.15$ A assumes each lamp uses up half the current, which is a common misconception.",
+    "verified": true
+  },
+  {
+    "id": "ML-CIR-012",
+    "domain": "math-logic",
+    "subtopic": "Basic circuitry",
+    "difficulty": "hard",
+    "question": "All three bulbs are identical. How does their brightness compare?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-6 -6 342 222\" width=\"342\" height=\"222\" role=\"img\" aria-label=\"Circuit: two branches connected across a battery. One branch has bulb B1 alone. The other branch has bulbs B2 and B3 in series.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"30\" y1=\"170\" x2=\"30\" y2=\"116\"/><line x1=\"30\" y1=\"104\" x2=\"30\" y2=\"50\"/><line x1=\"44\" y1=\"104\" x2=\"16\" y2=\"104\" stroke-width=\"2\"/><line x1=\"37\" y1=\"116\" x2=\"23\" y2=\"116\" stroke-width=\"4\"/><text x=\"14\" y=\"99\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">+</text><text x=\"14\" y=\"121\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">−</text><polyline points=\"30,50 30,25 260,25\"/><polyline points=\"140,25 140,65\"/><line x1=\"140\" y1=\"65\" x2=\"140\" y2=\"88\"/><line x1=\"140\" y1=\"112\" x2=\"140\" y2=\"135\"/><circle cx=\"140\" cy=\"100\" r=\"12\"/><line x1=\"131.6\" y1=\"91.6\" x2=\"148.4\" y2=\"108.4\"/><line x1=\"131.6\" y1=\"108.4\" x2=\"148.4\" y2=\"91.6\"/><text x=\"126\" y=\"100\" font-size=\"13\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">B1</text><polyline points=\"140,135 140,190\"/><polyline points=\"260,25 260,40\"/><line x1=\"260\" y1=\"40\" x2=\"260\" y2=\"55.5\"/><line x1=\"260\" y1=\"79.5\" x2=\"260\" y2=\"95\"/><circle cx=\"260\" cy=\"67.5\" r=\"12\"/><line x1=\"251.6\" y1=\"59.1\" x2=\"268.4\" y2=\"75.9\"/><line x1=\"251.6\" y1=\"75.9\" x2=\"268.4\" y2=\"59.1\"/><text x=\"274\" y=\"67.5\" font-size=\"13\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">B2</text><polyline points=\"260,95 260,115\"/><line x1=\"260\" y1=\"115\" x2=\"260\" y2=\"130.5\"/><line x1=\"260\" y1=\"154.5\" x2=\"260\" y2=\"170\"/><circle cx=\"260\" cy=\"142.5\" r=\"12\"/><line x1=\"251.6\" y1=\"134.1\" x2=\"268.4\" y2=\"150.9\"/><line x1=\"251.6\" y1=\"150.9\" x2=\"268.4\" y2=\"134.1\"/><text x=\"274\" y=\"142.5\" font-size=\"13\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">B3</text><polyline points=\"260,170 260,190\"/><circle cx=\"140\" cy=\"25\" r=\"3.5\" fill=\"currentColor\"/><circle cx=\"140\" cy=\"190\" r=\"3.5\" fill=\"currentColor\"/><polyline points=\"260,190 30,190 30,170\"/></svg>",
+    "choices": [
+      "All three bulbs are equally bright.",
+      "B1 is brightest; B2 and B3 are equally dim.",
+      "B2 and B3 are brighter than B1.",
+      "B2 is brighter than B3, and B1 is dimmest."
+    ],
+    "answerIndex": 1,
+    "explanation": "Both branches are connected directly across the battery, so each branch gets the full battery voltage $V$.\nB1 is alone in its branch, so it gets all of $V$. B2 and B3 are in series and identical, so each gets $\\frac{V}{2}$. Since $P = \\frac{V^2}{R}$, each of B2 and B3 gets one quarter of B1's power. B2 and B3 carry the same current, so they are equally bright.",
+    "verified": true
+  },
+  {
+    "id": "ML-CIR-013",
+    "domain": "math-logic",
+    "subtopic": "Basic circuitry",
+    "difficulty": "hard",
+    "question": "Three lamps are connected in parallel across a battery. A student then connects a plain wire directly from the positive terminal to the negative terminal. What happens?",
+    "choices": [
+      "All three lamps get brighter.",
+      "All three lamps go out, and a very large current flows through the wire.",
+      "Only the lamp nearest the wire goes out.",
+      "Nothing changes, because the lamps are in parallel."
+    ],
+    "answerIndex": 1,
+    "explanation": "The wire has almost zero resistance, so it is a **short circuit**. Nearly all the current takes this easy path, and the voltage across the battery terminals drops to almost zero. Every lamp is connected across those same terminals, so all of them go out.\nThe large current can heat the wire and damage the battery, which is why short circuits are dangerous. Being in parallel does not protect the lamps here, because the short is in parallel with all of them.",
+    "verified": true
+  },
+  {
+    "id": "ML-CIR-014",
+    "domain": "math-logic",
+    "subtopic": "Basic circuitry",
+    "difficulty": "medium",
+    "question": "Why are lights and appliances in a house connected in **parallel** rather than in series?",
+    "choices": [
+      "Each one gets the full supply voltage and can be switched on or off independently.",
+      "Turning off one appliance turns off all the others.",
+      "The total resistance of the house wiring increases.",
+      "The same current flows through every appliance."
+    ],
+    "answerIndex": 0,
+    "explanation": "In parallel, every appliance is connected directly across the supply, so each gets the full voltage it was designed for. Each also has its own branch, so switching one off does not affect the others.\nThe same current through every device is a property of **series** circuits. Adding branches in parallel **decreases** total resistance. Turning off one device turning off all the others is what happens in series.",
+    "verified": true
+  },
+  {
+    "id": "ML-TT-006",
+    "domain": "math-logic",
+    "subtopic": "Truth tables",
+    "difficulty": "easy",
+    "question": "Which gate has this truth table?",
+    "figure": "<table><thead><tr><th>A</th><th>B</th><th>Y</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>1</td></tr><tr><td>0</td><td>1</td><td>1</td></tr><tr><td>1</td><td>0</td><td>1</td></tr><tr><td>1</td><td>1</td><td>0</td></tr></tbody></table>",
+    "choices": [
+      "XOR",
+      "NOR",
+      "AND",
+      "NAND"
+    ],
+    "answerIndex": 3,
+    "explanation": "The output is 0 only when both inputs are 1. That is the opposite of AND, so it is **NAND**.\nXOR also gives 0 for $A = B = 1$, but it gives 0 for $A = B = 0$ too, while this table shows 1 there.",
+    "verified": true
+  },
+  {
+    "id": "ML-TT-007",
+    "domain": "math-logic",
+    "subtopic": "Truth tables",
+    "difficulty": "easy",
+    "question": "In the truth table of $Y = A + \\overline{B}$, how many rows have $Y = 0$?",
+    "choices": [
+      "$1$",
+      "$0$",
+      "$2$",
+      "$3$"
+    ],
+    "answerIndex": 0,
+    "explanation": "An OR is 0 only when **both** of its terms are 0: $A = 0$ and $\\overline{B} = 0$, that is, $A = 0$ and $B = 1$. That happens in exactly one of the 4 rows.\nThe choice $3$ counts the rows where $Y = 1$ instead.",
+    "verified": true
+  },
+  {
+    "id": "ML-TT-008",
+    "domain": "math-logic",
+    "subtopic": "Truth tables",
+    "difficulty": "medium",
+    "question": "Which expression matches this truth table?",
+    "figure": "<table><thead><tr><th>A</th><th>B</th><th>C</th><th>Y</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>0</td><td>1</td><td>0</td></tr><tr><td>0</td><td>1</td><td>0</td><td>0</td></tr><tr><td>0</td><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>0</td><td>0</td><td>0</td></tr><tr><td>1</td><td>0</td><td>1</td><td>0</td></tr><tr><td>1</td><td>1</td><td>0</td><td>0</td></tr><tr><td>1</td><td>1</td><td>1</td><td>1</td></tr></tbody></table>",
+    "choices": [
+      "$Y = A + BC$",
+      "$Y = ABC$",
+      "$Y = AB$",
+      "$Y = BC$"
+    ],
+    "answerIndex": 3,
+    "explanation": "$Y = 1$ only in rows 011 and 111. In both, $B = 1$ and $C = 1$, while $A$ can be 0 or 1. So $A$ does not matter, and $Y = BC$.\n$ABC$ misses row 011. $A + BC$ would also be 1 whenever $A = 1$, for example in row 100.",
+    "verified": true
+  },
+  {
+    "id": "ML-TT-009",
+    "domain": "math-logic",
+    "subtopic": "Truth tables",
+    "difficulty": "medium",
+    "question": "The rows of a truth table are listed in the order $ABC = 000, 001, 010, 011, 100, 101, 110, 111$. What is the output column for $Y = A \\oplus B \\oplus C$?",
+    "choices": [
+      "0, 1, 1, 0, 1, 0, 0, 1",
+      "0, 1, 1, 1, 1, 1, 1, 1",
+      "1, 0, 0, 1, 0, 1, 1, 0",
+      "0, 1, 1, 0, 1, 1, 1, 1"
+    ],
+    "answerIndex": 0,
+    "explanation": "A chain of XORs is 1 when an **odd** number of inputs are 1. Count the 1s in each row: 000 has 0 (even), 001 has 1 (odd), 010 has 1, 011 has 2, 100 has 1, 101 has 2, 110 has 2, 111 has 3 (odd).\nSo the column is 0, 1, 1, 0, 1, 0, 0, 1. The column with seven 1s is the OR of the three inputs. The column ending in 1, 1, 1 treats XOR like OR for the last rows.",
+    "verified": true
+  },
+  {
+    "id": "ML-TT-010",
+    "domain": "math-logic",
+    "subtopic": "Truth tables",
+    "difficulty": "medium",
+    "question": "Which expression matches this truth table?",
+    "figure": "<table><thead><tr><th>A</th><th>B</th><th>Y</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>1</td></tr><tr><td>0</td><td>1</td><td>1</td></tr><tr><td>1</td><td>0</td><td>0</td></tr><tr><td>1</td><td>1</td><td>1</td></tr></tbody></table>",
+    "choices": [
+      "$Y = A\\overline{B}$",
+      "$Y = \\overline{A}B$",
+      "$Y = A + \\overline{B}$",
+      "$Y = \\overline{A} + B$"
+    ],
+    "answerIndex": 3,
+    "explanation": "$Y = 0$ in only one row: $A = 1, B = 0$. So $Y$ is the complement of $A\\overline{B}$:\n$$Y = \\overline{A\\overline{B}} = \\overline{A} + B$$\nby De Morgan's law. $A\\overline{B}$ itself is 1 only in that one row, which is the exact opposite of the table. $A + \\overline{B}$ is 0 in row $A = 0, B = 1$ instead.",
+    "verified": true
+  },
+  {
+    "id": "ML-TT-011",
+    "domain": "math-logic",
+    "subtopic": "Truth tables",
+    "difficulty": "hard",
+    "question": "Which expression matches this truth table?",
+    "figure": "<table><thead><tr><th>A</th><th>B</th><th>C</th><th>Y</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td><td>1</td></tr><tr><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td>0</td><td>1</td><td>0</td><td>0</td></tr><tr><td>0</td><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>0</td><td>0</td><td>0</td></tr><tr><td>1</td><td>0</td><td>1</td><td>0</td></tr><tr><td>1</td><td>1</td><td>0</td><td>0</td></tr><tr><td>1</td><td>1</td><td>1</td><td>1</td></tr></tbody></table>",
+    "choices": [
+      "$Y = \\overline{A} + BC$",
+      "$Y = \\overline{B} + C$",
+      "$Y = \\overline{A}\\,\\overline{B} + BC$",
+      "$Y = \\overline{A}C + B\\overline{C}$"
+    ],
+    "answerIndex": 2,
+    "explanation": "$Y = 1$ in rows 000, 001, 011, and 111.\nRows 000 and 001 both have $A = 0, B = 0$, which gives the term $\\overline{A}\\,\\overline{B}$. Rows 011 and 111 both have $B = 1, C = 1$, which gives the term $BC$. So $Y = \\overline{A}\\,\\overline{B} + BC$.\n$\\overline{A} + BC$ is also 1 in row 010, where the table shows 0. $\\overline{B} + C$ is 1 in rows 100 and 101, where the table shows 0.",
+    "verified": true
+  },
+  {
+    "id": "ML-TT-012",
+    "domain": "math-logic",
+    "subtopic": "Truth tables",
+    "difficulty": "hard",
+    "question": "How many **different** Boolean functions of two inputs $A$ and $B$ are there? (Two functions are different if their truth tables have different output columns.)",
+    "choices": [
+      "$4$",
+      "$8$",
+      "$16$",
+      "$256$"
+    ],
+    "answerIndex": 2,
+    "explanation": "A two-input truth table has $2^2 = 4$ rows. Each row's output can be 0 or 1 independently, so there are $2^4 = 16$ possible output columns.\nThe choice $4$ counts the rows, not the functions. The choice $256 = 2^8$ is the count for **three** inputs.",
+    "verified": true
+  },
+  {
+    "id": "ML-TT-013",
+    "domain": "math-logic",
+    "subtopic": "Truth tables",
+    "difficulty": "medium",
+    "question": "Rows are numbered 0 to 7 using $ABC$ as a binary number ($A$ is the most significant bit). Which minterm list describes this truth table?",
+    "figure": "<table><thead><tr><th>A</th><th>B</th><th>C</th><th>Y</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>0</td><td>1</td><td>1</td><td>0</td></tr><tr><td>1</td><td>0</td><td>0</td><td>0</td></tr><tr><td>1</td><td>0</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>0</td><td>0</td></tr><tr><td>1</td><td>1</td><td>1</td><td>0</td></tr></tbody></table>",
+    "choices": [
+      "$\\sum m(0, 3, 4, 6, 7)$",
+      "$\\sum m(2, 3, 5)$",
+      "$\\sum m(1, 2, 5)$",
+      "$\\sum m(1, 2, 6)$"
+    ],
+    "answerIndex": 2,
+    "explanation": "List the rows where $Y = 1$ and convert $ABC$ to decimal: $001 = 1$, $010 = 2$, $101 = 5$. So $Y = \\sum m(1, 2, 5)$.\nThe list $(0, 3, 4, 6, 7)$ gives the rows where $Y = 0$. The list with 6 reads row $110$ by mistake.",
+    "verified": true
+  },
+  {
+    "id": "ML-TT-014",
+    "domain": "math-logic",
+    "subtopic": "Truth tables",
+    "difficulty": "easy",
+    "question": "A logic circuit has four inputs $A$, $B$, $C$, $D$. In its complete truth table, how many rows have $A = 1$ and $B = 0$?",
+    "choices": [
+      "$8$",
+      "$4$",
+      "$2$",
+      "$16$"
+    ],
+    "answerIndex": 1,
+    "explanation": "Fixing $A = 1$ and $B = 0$ leaves $C$ and $D$ free. Each can be 0 or 1, so there are $2^2 = 4$ such rows (out of $2^4 = 16$ in total).\nThe choice $8$ fixes only one input. The choice $16$ is the total number of rows.",
+    "verified": true
+  },
+  {
+    "id": "ML-BOOL-007",
+    "domain": "math-logic",
+    "subtopic": "Boolean algebra",
+    "difficulty": "easy",
+    "question": "Simplify: $A \\cdot 1 + A \\cdot 0$",
+    "choices": [
+      "$0$",
+      "$A$",
+      "$\\overline{A}$",
+      "$1$"
+    ],
+    "answerIndex": 1,
+    "explanation": "Use the identity laws: $A \\cdot 1 = A$ and $A \\cdot 0 = 0$. Then $A + 0 = A$.\nThe choice $1$ treats the \"+\" as if it made everything 1. In Boolean algebra, $A + 0 = A$, just like ordinary addition.",
+    "verified": true
+  },
+  {
+    "id": "ML-BOOL-008",
+    "domain": "math-logic",
+    "subtopic": "Boolean algebra",
+    "difficulty": "easy",
+    "question": "Simplify: $A + AB$",
+    "choices": [
+      "$B$",
+      "$A + B$",
+      "$AB$",
+      "$A$"
+    ],
+    "answerIndex": 3,
+    "explanation": "Factor out $A$: $A + AB = A(1 + B) = A \\cdot 1 = A$. This is the **absorption** law.\nIn words: if $A = 1$, the expression is 1; if $A = 0$, both terms are 0. $B$ never matters. The choice $A + B$ confuses this with $A + \\overline{A}B$, which does simplify to $A + B$.",
+    "verified": true
+  },
+  {
+    "id": "ML-BOOL-009",
+    "domain": "math-logic",
+    "subtopic": "Boolean algebra",
+    "difficulty": "medium",
+    "question": "Which expression is equal to $\\overline{A + \\overline{B}}$?",
+    "choices": [
+      "$A\\overline{B}$",
+      "$\\overline{A}\\,\\overline{B}$",
+      "$\\overline{A} + B$",
+      "$\\overline{A}B$"
+    ],
+    "answerIndex": 3,
+    "explanation": "De Morgan's law: $\\overline{X + Y} = \\overline{X}\\,\\overline{Y}$. So\n$$\\overline{A + \\overline{B}} = \\overline{A} \\cdot \\overline{\\overline{B}} = \\overline{A}B$$\nThe choice $\\overline{A} + B$ complements each term but forgets to change OR into AND. $\\overline{A}\\,\\overline{B}$ forgets that $\\overline{\\overline{B}} = B$.",
+    "verified": true
+  },
+  {
+    "id": "ML-BOOL-010",
+    "domain": "math-logic",
+    "subtopic": "Boolean algebra",
+    "difficulty": "medium",
+    "question": "Simplify: $(A + B)(A + C)$",
+    "choices": [
+      "$ABC$",
+      "$A + B + C$",
+      "$A + BC$",
+      "$AB + AC$"
+    ],
+    "answerIndex": 2,
+    "explanation": "Expand: $(A + B)(A + C) = AA + AC + AB + BC = A + AC + AB + BC$ (since $AA = A$).\nNow $A + AC + AB = A(1 + C + B) = A$, so the result is $A + BC$. This is the \"OR distributes over AND\" law, which has no match in ordinary algebra.\n$AB + AC$ is $A(B + C)$, a different function: it is 0 when $A = 0, B = 1, C = 1$, but the original is 1 there.",
+    "verified": true
+  },
+  {
+    "id": "ML-BOOL-011",
+    "domain": "math-logic",
+    "subtopic": "Boolean algebra",
+    "difficulty": "medium",
+    "question": "Simplify: $\\overline{A}\\,\\overline{B} + \\overline{A}B + AB$",
+    "choices": [
+      "$\\overline{A} + B$",
+      "$\\overline{A}$",
+      "$A + \\overline{B}$",
+      "$B$"
+    ],
+    "answerIndex": 0,
+    "explanation": "Group the first two terms: $\\overline{A}\\,\\overline{B} + \\overline{A}B = \\overline{A}(\\overline{B} + B) = \\overline{A}$. The expression becomes $\\overline{A} + AB$.\nUsing $X + \\overline{X}Y = X + Y$ with $X = \\overline{A}$: $\\overline{A} + AB = \\overline{A} + B$.\nThe choice $\\overline{A}$ stops after the first step and drops the $AB$ term.",
+    "verified": true
+  },
+  {
+    "id": "ML-BOOL-012",
+    "domain": "math-logic",
+    "subtopic": "Boolean algebra",
+    "difficulty": "hard",
+    "question": "Simplify: $ABC + AB\\overline{C} + A\\overline{B}C$",
+    "choices": [
+      "$ABC$",
+      "$A(B + C)$",
+      "$A + BC$",
+      "$AB$"
+    ],
+    "answerIndex": 1,
+    "explanation": "Combine the first two terms: $ABC + AB\\overline{C} = AB(C + \\overline{C}) = AB$.\nNow use $ABC$ again (since $X + X = X$, a term can be reused): $ABC + A\\overline{B}C = AC(B + \\overline{B}) = AC$.\nSo the expression is $AB + AC = A(B + C)$. The choice $AB$ stops after the first step and loses the row $A = 1, B = 0, C = 1$.",
+    "verified": true
+  },
+  {
+    "id": "ML-BOOL-013",
+    "domain": "math-logic",
+    "subtopic": "Boolean algebra",
+    "difficulty": "hard",
+    "question": "Which expression is equal to $A \\oplus B$ (exclusive OR)?",
+    "choices": [
+      "$A + B$",
+      "$(A + B)AB$",
+      "$AB + \\overline{A}\\,\\overline{B}$",
+      "$A\\overline{B} + \\overline{A}B$"
+    ],
+    "answerIndex": 3,
+    "explanation": "$A \\oplus B = 1$ when exactly one input is 1: either $A = 1, B = 0$ (the term $A\\overline{B}$) or $A = 0, B = 1$ (the term $\\overline{A}B$).\n$AB + \\overline{A}\\,\\overline{B}$ is 1 when the inputs are **equal**, which is XNOR. $(A + B)AB$ simplifies to $AB$. $A + B$ is also 1 when both inputs are 1.",
+    "verified": true
+  },
+  {
+    "id": "ML-BOOL-014",
+    "domain": "math-logic",
+    "subtopic": "Boolean algebra",
+    "difficulty": "medium",
+    "question": "Which expression is equal to $\\overline{AB}$ (a NAND gate) using only OR and NOT?",
+    "choices": [
+      "$\\overline{A + B}$",
+      "$\\overline{A}\\,\\overline{B}$",
+      "$\\overline{A} + B$",
+      "$\\overline{A} + \\overline{B}$"
+    ],
+    "answerIndex": 3,
+    "explanation": "De Morgan's law: $\\overline{AB} = \\overline{A} + \\overline{B}$. Breaking the bar over a product turns AND into OR.\n$\\overline{A}\\,\\overline{B}$ keeps the AND, which gives $\\overline{A + B}$ (a NOR), not a NAND. They differ when exactly one input is 1.",
+    "verified": true
   }
 ]
