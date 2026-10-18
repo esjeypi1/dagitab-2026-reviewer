@@ -80,4 +80,58 @@ export default {
         return { index: onlyMatch(c, ([r1, r2]) => close((9 * r2) / (r1 + r2), 4.5)) };
       }),
   'TK-SYS-011': withOrder([2,3,0,1], () => ({ choice: `${(3.7 * 2).toFixed(1)} V, ${2000} mAh` })),
+  'TK-FLO-012': withOrder([2,0,1,3], () => { const o = []; let n = 5; while (n > 0) { o.push(n); n -= 2; } return { choice: o.join(', ') }; }),
+  'TK-FLO-013': withOrder([1,2,0,3], () => { const x = 4; let y = 2 * x + 3; y = y * 2; return { value: y }; }),
+  'TK-FLO-014': withOrder([3,1,0,2], () => ({ choice: 30 > 30 ? '"FAN ON"' : '"FAN OFF"' })),
+  'TK-FLO-015': withOrder([1,0,3,2], () => { let p = 1, i = 1; while (i <= 4) { p *= 2; i++; } return { value: p }; }),
+  'TK-FLO-017': withOrder([2,3,1,0], () => { let n = 100, c = 0; while (n >= 10) { n = Math.floor(n / 2); c++; } return { value: c }; }),
+  'TK-FLO-018': withOrder([1,2,3,0], () => { let x = 2; do { x += 3; } while (!(x > 10)); return { value: x }; }),
+  'TK-FLO-019': withOrder([1,2,3,0], () => {
+        const f = (a, b) => (a > b ? a - b : b - a);
+        const c = [(a, b) => Math.abs(a - b), (a, b) => Math.max(a, b), (a, b) => a - b, (a, b) => a + b];
+        return { index: onlyMatch(c, (g) => [[3, 8], [8, 3], [5, 5], [-2, 4]].every(([a, b]) => g(a, b) === f(a, b))) };
+      }),
+  'TK-FLO-020': withOrder([0,1,2,3], () => {
+        const run = (cond) => { let s = 0, i = 1; while (cond(i)) { s += i; i++; } return s; };
+        const c = [(i) => i <= 10, (i) => i < 10, (i) => i > 10, (i) => i <= 11];
+        return { index: onlyMatch(c, (f) => run(f) === 55) };
+      }),
+  'TK-PSE-012': withOrder([2,1,0,3], () => { let x = 1; while (x < 100) x *= 3; return { value: x }; }),
+  'TK-PSE-013': withOrder([1,3,0,2], () => { const n = 15; let o; if (n % 3 === 0) o = '"Fizz"'; else if (n % 5 === 0) o = '"Buzz"'; else if (n % 15 === 0) o = '"FizzBuzz"'; else o = String(n); return { choice: o }; }),
+  'TK-PSE-014': withOrder([3,0,1,2], () => { const A = [3, 8, 2, 7, 5]; let s = 0; for (let i = 0; i <= 4; i++) if (A[i] > 4) s += A[i]; return { value: s }; }),
+  'TK-PSE-015': withOrder([2,1,3,0], () => {
+        const run = (start, lt, addFirst) => { let s = 0, i = start; while (lt ? i < 20 : i <= 20) { if (addFirst) { s += i; i += 2; } else { i += 2; s += i; } } return s; };
+        const vals = [run(2, false, true), run(2, true, true), run(2, false, false), run(1, false, true)];
+        return { index: onlyMatch(vals, (v) => v === 110) };
+      }),
+  'TK-PSE-016': withOrder([0,3,1,2], () => { let n = 0; do { n++; } while (!(n * n > 30)); return { value: n }; }),
+  'TK-PSE-017': withOrder([1,0,2,3], () => { const area = (w, h) => w * h; return { value: area(3, 4) + area(2, 5) }; }),
+  'TK-PSE-018': withOrder([3,0,1,2], () => ({ choice: '$' + Math.floor(47 / 5) + ',\\ ' + (47 % 5) + '$' })),
+  'TK-PSE-019': withOrder([3,1,0,2], () => { let c = 0; for (let i = 1; i <= 3; i++) for (let j = 1; j <= 4; j++) if (i < j) c++; return { value: c }; }),
+  'TK-PSE-020': withOrder([3,2,0,1], () => { const p = (b, e) => (e === 0 ? 1 : b * p(b, e - 1)); return { value: p(3, 4) }; }),
+  'TK-PRG-012': withOrder([0,2,3,1], () => {
+        const a = 4, b = 9;
+        return { index: onlyMatch([a < b && b < 10, a > b || b === 4, !(a < b), a + b > 13], (v) => v) };
+      }),
+  'TK-PRG-013': withOrder([0,1,3,2], () => ({ value: parseInt('110110', 2) })),
+  'TK-PRG-014': withOrder([0,1,3,2], () => ({ choice: '$' + (2 ** 8 - 1) + '$' })),
+  'TK-PRG-015': withOrder([2,1,3,0], () => { let i = 0, c = 0; while (i < 20) { i += 3; c++; } return { value: c }; }),
+  'TK-PRG-016': withOrder([3,2,0,1], () => {
+        const idx = new Set([0, 1, 2, 3, 4, 5, 6, 7]);
+        const ok = (a, b) => { const s = []; for (let i = a; i <= b; i++) s.push(i); return s.length === 8 && s.every((i) => idx.has(i)); };
+        return { index: onlyMatch([[0, 7], [1, 8], [0, 8], [1, 7]], ([a, b]) => ok(a, b)) };
+      }),
+  'TK-PRG-018': withOrder([0,2,3,1], () => ({ choice: '$' + (0xa7).toString(2) + '_2$' })),
+  'TK-PRG-019': withOrder([1,0,3,2], () => {
+        const c = [(a, b) => !a || !b, (a, b) => !a && !b, (a, b) => a || b, (a, b) => !a && b];
+        const rows2 = [[0, 0], [0, 1], [1, 0], [1, 1]].map(([a, b]) => [!!a, !!b]);
+        return { index: onlyMatch(c, (f) => rows2.every(([a, b]) => f(a, b) === !(a && b))) };
+      }),
+  'TK-PRG-020': withOrder([1,2,3,0], () => { let c = 250; for (let k = 0; k < 10; k++) c = (c + 1) % 256; return { value: c }; }),
+  'TK-ROB-012': withOrder([3,2,1,0], () => ({ value: (100 / 20) * 30 })),
+  'TK-ROB-014': withOrder([0,2,3,1], () => ({ value: ((1.5 - 1) / (2 - 1)) * 180 })),
+  'TK-ROB-016': withOrder([3,2,0,1], () => ({ value: (90 / 360) * 200 })),
+  'TK-ROB-018': withOrder([0,1,2,3], () => ({ choice: '$' + (120 * 10) / 100 + '\\pi$ m' })),
+  'TK-SYS-016': withOrder([1,0,2,3], () => ({ value: (128 / 256) * 5 })),
+  'TK-SYS-018': withOrder([3,1,0,2], () => { const t = 50 + 50 + 4 * 250; return { choice: t > 1000 ? 'No. The total is ' + t / 1000 + ' A, which is more than 1 A.' : 'x' }; }),
 };
