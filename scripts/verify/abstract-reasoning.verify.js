@@ -28,4 +28,37 @@ export default {
   'AR-VIS-014': withOrder([2,3,1,0], () => { const t = 12 * 60 - (2 * 60 + 20); return { choice: `${Math.floor(t / 60)}:${String(t % 60).padStart(2, '0')}` }; }),
   'AR-VIS-015': withOrder([2,3,0,1], () => { const d = Math.abs(40 * 6 - (3 * 30 + 40 * 0.5)); return { value: Math.min(d, 360 - d) }; }),
   'AR-VIS-016': withOrder([3,1,0,2], () => ({ value: nCr(6, 2) })),
+  'AR-SPA-027': withOrder([3,0,2,1], () => ({ value: [[2, 2, 1], [2, 1, 1], [1, 1, 0]].flat().reduce((a, b) => a + b, 0) })),
+  'AR-SPA-028': withOrder([0,2,3,1], () => ({ value: 27 - [[3, 3, 2], [3, 2, 1], [2, 1, 1]].flat().reduce((a, b) => a + b, 0) })),
+  'AR-SPA-029': withOrder([0,2,3,1], () => {
+      let n = 0;
+      for (let x = 0; x < 3; x++) for (let y = 0; y < 3; y++) for (let z = 0; z < 3; z++) n += [x, y, z].filter((v) => v === 0 || v === 2).length === 2 ? 1 : 0;
+      return { value: n };
+    }),
+  'AR-VIS-017': withOrder([2,0,3,1], () => { let n = 0; for (let k = 1; k <= 4; k++) n += (5 - k) ** 2; return { value: n }; }),
+  'AR-VIS-018': withOrder([1,2,3,0], () => {
+        const lines = ['AB', 'BC', 'CD', 'DA', 'AOC', 'BOD'];
+        const pts = [...new Set(lines.join(''))];
+        const share = (p, q) => lines.some((l) => l.includes(p) && l.includes(q));
+        const col = (p, q, r) => lines.some((l) => l.includes(p) && l.includes(q) && l.includes(r));
+        let n = 0;
+        for (let i = 0; i < pts.length; i++) for (let j = i + 1; j < pts.length; j++) for (let k = j + 1; k < pts.length; k++) { const [p, q, r] = [pts[i], pts[j], pts[k]]; if (share(p, q) && share(q, r) && share(p, r) && !col(p, q, r)) n++; }
+        return { value: n };
+      }),
+  'AR-VIS-019': withOrder([0,1,2,3], () => ({ value: nCr(5, 2) })),
+  'AR-VIS-020': withOrder([3,1,2,0], () => {
+        const lines = ['AEB', 'BFC', 'CGD', 'DHA', 'EOG', 'HOF', 'AOC', 'BOD'];
+        const pts = [...new Set(lines.join(''))];
+        const share = (p, q) => lines.some((l) => l.includes(p) && l.includes(q));
+        const col = (p, q, r) => lines.some((l) => l.includes(p) && l.includes(q) && l.includes(r));
+        let n = 0;
+        for (let i = 0; i < pts.length; i++) for (let j = i + 1; j < pts.length; j++) for (let k = j + 1; k < pts.length; k++) { const [p, q, r] = [pts[i], pts[j], pts[k]]; if (share(p, q) && share(q, r) && share(p, r) && !col(p, q, r)) n++; }
+        return { value: n };
+      }),
+  'AR-VIS-021': withOrder([2,0,3,1], () => ({ value: nCr(3, 2) * nCr(3, 2) })),
+  'AR-VIS-024': withOrder([1,0,3,2], () => ({ choice: `${(2 * 30) / 10} turns counterclockwise` })),
+  'AR-VIS-025': withOrder([1,2,3,0], () => ({ choice: ['B', 'C', 'D', 'E'].filter((_, i) => (i + 1) % 2 === 0).join(' and ') })),
+  'AR-VIS-028': withOrder([0,3,2,1], () => { const d = Math.abs(30 * 6 - (2 * 30 + 30 * 0.5)); return { value: Math.min(d, 360 - d) }; }),
+  'AR-VIS-029': withOrder([0,1,3,2], () => { const t = 12 * 60 - (4 * 60 + 15); return { choice: `${Math.floor(t / 60)}:${String(t % 60).padStart(2, '0')}` }; }),
+  'AR-VIS-030': withOrder([2,1,0,3], () => ({ value: nCr(6, 3) })),
 };
