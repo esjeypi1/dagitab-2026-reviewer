@@ -1,0 +1,1032 @@
+[
+  {
+    "id": "ML-FUN-001",
+    "domain": "math-logic",
+    "subtopic": "Functions",
+    "difficulty": "easy",
+    "question": "If $f(x) = 2x^2 - 3x + 1$, what is $f(-2)$?",
+    "choices": [
+      "$3$",
+      "$-1$",
+      "$15$",
+      "$23$"
+    ],
+    "answerIndex": 2,
+    "explanation": "Substitute $x = -2$ carefully, using parentheses:\n$$f(-2) = 2(-2)^2 - 3(-2) + 1 = 2(4) + 6 + 1 = 15$$\nCommon mistakes: writing $-3(-2)$ as $-6$ gives $3$. Treating $(-2)^2$ as $-4$ gives $-1$. Squaring $2x$ instead of only $x$ gives $(-4)^2+6+1 = 23$.",
+    "verified": true
+  },
+  {
+    "id": "ML-FUN-002",
+    "domain": "math-logic",
+    "subtopic": "Functions",
+    "difficulty": "medium",
+    "question": "Let $f(x) = 3x - 5$ and $g(x) = x^2 + 1$. What is $(f \\circ g)(2)$?",
+    "choices": [
+      "$5$",
+      "$2$",
+      "$10$",
+      "$8$"
+    ],
+    "answerIndex": 2,
+    "explanation": "$(f \\circ g)(2) = f(g(2))$. Work from the inside out.\n$$g(2) = 2^2 + 1 = 5, \\qquad f(5) = 3(5) - 5 = 10$$\nThe choice $2$ comes from doing it in the wrong order: $g(f(2)) = g(1) = 2$. The choice $5$ is $f(2) \\cdot g(2) = 1 \\cdot 5$, which is multiplication, not composition.",
+    "verified": true
+  },
+  {
+    "id": "ML-FUN-003",
+    "domain": "math-logic",
+    "subtopic": "Functions",
+    "difficulty": "medium",
+    "question": "If $f(x) = \\dfrac{2x + 3}{x - 1}$, what is $f^{-1}(5)$?",
+    "choices": [
+      "$\\frac{4}{3}$",
+      "$\\frac{8}{3}$",
+      "$\\frac{4}{13}$",
+      "$\\frac{13}{4}$"
+    ],
+    "answerIndex": 1,
+    "explanation": "$f^{-1}(5)$ is the input $x$ that gives $f(x) = 5$.\n$$\\frac{2x+3}{x-1} = 5 \\;\\Rightarrow\\; 2x + 3 = 5x - 5 \\;\\Rightarrow\\; 8 = 3x \\;\\Rightarrow\\; x = \\frac{8}{3}$$\nCheck: $f\\left(\\frac{8}{3}\\right) = \\frac{16/3 + 9/3}{5/3} = \\frac{25/3}{5/3} = 5$. The choice $\\frac{13}{4}$ is $f(5)$, not $f^{-1}(5)$, and $\\frac{4}{13}$ is $\\frac{1}{f(5)}$. The inverse is not the reciprocal.",
+    "verified": true
+  },
+  {
+    "id": "ML-FUN-004",
+    "domain": "math-logic",
+    "subtopic": "Functions",
+    "difficulty": "medium",
+    "question": "What is the domain of $f(x) = \\dfrac{\\sqrt{x - 2}}{x - 5}$?",
+    "choices": [
+      "$[2, 5) \\cup (5, \\infty)$",
+      "$[2, \\infty)$",
+      "all real numbers except $5$",
+      "$(2, 5) \\cup (5, \\infty)$"
+    ],
+    "answerIndex": 0,
+    "explanation": "Two conditions must hold:\n1. The square root needs $x - 2 \\ge 0$, so $x \\ge 2$. Note that $x = 2$ is allowed because $\\sqrt{0} = 0$.\n2. The denominator cannot be zero, so $x \\ne 5$.\n\nTogether: $[2, 5) \\cup (5, \\infty)$. Using $(2, 5)$ wrongly removes $x = 2$, and $[2, \\infty)$ forgets that $x = 5$ makes the denominator zero.",
+    "verified": true
+  },
+  {
+    "id": "ML-FUN-005",
+    "domain": "math-logic",
+    "subtopic": "Functions",
+    "difficulty": "hard",
+    "question": "If $f(x + 1) = x^2 + 3x$ for all real $x$, which of the following is $f(x)$?",
+    "choices": [
+      "$x^2 + 5x + 4$",
+      "$x^2 + x - 2$",
+      "$x^2 + x + 2$",
+      "$x^2 + 3x - 4$"
+    ],
+    "answerIndex": 1,
+    "explanation": "Let $u = x + 1$, so $x = u - 1$. Then\n$$f(u) = (u-1)^2 + 3(u-1) = u^2 - 2u + 1 + 3u - 3 = u^2 + u - 2$$\nSo $f(x) = x^2 + x - 2$. Check with $x = 1$: $f(2)$ should be $1 + 3 = 4$, and $2^2 + 2 - 2 = 4$. Correct.\nThe choice $x^2 + 5x + 4$ comes from substituting $x + 1$ into $x^2 + 3x$, which finds $f(x+2)$ instead.",
+    "verified": true
+  },
+  {
+    "id": "ML-ALG-001",
+    "domain": "math-logic",
+    "subtopic": "Advanced algebra",
+    "difficulty": "medium",
+    "question": "Solve for $x$: $\\log_2 x + \\log_2 (x - 2) = 3$",
+    "choices": [
+      "$x = 3$",
+      "$x = 4$ or $x = -2$",
+      "$x = 4$",
+      "$x = 5$"
+    ],
+    "answerIndex": 2,
+    "explanation": "Use the product rule: $\\log_2 [x(x-2)] = 3$, so $x(x - 2) = 2^3 = 8$.\n$$x^2 - 2x - 8 = 0 \\;\\Rightarrow\\; (x - 4)(x + 2) = 0 \\;\\Rightarrow\\; x = 4 \\text{ or } x = -2$$\nReject $x = -2$ because $\\log_2(-2)$ is undefined. Only $x = 4$ works.\nThe choice $x = 3$ comes from forgetting to rewrite in exponential form ($x(x-2) = 3$). The choice $x = 5$ comes from wrongly adding the inputs: $\\log_2(x + x - 2) = 3$.",
+    "verified": true
+  },
+  {
+    "id": "ML-ALG-002",
+    "domain": "math-logic",
+    "subtopic": "Advanced algebra",
+    "difficulty": "medium",
+    "question": "If $r$ and $s$ are the roots of $2x^2 - 7x + 3 = 0$, what is $r^2 + s^2$?",
+    "choices": [
+      "$43$",
+      "$\\frac{37}{4}$",
+      "$\\frac{49}{4}$",
+      "$\\frac{43}{4}$"
+    ],
+    "answerIndex": 1,
+    "explanation": "For $ax^2 + bx + c = 0$: $r + s = -\\frac{b}{a} = \\frac{7}{2}$ and $rs = \\frac{c}{a} = \\frac{3}{2}$.\n$$r^2 + s^2 = (r+s)^2 - 2rs = \\frac{49}{4} - 3 = \\frac{37}{4}$$\nCheck: the roots are $3$ and $\\frac{1}{2}$, and $9 + \\frac{1}{4} = \\frac{37}{4}$.\n$\\frac{49}{4}$ forgets to subtract $2rs$. $\\frac{43}{4}$ subtracts only $rs$. $43$ forgets to divide by $a = 2$.",
+    "verified": true
+  },
+  {
+    "id": "ML-ALG-003",
+    "domain": "math-logic",
+    "subtopic": "Advanced algebra",
+    "difficulty": "hard",
+    "question": "What is the sum of all real solutions of $4^x - 6 \\cdot 2^x + 8 = 0$?",
+    "choices": [
+      "$3$",
+      "$8$",
+      "$6$",
+      "$2$"
+    ],
+    "answerIndex": 0,
+    "explanation": "Since $4^x = (2^x)^2$, let $y = 2^x$:\n$$y^2 - 6y + 8 = 0 \\;\\Rightarrow\\; (y - 2)(y - 4) = 0 \\;\\Rightarrow\\; y = 2 \\text{ or } y = 4$$\nSo $2^x = 2$ gives $x = 1$, and $2^x = 4$ gives $x = 2$. The sum is $1 + 2 = 3$.\nThe choice $6$ is the sum of the $y$ values, not the $x$ values. Always convert back to $x$.",
+    "verified": true
+  },
+  {
+    "id": "ML-ALG-004",
+    "domain": "math-logic",
+    "subtopic": "Advanced algebra",
+    "difficulty": "medium",
+    "question": "A school play sold 50 tickets for a total of ₱4,800. Adult tickets cost ₱120 each and student tickets cost ₱80 each. How many student tickets were sold?",
+    "choices": [
+      "$25$",
+      "$30$",
+      "$20$",
+      "$40$"
+    ],
+    "answerIndex": 1,
+    "explanation": "Let $a$ = adult tickets and $s$ = student tickets.\n$$a + s = 50, \\qquad 120a + 80s = 4800$$\nSubstitute $a = 50 - s$: $120(50 - s) + 80s = 4800 \\Rightarrow 6000 - 40s = 4800 \\Rightarrow s = 30$.\nCheck: $20$ adults and $30$ students give $2400 + 2400 = 4800$. The choice $20$ is the number of adult tickets.",
+    "verified": true
+  },
+  {
+    "id": "ML-ALG-005",
+    "domain": "math-logic",
+    "subtopic": "Advanced algebra",
+    "difficulty": "medium",
+    "question": "Which describes all solutions of $|2x - 3| < 7$?",
+    "choices": [
+      "$x < 5$",
+      "$x < -2$ or $x > 5$",
+      "$-2 < x < 5$",
+      "$-5 < x < 2$"
+    ],
+    "answerIndex": 2,
+    "explanation": "$|u| < 7$ means $-7 < u < 7$. So\n$$-7 < 2x - 3 < 7 \\;\\Rightarrow\\; -4 < 2x < 10 \\;\\Rightarrow\\; -2 < x < 5$$\nThe choice $x < 5$ forgets the lower bound. The choice \"$x < -2$ or $x > 5$\" is the answer for $|2x - 3| > 7$.",
+    "verified": true
+  },
+  {
+    "id": "ML-ALG-006",
+    "domain": "math-logic",
+    "subtopic": "Advanced algebra",
+    "difficulty": "easy",
+    "question": "What is the remainder when $P(x) = x^3 - 2x^2 + 4x - 5$ is divided by $x - 2$?",
+    "choices": [
+      "$-29$",
+      "$11$",
+      "$3$",
+      "$-5$"
+    ],
+    "answerIndex": 2,
+    "explanation": "By the Remainder Theorem, the remainder when $P(x)$ is divided by $x - 2$ is $P(2)$:\n$$P(2) = 8 - 8 + 8 - 5 = 3$$\nThe choice $-29$ is $P(-2)$. For a divisor $x - c$, substitute $x = c$, not $x = -c$.",
+    "verified": true
+  },
+  {
+    "id": "ML-GEN-001",
+    "domain": "math-logic",
+    "subtopic": "General mathematics",
+    "difficulty": "medium",
+    "question": "Ana deposits ₱10,000 in a bank that pays 10% interest per year, compounded annually. How much is in the account after 3 years?",
+    "choices": [
+      "₱12,100",
+      "₱13,000",
+      "₱13,310",
+      "₱3,310"
+    ],
+    "answerIndex": 2,
+    "explanation": "With annual compounding, the balance is multiplied by $1.10$ each year:\n$$10{,}000 \\to 11{,}000 \\to 12{,}100 \\to 13{,}310$$\nThis is $A = P(1 + r)^t = 10{,}000(1.1)^3 = 13{,}310$.\n₱13,000 is **simple** interest (₱1,000 every year, never earning interest on interest). ₱3,310 is only the interest earned, not the balance. ₱12,100 is the balance after 2 years.",
+    "verified": true
+  },
+  {
+    "id": "ML-GEN-002",
+    "domain": "math-logic",
+    "subtopic": "General mathematics",
+    "difficulty": "easy",
+    "question": "The price of a calculator is increased by 20%. Later, the new price is decreased by 20%. Compared with the original price, the final price is",
+    "choices": [
+      "the same",
+      "4% higher",
+      "4% lower",
+      "20% lower"
+    ],
+    "answerIndex": 2,
+    "explanation": "Let the original price be $100$. After a 20% increase: $100 \\times 1.20 = 120$. After a 20% decrease: $120 \\times 0.80 = 96$.\nThe final price is $96$, which is 4% lower than $100$. The decrease is taken from a bigger number, so it removes more than the increase added. \"The same\" is the tempting but wrong answer.",
+    "verified": true
+  },
+  {
+    "id": "ML-GEN-003",
+    "domain": "math-logic",
+    "subtopic": "General mathematics",
+    "difficulty": "medium",
+    "question": "A radioactive sample has a mass of 200 g and a half-life of 5 days. What is its mass after 20 days?",
+    "choices": [
+      "$100$ g",
+      "$12.5$ g",
+      "$50$ g",
+      "$25$ g"
+    ],
+    "answerIndex": 1,
+    "explanation": "20 days is $\\frac{20}{5} = 4$ half-lives. The mass halves 4 times:\n$$200 \\times \\left(\\tfrac{1}{2}\\right)^4 = \\frac{200}{16} = 12.5 \\text{ g}$$\nThe choice $50$ g divides 200 by 4 instead of halving 4 times. The choice $25$ g halves only 3 times.",
+    "verified": true
+  },
+  {
+    "id": "ML-GEN-004",
+    "domain": "math-logic",
+    "subtopic": "General mathematics",
+    "difficulty": "medium",
+    "question": "What is the negation of the statement \"All engineering students passed the exam\"?",
+    "choices": [
+      "Some engineering students did not pass the exam.",
+      "Some engineering students passed the exam.",
+      "No engineering student passed the exam.",
+      "All engineering students failed the exam."
+    ],
+    "answerIndex": 0,
+    "explanation": "The negation must be true exactly when the original is false. \"All passed\" is false as soon as **at least one** student did not pass. So the negation is \"Some engineering students did not pass.\"\n\"No student passed\" and \"All failed\" are too strong: they claim every student failed, which is more than the negation requires.",
+    "verified": true
+  },
+  {
+    "id": "ML-GEN-005",
+    "domain": "math-logic",
+    "subtopic": "General mathematics",
+    "difficulty": "medium",
+    "question": "Which statement is logically equivalent to \"If it rains, then the ground is wet\"?",
+    "choices": [
+      "If the ground is not wet, then it did not rain.",
+      "It rains and the ground is not wet.",
+      "If it does not rain, then the ground is not wet.",
+      "If the ground is wet, then it rained."
+    ],
+    "answerIndex": 0,
+    "explanation": "A conditional $p \\to q$ is always equivalent to its **contrapositive** $\\lnot q \\to \\lnot p$: \"If the ground is not wet, then it did not rain.\"\n\"If the ground is wet, then it rained\" is the converse, and \"If it does not rain, then the ground is not wet\" is the inverse. Neither is equivalent (the ground could be wet from a sprinkler). \"It rains and the ground is not wet\" is the negation.",
+    "verified": true
+  },
+  {
+    "id": "ML-GEN-006",
+    "domain": "math-logic",
+    "subtopic": "General mathematics",
+    "difficulty": "hard",
+    "question": "Pipe A can fill a tank in 6 hours and pipe B can fill it in 4 hours. A drain can empty the full tank in 12 hours. If the tank starts empty and all three are open, how long will it take to fill the tank?",
+    "choices": [
+      "2.4 hours",
+      "2 hours",
+      "10 hours",
+      "3 hours"
+    ],
+    "answerIndex": 3,
+    "explanation": "Add the rates (tank per hour). The drain works against the pipes, so subtract it:\n$$\\frac{1}{6} + \\frac{1}{4} - \\frac{1}{12} = \\frac{2 + 3 - 1}{12} = \\frac{4}{12} = \\frac{1}{3}$$\nAt $\\frac{1}{3}$ tank per hour, it takes 3 hours. 2.4 hours ignores the drain. 2 hours adds the drain's rate instead of subtracting it.",
+    "verified": true
+  },
+  {
+    "id": "ML-GEO-001",
+    "domain": "math-logic",
+    "subtopic": "Geometry",
+    "difficulty": "medium",
+    "question": "A circle is inscribed in a right triangle with legs 6 cm and 8 cm, as shown. What is the radius of the circle?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 260 190\" width=\"260\" height=\"190\" role=\"img\" aria-label=\"Right triangle with legs 6 and 8 and a circle inscribed inside it\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"30,160 230,160 30,10\"/><polyline points=\"30,145 45,145 45,160\" stroke-width=\"1.5\"/><circle cx=\"80\" cy=\"110\" r=\"50\" stroke-dasharray=\"5 4\"/><text x=\"16\" y=\"85\" font-size=\"16\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">6</text><text x=\"130\" y=\"176\" font-size=\"16\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">8</text></svg>",
+    "choices": [
+      "$2.4$ cm",
+      "$4$ cm",
+      "$5$ cm",
+      "$2$ cm"
+    ],
+    "answerIndex": 3,
+    "explanation": "The hypotenuse is $\\sqrt{6^2 + 8^2} = 10$. For a right triangle, the inradius is $r = \\frac{a + b - c}{2}$. Another way: area $= r \\times$ semiperimeter.\n$$\\text{Area} = \\tfrac{1}{2}(6)(8) = 24, \\quad s = \\frac{6 + 8 + 10}{2} = 12, \\quad r = \\frac{24}{12} = 2 \\text{ cm}$$\n$5$ cm is the radius of the circle drawn **around** the triangle (half the hypotenuse). $4$ cm forgets to divide $a + b - c$ by 2.",
+    "verified": true
+  },
+  {
+    "id": "ML-GEO-002",
+    "domain": "math-logic",
+    "subtopic": "Geometry",
+    "difficulty": "medium",
+    "question": "In the figure, ABCD is a square with side 12 cm. An arc of a circle centered at A passes through B and D. What is the area of the shaded region?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 260 240\" width=\"260\" height=\"240\" role=\"img\" aria-label=\"Square ABCD with side 12 cm. A quarter circle centered at A passes through B and D. The region between the arc and corner C is shaded.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M 40 20 L 220 20 L 220 200 A 180 180 0 0 0 40 20 Z\" fill=\"currentColor\" fill-opacity=\"0.35\" stroke=\"none\"/><rect x=\"40\" y=\"20\" width=\"180\" height=\"180\"/><path d=\"M 220 200 A 180 180 0 0 0 40 20\"/><text x=\"26\" y=\"212\" font-size=\"15\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">A</text><text x=\"234\" y=\"212\" font-size=\"15\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">B</text><text x=\"234\" y=\"12\" font-size=\"15\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">C</text><text x=\"26\" y=\"12\" font-size=\"15\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">D</text><text x=\"130\" y=\"218\" font-size=\"14\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">12 cm</text></svg>",
+    "choices": [
+      "$144 - 36\\pi$ cm²",
+      "$36\\pi$ cm²",
+      "$144 - 6\\pi$ cm²",
+      "$144 - 72\\pi$ cm²"
+    ],
+    "answerIndex": 0,
+    "explanation": "The arc is a quarter circle of radius 12. The shaded region is the square minus the quarter circle:\n$$12^2 - \\tfrac{1}{4}\\pi(12)^2 = 144 - 36\\pi \\approx 30.9 \\text{ cm}^2$$\n$36\\pi$ is the quarter circle itself (the unshaded part). $144 - 72\\pi$ uses a half circle. $144 - 6\\pi$ subtracts the arc length $\\frac{1}{4}(2\\pi \\cdot 12) = 6\\pi$, which is a length, not an area.",
+    "verified": true
+  },
+  {
+    "id": "ML-GEO-003",
+    "domain": "math-logic",
+    "subtopic": "Geometry",
+    "difficulty": "easy",
+    "question": "A 1.6-m tall student casts a shadow 2.4 m long. At the same time, a flagpole casts a shadow 15 m long. How tall is the flagpole?",
+    "choices": [
+      "$22.5$ m",
+      "$10$ m",
+      "$24$ m",
+      "$14.2$ m"
+    ],
+    "answerIndex": 1,
+    "explanation": "The sun's rays make similar triangles, so height and shadow are proportional:\n$$\\frac{1.6}{2.4} = \\frac{h}{15} \\;\\Rightarrow\\; h = \\frac{1.6 \\times 15}{2.4} = 10 \\text{ m}$$\n$22.5$ m flips the ratio ($\\frac{2.4 \\times 15}{1.6}$). $14.2$ m adds a difference instead of using a ratio. $24$ m forgets to divide by 2.4.",
+    "verified": true
+  },
+  {
+    "id": "ML-GEO-004",
+    "domain": "math-logic",
+    "subtopic": "Geometry",
+    "difficulty": "hard",
+    "question": "The sum of the interior angles of a convex polygon is $2340^\\circ$. How many diagonals does the polygon have?",
+    "choices": [
+      "$90$",
+      "$15$",
+      "$180$",
+      "$105$"
+    ],
+    "answerIndex": 0,
+    "explanation": "Interior angle sum $= (n - 2) \\cdot 180^\\circ$, so $n - 2 = \\frac{2340}{180} = 13$ and $n = 15$.\nNumber of diagonals $= \\frac{n(n - 3)}{2} = \\frac{15 \\cdot 12}{2} = 90$.\n$15$ is the number of sides. $105 = \\binom{15}{2}$ counts every pair of vertices, including the 15 sides. $180$ forgets to divide by 2.",
+    "verified": true
+  },
+  {
+    "id": "ML-GEO-005",
+    "domain": "math-logic",
+    "subtopic": "Geometry",
+    "difficulty": "medium",
+    "question": "Which line passes through $(4, -1)$ and is perpendicular to $2x - 3y = 6$?",
+    "choices": [
+      "$2x - 3y = 11$",
+      "$3x + 2y = 10$",
+      "$3x - 2y = 14$",
+      "$3x + 2y = 14$"
+    ],
+    "answerIndex": 1,
+    "explanation": "The given line is $y = \\frac{2}{3}x - 2$, so its slope is $\\frac{2}{3}$. A perpendicular line has slope $-\\frac{3}{2}$ (negative reciprocal).\n$$y + 1 = -\\tfrac{3}{2}(x - 4) \\;\\Rightarrow\\; 2y + 2 = -3x + 12 \\;\\Rightarrow\\; 3x + 2y = 10$$\nCheck: $3(4) + 2(-1) = 10$. The line $2x - 3y = 11$ is parallel, not perpendicular. $3x - 2y = 14$ uses slope $+\\frac{3}{2}$ (forgot the negative sign).",
+    "verified": true
+  },
+  {
+    "id": "ML-GEO-006",
+    "domain": "math-logic",
+    "subtopic": "Geometry",
+    "difficulty": "medium",
+    "question": "What are the center and radius of the circle $x^2 + y^2 - 6x + 4y - 12 = 0$?",
+    "choices": [
+      "center $(-3, 2)$, radius $5$",
+      "center $(3, -2)$, radius $5$",
+      "center $(3, -2)$, radius $25$",
+      "center $(3, -2)$, radius $2\\sqrt{3}$"
+    ],
+    "answerIndex": 1,
+    "explanation": "Complete the square:\n$$(x^2 - 6x + 9) + (y^2 + 4y + 4) = 12 + 9 + 4 \\;\\Rightarrow\\; (x - 3)^2 + (y + 2)^2 = 25$$\nThe center is $(3, -2)$ and the radius is $\\sqrt{25} = 5$. The center $(-3, 2)$ has the signs reversed. Radius $2\\sqrt{3} = \\sqrt{12}$ forgets to add the 9 and 4 to the right side. Radius $25$ forgets the square root.",
+    "verified": true
+  },
+  {
+    "id": "ML-TRI-001",
+    "domain": "math-logic",
+    "subtopic": "Trigonometry",
+    "difficulty": "easy",
+    "question": "If $\\sin\\theta = \\frac{3}{5}$ and $\\theta$ is in Quadrant II, what is $\\tan\\theta$?",
+    "choices": [
+      "$-\\frac{3}{4}$",
+      "$\\frac{4}{3}$",
+      "$\\frac{3}{4}$",
+      "$-\\frac{4}{3}$"
+    ],
+    "answerIndex": 0,
+    "explanation": "From $\\sin^2\\theta + \\cos^2\\theta = 1$: $\\cos\\theta = \\pm\\frac{4}{5}$. In Quadrant II, cosine is negative, so $\\cos\\theta = -\\frac{4}{5}$.\n$$\\tan\\theta = \\frac{\\sin\\theta}{\\cos\\theta} = \\frac{3/5}{-4/5} = -\\frac{3}{4}$$\n$\\frac{3}{4}$ forgets the sign in Quadrant II. $-\\frac{4}{3}$ is $\\frac{\\cos\\theta}{\\sin\\theta}$ (cotangent).",
+    "verified": true
+  },
+  {
+    "id": "ML-TRI-002",
+    "domain": "math-logic",
+    "subtopic": "Trigonometry",
+    "difficulty": "medium",
+    "question": "What is the exact value of $\\sin 75^\\circ$?",
+    "choices": [
+      "$\\frac{\\sqrt{2} + 1}{2}$",
+      "$\\frac{\\sqrt{3} + 1}{2}$",
+      "$\\frac{\\sqrt{6} - \\sqrt{2}}{4}$",
+      "$\\frac{\\sqrt{6} + \\sqrt{2}}{4}$"
+    ],
+    "answerIndex": 3,
+    "explanation": "Use $\\sin(A + B) = \\sin A\\cos B + \\cos A \\sin B$ with $75^\\circ = 45^\\circ + 30^\\circ$:\n$$\\sin 75^\\circ = \\frac{\\sqrt{2}}{2}\\cdot\\frac{\\sqrt{3}}{2} + \\frac{\\sqrt{2}}{2}\\cdot\\frac{1}{2} = \\frac{\\sqrt{6} + \\sqrt{2}}{4}$$\n$\\frac{\\sqrt{6} - \\sqrt{2}}{4}$ is $\\sin 15^\\circ$. $\\frac{\\sqrt{2} + 1}{2}$ wrongly adds $\\sin 45^\\circ + \\sin 30^\\circ$; it is greater than 1, which is impossible for sine.",
+    "verified": true
+  },
+  {
+    "id": "ML-TRI-003",
+    "domain": "math-logic",
+    "subtopic": "Trigonometry",
+    "difficulty": "medium",
+    "question": "From a point on level ground 60 m from the base of a building, the angle of elevation of the top of the building is $30^\\circ$. How tall is the building?",
+    "choices": [
+      "$30$ m",
+      "$60\\sqrt{3}$ m",
+      "$20\\sqrt{3}$ m",
+      "$30\\sqrt{3}$ m"
+    ],
+    "answerIndex": 2,
+    "explanation": "The height is opposite the angle and the 60 m is adjacent, so use tangent:\n$$\\tan 30^\\circ = \\frac{h}{60} \\;\\Rightarrow\\; h = 60 \\cdot \\frac{1}{\\sqrt{3}} = \\frac{60}{\\sqrt{3}} = \\frac{60\\sqrt{3}}{3} = 20\\sqrt{3} \\text{ m} \\approx 34.6 \\text{ m}$$\n$30$ m uses $\\sin 30^\\circ = \\frac{1}{2}$ and $30\\sqrt{3}$ m uses $\\cos 30^\\circ$. $60\\sqrt{3}$ m divides by $\\tan 30^\\circ$ instead of multiplying.",
+    "verified": true
+  },
+  {
+    "id": "ML-TRI-004",
+    "domain": "math-logic",
+    "subtopic": "Trigonometry",
+    "difficulty": "hard",
+    "question": "Find all solutions of $2\\sin^2 x - \\sin x - 1 = 0$ for $0 \\le x < 2\\pi$.",
+    "choices": [
+      "$\\frac{\\pi}{2}, \\frac{\\pi}{6}, \\frac{5\\pi}{6}$",
+      "$\\frac{3\\pi}{2}, \\frac{\\pi}{6}, \\frac{5\\pi}{6}$",
+      "$\\frac{\\pi}{2}, \\frac{7\\pi}{6}$",
+      "$\\frac{\\pi}{2}, \\frac{7\\pi}{6}, \\frac{11\\pi}{6}$"
+    ],
+    "answerIndex": 3,
+    "explanation": "Factor as a quadratic in $\\sin x$:\n$$(2\\sin x + 1)(\\sin x - 1) = 0 \\;\\Rightarrow\\; \\sin x = -\\tfrac{1}{2} \\text{ or } \\sin x = 1$$\n$\\sin x = 1$ gives $x = \\frac{\\pi}{2}$. $\\sin x = -\\frac{1}{2}$ happens in Quadrants III and IV: $x = \\frac{7\\pi}{6}$ and $\\frac{11\\pi}{6}$.\nThe choice with $\\frac{\\pi}{6}, \\frac{5\\pi}{6}$ uses $\\sin x = +\\frac{1}{2}$ (sign error when factoring). The two-angle choice misses the Quadrant IV solution.",
+    "verified": true
+  },
+  {
+    "id": "ML-TRI-005",
+    "domain": "math-logic",
+    "subtopic": "Trigonometry",
+    "difficulty": "medium",
+    "question": "Two sides of a triangle are 7 cm and 8 cm, and the angle between them is $60^\\circ$. What is the length of the third side?",
+    "choices": [
+      "$\\sqrt{113}$ cm",
+      "$\\sqrt{113 - 56\\sqrt{3}}$ cm",
+      "$\\sqrt{57}$ cm",
+      "$13$ cm"
+    ],
+    "answerIndex": 2,
+    "explanation": "Law of Cosines: $c^2 = a^2 + b^2 - 2ab\\cos C$.\n$$c^2 = 49 + 64 - 2(7)(8)\\cos 60^\\circ = 113 - 112\\left(\\tfrac{1}{2}\\right) = 57 \\;\\Rightarrow\\; c = \\sqrt{57} \\approx 7.55 \\text{ cm}$$\n$\\sqrt{113}$ uses the Pythagorean theorem, which only works for $90^\\circ$. $13$ cm adds the $2ab\\cos C$ term instead of subtracting. The choice $\\sqrt{113 - 56\\sqrt{3}}$ uses $\\cos 60^\\circ = \\frac{\\sqrt{3}}{2}$, which is actually $\\cos 30^\\circ$.",
+    "verified": true
+  },
+  {
+    "id": "ML-TRI-006",
+    "domain": "math-logic",
+    "subtopic": "Trigonometry",
+    "difficulty": "medium",
+    "question": "A sector of a circle has radius 9 cm and central angle $140^\\circ$. What is its arc length?",
+    "choices": [
+      "$1260$ cm",
+      "$7\\pi$ cm",
+      "$\\frac{7\\pi}{9}$ cm",
+      "$\\frac{63\\pi}{2}$ cm"
+    ],
+    "answerIndex": 1,
+    "explanation": "Convert the angle to radians: $140^\\circ \\times \\frac{\\pi}{180^\\circ} = \\frac{7\\pi}{9}$. Then\n$$s = r\\theta = 9 \\cdot \\frac{7\\pi}{9} = 7\\pi \\approx 22.0 \\text{ cm}$$\n$1260$ forgets to convert degrees to radians ($9 \\times 140$). $\\frac{63\\pi}{2}$ is the sector's **area** $\\frac{1}{2}r^2\\theta$. $\\frac{7\\pi}{9}$ is only the angle in radians.",
+    "verified": true
+  },
+  {
+    "id": "ML-PRB-001",
+    "domain": "math-logic",
+    "subtopic": "Probability",
+    "difficulty": "easy",
+    "question": "Two fair six-sided dice are rolled. What is the probability that the sum is 8?",
+    "choices": [
+      "$\\frac{1}{11}$",
+      "$\\frac{5}{36}$",
+      "$\\frac{1}{6}$",
+      "$\\frac{1}{9}$"
+    ],
+    "answerIndex": 1,
+    "explanation": "There are $6 \\times 6 = 36$ equally likely outcomes. A sum of 8 comes from $(2,6), (3,5), (4,4), (5,3), (6,2)$: 5 outcomes.\n$$P = \\frac{5}{36}$$\n$\\frac{1}{11}$ wrongly treats the 11 possible sums (2 to 12) as equally likely. $\\frac{1}{9} = \\frac{4}{36}$ forgets that $(4,4)$ also counts, or counts only 4 pairs.",
+    "verified": true
+  },
+  {
+    "id": "ML-PRB-002",
+    "domain": "math-logic",
+    "subtopic": "Probability",
+    "difficulty": "medium",
+    "question": "A bag has 5 red, 3 blue, and 2 green marbles. Two marbles are drawn one after the other **without replacement**. What is the probability that both are red?",
+    "choices": [
+      "$\\frac{1}{5}$",
+      "$\\frac{1}{4}$",
+      "$\\frac{1}{2}$",
+      "$\\frac{2}{9}$"
+    ],
+    "answerIndex": 3,
+    "explanation": "First draw: $\\frac{5}{10}$. After one red is removed, 4 red remain out of 9:\n$$P = \\frac{5}{10} \\times \\frac{4}{9} = \\frac{20}{90} = \\frac{2}{9}$$\n$\\frac{1}{4} = \\frac{5}{10}\\cdot\\frac{5}{10}$ is the answer **with** replacement. $\\frac{1}{5} = \\frac{5}{10}\\cdot\\frac{4}{10}$ forgets that the total also drops to 9.",
+    "verified": true
+  },
+  {
+    "id": "ML-PRB-003",
+    "domain": "math-logic",
+    "subtopic": "Probability",
+    "difficulty": "medium",
+    "question": "A committee of 4 is chosen from 6 boys and 5 girls. In how many ways can the committee have exactly 2 girls?",
+    "choices": [
+      "$25$",
+      "$330$",
+      "$600$",
+      "$150$"
+    ],
+    "answerIndex": 3,
+    "explanation": "Choose 2 of the 5 girls and 2 of the 6 boys. Order does not matter, so use combinations and multiply:\n$$\\binom{5}{2}\\binom{6}{2} = 10 \\times 15 = 150$$\n$330 = \\binom{11}{4}$ ignores the \"exactly 2 girls\" condition. $600$ uses permutations (order matters), which double counts. $25$ adds instead of multiplying.",
+    "verified": true
+  },
+  {
+    "id": "ML-PRB-004",
+    "domain": "math-logic",
+    "subtopic": "Probability",
+    "difficulty": "hard",
+    "question": "A fair die is rolled 3 times. What is the probability of getting **at least one** 6?",
+    "choices": [
+      "$\\frac{1}{2}$",
+      "$\\frac{1}{216}$",
+      "$\\frac{125}{216}$",
+      "$\\frac{91}{216}$"
+    ],
+    "answerIndex": 3,
+    "explanation": "Use the complement. The probability of **no** 6 in 3 rolls is $\\left(\\frac{5}{6}\\right)^3 = \\frac{125}{216}$. So\n$$P(\\text{at least one 6}) = 1 - \\frac{125}{216} = \\frac{91}{216} \\approx 0.42$$\n$\\frac{1}{2} = \\frac{1}{6} + \\frac{1}{6} + \\frac{1}{6}$ wrongly adds probabilities of events that can happen together. $\\frac{125}{216}$ is the probability of no 6. $\\frac{1}{216}$ is the probability of three 6s.",
+    "verified": true
+  },
+  {
+    "id": "ML-PRB-005",
+    "domain": "math-logic",
+    "subtopic": "Probability",
+    "difficulty": "hard",
+    "question": "In a school, 60% of students take Math Club, 50% take Physics Club, and 30% take both. A student is picked at random from the Physics Club. What is the probability that this student is also in Math Club?",
+    "choices": [
+      "$0.3$",
+      "$0.5$",
+      "$0.6$",
+      "$0.8$"
+    ],
+    "answerIndex": 2,
+    "explanation": "This is a conditional probability:\n$$P(M \\mid P) = \\frac{P(M \\cap P)}{P(P)} = \\frac{0.30}{0.50} = 0.6$$\n$0.5 = \\frac{0.3}{0.6}$ divides by the wrong club, which gives $P(P \\mid M)$. $0.3$ is $P(M \\cap P)$ for a random student from the whole school. $0.8$ is $P(M \\cup P)$.",
+    "verified": true
+  },
+  {
+    "id": "ML-PRB-006",
+    "domain": "math-logic",
+    "subtopic": "Probability",
+    "difficulty": "medium",
+    "question": "How many different arrangements can be made using all the letters of the word CIRCUIT?",
+    "choices": [
+      "$1260$",
+      "$2520$",
+      "$630$",
+      "$5040$"
+    ],
+    "answerIndex": 0,
+    "explanation": "CIRCUIT has 7 letters: C appears 2 times, I appears 2 times, and R, U, T once each.\n$$\\frac{7!}{2!\\,2!} = \\frac{5040}{4} = 1260$$\n$5040 = 7!$ treats the repeated letters as different. $2520$ divides by only one $2!$. $630$ divides by an extra $2!$.",
+    "verified": true
+  },
+  {
+    "id": "ML-RDG-001",
+    "domain": "math-logic",
+    "subtopic": "Reading comprehension",
+    "difficulty": "medium",
+    "passage": "A solar cell turns light directly into electricity. It is made mostly of silicon that has been treated so that one layer has extra electrons, while the layer beside it has \"holes,\" or places where electrons are missing. Where the two layers meet, an electric field forms. When sunlight strikes the cell, its energy can knock electrons loose from silicon atoms. The electric field then pushes these freed electrons in one direction, creating a current that can flow through a wire to power a device.\n\nA single cell produces only about half a volt, so manufacturers connect many cells together to form a panel. Even so, most commercial panels convert only about 15 to 22 percent of the sunlight that reaches them into electrical energy; the rest is reflected or turned into heat. Researchers are now testing newer materials, such as perovskites, hoping to raise this figure while keeping costs low.",
+    "question": "Which statement best expresses the main idea of the passage?",
+    "choices": [
+      "Solar cells use specially treated layers of silicon to turn sunlight into electric current, but their efficiency is still limited.",
+      "Most of the sunlight that strikes a solar panel is changed into heat.",
+      "Perovskites will soon replace silicon in all solar panels.",
+      "A single solar cell produces about half a volt of electricity."
+    ],
+    "answerIndex": 0,
+    "explanation": "The main idea must cover the whole passage: how a solar cell works (first paragraph) and its limits and improvements (second paragraph). Only the choice about treated silicon layers and limited efficiency does this.\n\"A single cell produces about half a volt\" is a true detail, but too narrow. The perovskite choice goes beyond the passage, which says only that researchers are **testing** them. The heat choice distorts the text: it says the unused light is reflected **or** turned into heat, not that most becomes heat.",
+    "verified": true
+  },
+  {
+    "id": "ML-RDG-002",
+    "domain": "math-logic",
+    "subtopic": "Reading comprehension",
+    "difficulty": "medium",
+    "passage": "Many people believe that a lightning rod attracts lightning from far away. In fact, it does no such thing. A lightning rod simply offers a strike an easy path to the ground. The rod is a pointed metal bar placed on the highest part of a building and connected by a thick cable to metal plates buried in the soil. Because metal conducts electricity far better than wood, brick, or concrete, the current follows the cable instead of passing through the walls, where its heat could start a fire or crack the structure.\n\nFor the system to work, the cable must be unbroken from top to bottom, and the plates must make good contact with moist soil. A rusted or loose joint can force the current to leave the cable and jump into the building anyway.",
+    "question": "Based on the passage, which situation would most likely cause a lightning rod to **fail** to protect a house?",
+    "choices": [
+      "The rod attracts lightning from a storm several kilometers away.",
+      "The cable from the rod to the ground plates has been cut halfway down the wall.",
+      "The house is built of concrete instead of wood.",
+      "The rod is installed on the highest point of the roof."
+    ],
+    "answerIndex": 1,
+    "explanation": "The passage says the cable \"must be unbroken from top to bottom,\" and a bad joint can force the current into the building. A cut cable is the clearest case of this.\nPlacing the rod on the highest point is what the passage recommends. Concrete, like wood and brick, conducts poorly, so it does not change how the rod works. The choice about attracting lightning from several kilometers away repeats the belief the passage says is wrong.",
+    "verified": true
+  },
+  {
+    "id": "ML-RDG-003",
+    "domain": "math-logic",
+    "subtopic": "Reading comprehension",
+    "difficulty": "easy",
+    "passage": "Microcontrollers are now ubiquitous. These tiny chips sit inside microwave ovens, washing machines, television remotes, cars, toys, and even greeting cards that play a song when opened. A typical household may own dozens of them without knowing it. Unlike the microprocessor in a laptop, which is built to run many different programs, a microcontroller usually runs a single program over and over. It combines a small processor, memory, and input and output pins on one chip, so it can read a button or sensor and switch a motor or light on its own. Because they are cheap and use little power, microcontrollers have become the \"brains\" of most simple electronic devices.",
+    "question": "As used in the passage, the word \"ubiquitous\" most nearly means",
+    "choices": [
+      "extremely powerful",
+      "found almost everywhere",
+      "difficult to program",
+      "very expensive"
+    ],
+    "answerIndex": 1,
+    "explanation": "The sentences right after the word give the clue: microcontrollers are in ovens, washing machines, remotes, cars, toys, and greeting cards, and a home \"may own dozens of them.\" So \"ubiquitous\" means found almost everywhere.\n\"Very expensive\" contradicts the passage, which calls them cheap. \"Extremely powerful\" contradicts the comparison with the laptop microprocessor.",
+    "verified": true
+  },
+  {
+    "id": "ML-RDG-004",
+    "domain": "math-logic",
+    "subtopic": "Reading comprehension",
+    "difficulty": "medium",
+    "passage": "Every year, Filipinos throw away thousands of tonnes of old phones, chargers, and computers. Much of this electronic waste ends up with informal recyclers who burn cables in open fires to recover copper, or soak circuit boards in acid to extract small amounts of gold. These methods release lead, mercury, and toxic smoke that harm workers, many of whom are young, and pollute nearby soil and rivers.\n\nElectronic waste does not have to be dangerous. Licensed recycling facilities use closed systems that capture harmful substances while still recovering valuable metals. Consumers can help by bringing old devices to official collection points run by local governments and some phone companies, by repairing gadgets instead of replacing them, and by removing batteries before disposal. When handled properly, a discarded phone is less a hazard than a small mine of reusable materials.",
+    "question": "What is the author's main purpose in writing the passage?",
+    "choices": [
+      "To explain the dangers of informal e-waste recycling and describe safer ways to handle old devices",
+      "To praise informal recyclers for recovering valuable metals",
+      "To persuade readers to stop buying new electronic devices",
+      "To describe how mobile phones are manufactured"
+    ],
+    "answerIndex": 0,
+    "explanation": "The first paragraph describes the harm caused by informal recycling. The second paragraph offers safer alternatives (licensed facilities, collection points, repair). So the purpose is to explain the danger and point to safer handling.\nThe author encourages repair, but never tells readers to stop buying devices. The passage does not praise informal recyclers; it criticizes their methods.",
+    "verified": true
+  },
+  {
+    "id": "ML-RDG-005",
+    "domain": "math-logic",
+    "subtopic": "Reading comprehension",
+    "difficulty": "hard",
+    "passage": "The capacity of a rechargeable battery is often printed in milliampere-hours (mAh). In principle, a 3000 mAh battery can supply 3000 milliamperes for one hour, 1500 milliamperes for two hours, or 300 milliamperes for ten hours. In other words, the ideal running time is the capacity divided by the current drawn.\n\nIn practice, the actual running time is usually somewhat shorter than this ideal value. Part of the stored energy is lost as heat inside the battery, especially when current is drawn quickly. Capacity also drops gradually as a battery ages; after a few hundred charging cycles, many phone batteries hold only about 80 percent of their original charge.",
+    "question": "According to the passage, how long would a **new** 3000 mAh battery most likely run a device that draws a steady 600 mA?",
+    "choices": [
+      "About 0.2 hours",
+      "Slightly less than 5 hours",
+      "Exactly 5 hours",
+      "About 4 hours, because it holds only 80 percent of its charge"
+    ],
+    "answerIndex": 1,
+    "explanation": "The ideal time is capacity divided by current: $\\frac{3000 \\text{ mAh}}{600 \\text{ mA}} = 5$ hours. But the second paragraph says the actual time is \"usually somewhat shorter\" than the ideal value, so the best answer is slightly less than 5 hours.\n\"Exactly 5 hours\" ignores the second paragraph. $0.2$ hours divides the wrong way ($\\frac{600}{3000}$). The 80 percent figure applies to **old** batteries, not a new one.",
+    "verified": true
+  },
+  {
+    "id": "ML-RDG-006",
+    "domain": "math-logic",
+    "subtopic": "Reading comprehension",
+    "difficulty": "medium",
+    "passage": "Early electronic computers and radios depended on vacuum tubes, glass bulbs about the size of a thumb that could amplify signals and switch currents on and off. Tubes worked, but they were bulky, used a great deal of power, gave off heat, and burned out often. One famous early computer used about 18,000 tubes, and technicians spent much of their time finding and replacing failed ones.\n\nIn 1947, researchers at Bell Laboratories demonstrated the transistor, a small device made from a semiconductor that could do the same jobs as a tube while using far less power. About a decade later, engineers learned to build many transistors, along with the wires between them, on a single piece of silicon. This invention, the integrated circuit, made it possible to place thousands, and later billions, of transistors on one chip.",
+    "question": "Which of the following does the passage present as a **disadvantage** of vacuum tubes?",
+    "choices": [
+      "They could not amplify signals.",
+      "They were too small to handle by hand.",
+      "They could only be built on a single piece of silicon.",
+      "They used a lot of power and frequently burned out."
+    ],
+    "answerIndex": 3,
+    "explanation": "The first paragraph lists the problems with tubes: bulky, high power use, heat, and frequent burnouts.\nThe passage says tubes **could** amplify signals, so \"They could not amplify signals\" is false. Tubes were \"about the size of a thumb\" and described as bulky, not too small. Building on one piece of silicon describes the integrated circuit, not tubes.",
+    "verified": true
+  },
+  {
+    "id": "ML-GAT-001",
+    "domain": "math-logic",
+    "subtopic": "Logic gates",
+    "difficulty": "easy",
+    "question": "Which Boolean expression describes the output $Y$ of this circuit?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-6 -6 312 152\" width=\"312\" height=\"152\" role=\"img\" aria-label=\"Logic circuit: A and B go into an AND gate. C goes into a NOT gate. Both outputs go into an OR gate whose output is Y.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M 80 20 H 105 A 20 20 0 0 1 105 60 H 80 Z\"/><polygon points=\"90,94 90,126 122,110\"/><circle cx=\"126.5\" cy=\"110\" r=\"4.5\"/><path d=\"M 190 55 Q 202 75 190 95 Q 222 95 236 75 Q 222 55 190 55 Z\"/><polyline points=\"30,30 80,30\"/><polyline points=\"30,50 80,50\"/><polyline points=\"30,110 90,110\"/><polyline points=\"125,40 150,40 150,65 194.5,65\"/><polyline points=\"131,110 160,110 160,85 194.5,85\"/><polyline points=\"236,75 270,75\"/><text x=\"24\" y=\"30\" font-size=\"15\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">A</text><text x=\"24\" y=\"50\" font-size=\"15\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">B</text><text x=\"24\" y=\"110\" font-size=\"15\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">C</text><text x=\"276\" y=\"75\" font-size=\"15\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">Y</text></svg>",
+    "choices": [
+      "$Y = AB\\,\\overline{C}$",
+      "$Y = (A + B)\\,\\overline{C}$",
+      "$Y = \\overline{AB + C}$",
+      "$Y = AB + \\overline{C}$"
+    ],
+    "answerIndex": 3,
+    "explanation": "Follow the signals from left to right. The AND gate gives $AB$. The NOT gate gives $\\overline{C}$. The OR gate combines them: $Y = AB + \\overline{C}$.\n$\\overline{AB + C}$ puts the inversion on the whole output instead of only on $C$. $AB\\,\\overline{C}$ treats the last gate as AND, but its curved shape with a pointed tip is an OR gate.",
+    "verified": true
+  },
+  {
+    "id": "ML-GAT-002",
+    "domain": "math-logic",
+    "subtopic": "Logic gates",
+    "difficulty": "medium",
+    "question": "For which input combination is the output $Y = 1$?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-6 -6 302 132\" width=\"302\" height=\"132\" role=\"img\" aria-label=\"Logic circuit: A and B go into an XOR gate. Its output and C go into an AND gate whose output is Y.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M 87 20 Q 99 40 87 60 Q 119 60 133 40 Q 119 20 87 20 Z\"/><path d=\"M 80 20 Q 92 40 80 60\"/><path d=\"M 180 45 H 205 A 20 20 0 0 1 205 85 H 180 Z\"/><polyline points=\"30,30 84.5,30\"/><polyline points=\"30,50 84.5,50\"/><polyline points=\"133,40 150,40 150,55 180,55\"/><polyline points=\"30,100 150,100 150,75 180,75\"/><polyline points=\"225,65 260,65\"/><text x=\"24\" y=\"30\" font-size=\"15\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">A</text><text x=\"24\" y=\"50\" font-size=\"15\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">B</text><text x=\"24\" y=\"100\" font-size=\"15\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">C</text><text x=\"266\" y=\"65\" font-size=\"15\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">Y</text></svg>",
+    "choices": [
+      "$A = 1,\\ B = 0,\\ C = 0$",
+      "$A = 0,\\ B = 0,\\ C = 1$",
+      "$A = 0,\\ B = 1,\\ C = 1$",
+      "$A = 1,\\ B = 1,\\ C = 1$"
+    ],
+    "answerIndex": 2,
+    "explanation": "$Y = (A \\oplus B) \\cdot C$. For $Y = 1$, the XOR output must be 1 (so $A$ and $B$ must be **different**) and $C$ must be 1. Only $A = 0, B = 1, C = 1$ does this.\nWith $A = 1, B = 1$, the XOR gives 0 because the inputs are the same; this choice tempts students who read the XOR as an OR. With $C = 0$, the AND gate outputs 0 no matter what.",
+    "verified": true
+  },
+  {
+    "id": "ML-GAT-003",
+    "domain": "math-logic",
+    "subtopic": "Logic gates",
+    "difficulty": "medium",
+    "question": "This circuit behaves exactly like which single gate?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-6 -6 292 117\" width=\"292\" height=\"117\" role=\"img\" aria-label=\"Logic circuit: A goes through a NOT gate and B goes through a NOT gate. Both outputs go into an OR gate whose output is Y.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"70,4 70,36 102,20\"/><circle cx=\"106.5\" cy=\"20\" r=\"4.5\"/><polygon points=\"70,64 70,96 102,80\"/><circle cx=\"106.5\" cy=\"80\" r=\"4.5\"/><path d=\"M 170 30 Q 182 50 170 70 Q 202 70 216 50 Q 202 30 170 30 Z\"/><polyline points=\"30,20 70,20\"/><polyline points=\"30,80 70,80\"/><polyline points=\"111,20 140,20 140,40 174.5,40\"/><polyline points=\"111,80 140,80 140,60 174.5,60\"/><polyline points=\"216,50 250,50\"/><text x=\"24\" y=\"20\" font-size=\"15\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">A</text><text x=\"24\" y=\"80\" font-size=\"15\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">B</text><text x=\"256\" y=\"50\" font-size=\"15\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">Y</text></svg>",
+    "choices": [
+      "AND",
+      "XOR",
+      "NOR",
+      "NAND"
+    ],
+    "answerIndex": 3,
+    "explanation": "The output is $Y = \\overline{A} + \\overline{B}$. By De Morgan's law, $\\overline{A} + \\overline{B} = \\overline{AB}$, which is NAND.\nCheck one row: $A = 1, B = 1$ gives $0 + 0 = 0$, and every other row gives 1. That is the NAND pattern. NOR would be $\\overline{A}\\,\\overline{B}$, which needs an AND gate at the end.",
+    "verified": true
+  },
+  {
+    "id": "ML-GAT-004",
+    "domain": "math-logic",
+    "subtopic": "Logic gates",
+    "difficulty": "easy",
+    "question": "The circuit below is a half adder. What are the outputs $S$ and $C$ when $A = 1$ and $B = 1$?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-6 -6 272 137\" width=\"272\" height=\"137\" role=\"img\" aria-label=\"Half adder: A and B both connect to an XOR gate with output S and to an AND gate with output C.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M 117 0 Q 129 20 117 40 Q 149 40 163 20 Q 149 0 117 0 Z\"/><path d=\"M 110 0 Q 122 20 110 40\"/><path d=\"M 110 80 H 135 A 20 20 0 0 1 135 120 H 110 Z\"/><polyline points=\"20,10 114.5,10\"/><polyline points=\"20,30 70,30 114.5,30\"/><polyline points=\"50,10 50,90 110,90\"/><polyline points=\"70,30 70,110 110,110\"/><circle cx=\"50\" cy=\"10\" r=\"3.5\" fill=\"currentColor\"/><circle cx=\"70\" cy=\"30\" r=\"3.5\" fill=\"currentColor\"/><polyline points=\"163,20 220,20\"/><polyline points=\"155,100 220,100\"/><text x=\"14\" y=\"10\" font-size=\"15\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">A</text><text x=\"14\" y=\"30\" font-size=\"15\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">B</text><text x=\"226\" y=\"20\" font-size=\"15\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">S</text><text x=\"226\" y=\"100\" font-size=\"15\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">C</text></svg>",
+    "choices": [
+      "$S = 1,\\ C = 1$",
+      "$S = 0,\\ C = 0$",
+      "$S = 1,\\ C = 0$",
+      "$S = 0,\\ C = 1$"
+    ],
+    "answerIndex": 3,
+    "explanation": "$S = A \\oplus B = 1 \\oplus 1 = 0$ and $C = A \\cdot B = 1 \\cdot 1 = 1$.\nThis matches binary addition: $1 + 1 = 10_2$, which means sum digit 0 and carry 1. Choosing $S = 1$ treats the XOR gate as an OR gate.",
+    "verified": true
+  },
+  {
+    "id": "ML-GAT-005",
+    "domain": "math-logic",
+    "subtopic": "Logic gates",
+    "difficulty": "hard",
+    "question": "For how many of the 8 possible input combinations of $A$, $B$, and $C$ is the output $Y = 1$?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-6 -6 322 132\" width=\"322\" height=\"132\" role=\"img\" aria-label=\"Logic circuit: A and B go into a NAND gate. B and C go into an OR gate. Both outputs go into an AND gate whose output is Y.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M 90 0 H 115 A 20 20 0 0 1 115 40 H 90 Z\"/><circle cx=\"139.5\" cy=\"20\" r=\"4.5\"/><path d=\"M 90 70 Q 102 90 90 110 Q 122 110 136 90 Q 122 70 90 70 Z\"/><path d=\"M 200 35 H 225 A 20 20 0 0 1 225 75 H 200 Z\"/><polyline points=\"20,10 90,10\"/><polyline points=\"20,45 60,45 60,30 90,30\"/><polyline points=\"60,45 60,80 94.5,80\"/><circle cx=\"60\" cy=\"45\" r=\"3.5\" fill=\"currentColor\"/><polyline points=\"20,100 94.5,100\"/><polyline points=\"144,20 170,20 170,45 200,45\"/><polyline points=\"136,90 170,90 170,65 200,65\"/><polyline points=\"245,55 280,55\"/><text x=\"14\" y=\"10\" font-size=\"15\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">A</text><text x=\"14\" y=\"45\" font-size=\"15\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">B</text><text x=\"14\" y=\"100\" font-size=\"15\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">C</text><text x=\"286\" y=\"55\" font-size=\"15\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">Y</text></svg>",
+    "choices": [
+      "$5$",
+      "$2$",
+      "$4$",
+      "$3$"
+    ],
+    "answerIndex": 2,
+    "explanation": "$Y = \\overline{AB} \\cdot (B + C)$. $Y = 1$ needs both parts to be 1:\n- $\\overline{AB} = 1$ unless $A = B = 1$.\n- $B + C = 1$ unless $B = C = 0$.\n\nGo through the rows $ABC$: $000$ (B+C = 0) no; $001$ yes; $010$ yes; $011$ yes; $100$ (B+C = 0) no; $101$ yes; $110$ ($AB = 1$) no; $111$ no. That is **4** rows.",
+    "verified": true
+  },
+  {
+    "id": "ML-GAT-006",
+    "domain": "math-logic",
+    "subtopic": "Logic gates",
+    "difficulty": "hard",
+    "question": "In the circuit, both inputs of the first NAND gate are connected to $A$. Which expression equals $Y$?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-6 -6 312 97\" width=\"312\" height=\"97\" role=\"img\" aria-label=\"Logic circuit: A feeds both inputs of the first NAND gate. Its output and B go into a second NAND gate whose output is Y.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M 80 0 H 105 A 20 20 0 0 1 105 40 H 80 Z\"/><circle cx=\"129.5\" cy=\"20\" r=\"4.5\"/><path d=\"M 190 15 H 215 A 20 20 0 0 1 215 55 H 190 Z\"/><circle cx=\"239.5\" cy=\"35\" r=\"4.5\"/><polyline points=\"20,20 55,20\"/><polyline points=\"55,10 55,30\"/><polyline points=\"55,10 80,10\"/><polyline points=\"55,30 80,30\"/><circle cx=\"55\" cy=\"20\" r=\"3.5\" fill=\"currentColor\"/><polyline points=\"134,20 160,20 160,25 190,25\"/><polyline points=\"20,70 160,70 160,45 190,45\"/><polyline points=\"244,35 280,35\"/><text x=\"14\" y=\"20\" font-size=\"15\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">A</text><text x=\"14\" y=\"70\" font-size=\"15\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">B</text><text x=\"286\" y=\"35\" font-size=\"15\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">Y</text></svg>",
+    "choices": [
+      "$\\overline{A}\\,B$",
+      "$\\overline{A} + B$",
+      "$A\\,\\overline{B}$",
+      "$A + \\overline{B}$"
+    ],
+    "answerIndex": 3,
+    "explanation": "A NAND gate with both inputs tied together is a NOT gate: $\\overline{A \\cdot A} = \\overline{A}$.\nThe second gate gives $Y = \\overline{\\overline{A} \\cdot B} = \\overline{\\overline{A}} + \\overline{B} = A + \\overline{B}$ (De Morgan's law).\n$\\overline{A}\\,B$ forgets that the second gate is also a NAND, so its output must be inverted.",
+    "verified": true
+  },
+  {
+    "id": "ML-CIR-001",
+    "domain": "math-logic",
+    "subtopic": "Basic circuitry",
+    "difficulty": "medium",
+    "question": "In the circuit, each switch is either closed (1) or open (0). Which expression is true exactly when the lamp lights?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-6 -6 372 212\" width=\"372\" height=\"212\" role=\"img\" aria-label=\"Circuit: a battery, then two paths in parallel. The top path has switches S1 and S2 in series. The bottom path has switch S3. Then a lamp, back to the battery.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"30\" y1=\"170\" x2=\"30\" y2=\"111\"/><line x1=\"30\" y1=\"99\" x2=\"30\" y2=\"40\"/><line x1=\"44\" y1=\"99\" x2=\"16\" y2=\"99\" stroke-width=\"2\"/><line x1=\"37\" y1=\"111\" x2=\"23\" y2=\"111\" stroke-width=\"4\"/><text x=\"14\" y=\"94\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">+</text><text x=\"14\" y=\"116\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">−</text><polyline points=\"30,40 30,20 90,20\"/><polyline points=\"90,20 90,75\"/><circle cx=\"90\" cy=\"20\" r=\"3.5\" fill=\"currentColor\"/><line x1=\"90\" y1=\"20\" x2=\"110\" y2=\"20\"/><line x1=\"140\" y1=\"20\" x2=\"160\" y2=\"20\"/><circle cx=\"110\" cy=\"20\" r=\"2.5\" fill=\"currentColor\"/><circle cx=\"140\" cy=\"20\" r=\"2.5\" fill=\"currentColor\"/><line x1=\"110\" y1=\"20\" x2=\"138\" y2=\"8\"/><text x=\"125\" y=\"-2\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">S1</text><line x1=\"160\" y1=\"20\" x2=\"180\" y2=\"20\"/><line x1=\"210\" y1=\"20\" x2=\"230\" y2=\"20\"/><circle cx=\"180\" cy=\"20\" r=\"2.5\" fill=\"currentColor\"/><circle cx=\"210\" cy=\"20\" r=\"2.5\" fill=\"currentColor\"/><line x1=\"180\" y1=\"20\" x2=\"208\" y2=\"8\"/><text x=\"195\" y=\"-2\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">S2</text><polyline points=\"90,75 125,75\"/><line x1=\"125\" y1=\"75\" x2=\"145\" y2=\"75\"/><line x1=\"175\" y1=\"75\" x2=\"195\" y2=\"75\"/><circle cx=\"145\" cy=\"75\" r=\"2.5\" fill=\"currentColor\"/><circle cx=\"175\" cy=\"75\" r=\"2.5\" fill=\"currentColor\"/><line x1=\"145\" y1=\"75\" x2=\"173\" y2=\"63\"/><text x=\"160\" y=\"97\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">S3</text><polyline points=\"195,75 230,75 230,20\"/><circle cx=\"230\" cy=\"20\" r=\"3.5\" fill=\"currentColor\"/><polyline points=\"230,20 320,20 320,70\"/><line x1=\"320\" y1=\"70\" x2=\"320\" y2=\"88\"/><line x1=\"320\" y1=\"112\" x2=\"320\" y2=\"130\"/><circle cx=\"320\" cy=\"100\" r=\"12\"/><line x1=\"311.6\" y1=\"91.6\" x2=\"328.4\" y2=\"108.4\"/><line x1=\"311.6\" y1=\"108.4\" x2=\"328.4\" y2=\"91.6\"/><text x=\"306\" y=\"100\" font-size=\"13\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">Lamp</text><polyline points=\"320,130 320,190 30,190 30,170\"/></svg>",
+    "choices": [
+      "$S_1 + S_2 + S_3$",
+      "$S_1 S_2 + S_3$",
+      "$(S_1 + S_2)\\,S_3$",
+      "$S_1 S_2 S_3$"
+    ],
+    "answerIndex": 1,
+    "explanation": "Switches in **series** act like AND (current passes only if both are closed). Paths in **parallel** act like OR (current passes if either path is complete).\nThe top path needs $S_1$ and $S_2$: $S_1 S_2$. The bottom path needs $S_3$. The paths are in parallel, so the lamp lights when $S_1 S_2 + S_3$.\n$S_1 + S_2 + S_3$ wrongly treats $S_1$ and $S_2$ as parallel. Closing only $S_1$ does not complete the top path.",
+    "verified": true
+  },
+  {
+    "id": "ML-CIR-002",
+    "domain": "math-logic",
+    "subtopic": "Basic circuitry",
+    "difficulty": "hard",
+    "question": "The three bulbs are identical. If bulb B3 burns out (its filament breaks), what happens to bulbs B1 and B2?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-6 -6 342 202\" width=\"342\" height=\"202\" role=\"img\" aria-label=\"Circuit: a battery, then bulb B1 in series with a pair of bulbs B2 and B3 that are in parallel with each other.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"30\" y1=\"150\" x2=\"30\" y2=\"101\"/><line x1=\"30\" y1=\"89\" x2=\"30\" y2=\"40\"/><line x1=\"44\" y1=\"89\" x2=\"16\" y2=\"89\" stroke-width=\"2\"/><line x1=\"37\" y1=\"101\" x2=\"23\" y2=\"101\" stroke-width=\"4\"/><text x=\"14\" y=\"84\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">+</text><text x=\"14\" y=\"106\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">−</text><polyline points=\"30,40 30,20 60,20\"/><line x1=\"60\" y1=\"20\" x2=\"88\" y2=\"20\"/><line x1=\"112\" y1=\"20\" x2=\"140\" y2=\"20\"/><circle cx=\"100\" cy=\"20\" r=\"12\"/><line x1=\"91.6\" y1=\"11.6\" x2=\"108.4\" y2=\"28.4\"/><line x1=\"91.6\" y1=\"28.4\" x2=\"108.4\" y2=\"11.6\"/><text x=\"100\" y=\"-2\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">B1</text><polyline points=\"140,20 280,20\"/><polyline points=\"200,20 200,60\"/><line x1=\"200\" y1=\"60\" x2=\"200\" y2=\"83\"/><line x1=\"200\" y1=\"107\" x2=\"200\" y2=\"130\"/><circle cx=\"200\" cy=\"95\" r=\"12\"/><line x1=\"191.6\" y1=\"86.6\" x2=\"208.4\" y2=\"103.4\"/><line x1=\"191.6\" y1=\"103.4\" x2=\"208.4\" y2=\"86.6\"/><text x=\"186\" y=\"95\" font-size=\"13\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">B2</text><polyline points=\"200,130 200,170\"/><polyline points=\"280,20 280,60\"/><line x1=\"280\" y1=\"60\" x2=\"280\" y2=\"83\"/><line x1=\"280\" y1=\"107\" x2=\"280\" y2=\"130\"/><circle cx=\"280\" cy=\"95\" r=\"12\"/><line x1=\"271.6\" y1=\"86.6\" x2=\"288.4\" y2=\"103.4\"/><line x1=\"271.6\" y1=\"103.4\" x2=\"288.4\" y2=\"86.6\"/><text x=\"294\" y=\"95\" font-size=\"13\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">B3</text><polyline points=\"280,130 280,170\"/><circle cx=\"200\" cy=\"20\" r=\"3.5\" fill=\"currentColor\"/><circle cx=\"200\" cy=\"170\" r=\"3.5\" fill=\"currentColor\"/><polyline points=\"280,170 30,170 30,150\"/></svg>",
+    "choices": [
+      "Both B1 and B2 become brighter.",
+      "B1 becomes brighter and B2 becomes dimmer.",
+      "B1 becomes dimmer and B2 becomes brighter.",
+      "Both B1 and B2 become dimmer."
+    ],
+    "answerIndex": 2,
+    "explanation": "Let each bulb have resistance $R$ and the battery voltage be $V$.\n**Before:** B2 and B3 in parallel make $\\frac{R}{2}$, so the total is $\\frac{3R}{2}$. The current through B1 is $\\frac{2V}{3R}$. It splits equally, so B2 gets $\\frac{V}{3R}$.\n**After:** B3 is open, so B1 and B2 are simply in series: total $2R$, current $\\frac{V}{2R}$ through both.\nB1's current falls from $\\frac{2V}{3R}$ to $\\frac{V}{2R}$ (dimmer). B2's current rises from $\\frac{V}{3R}$ to $\\frac{V}{2R}$ (brighter). Many students expect everything to get dimmer, but B2 now gets all of the current instead of half.",
+    "verified": true
+  },
+  {
+    "id": "ML-CIR-003",
+    "domain": "math-logic",
+    "subtopic": "Basic circuitry",
+    "difficulty": "medium",
+    "question": "Three identical bulbs are connected in series to a battery. A plain connecting wire is then attached across bulb B2, as shown. What happens?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-6 -6 372 182\" width=\"372\" height=\"182\" role=\"img\" aria-label=\"Circuit: a battery with bulbs B1, B2 and B3 in series. A plain connecting wire is attached across the two ends of B2.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"30\" y1=\"140\" x2=\"30\" y2=\"101\"/><line x1=\"30\" y1=\"89\" x2=\"30\" y2=\"50\"/><line x1=\"44\" y1=\"89\" x2=\"16\" y2=\"89\" stroke-width=\"2\"/><line x1=\"37\" y1=\"101\" x2=\"23\" y2=\"101\" stroke-width=\"4\"/><text x=\"14\" y=\"84\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">+</text><text x=\"14\" y=\"106\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">−</text><polyline points=\"30,50 30,40 60,40\"/><line x1=\"60\" y1=\"40\" x2=\"78\" y2=\"40\"/><line x1=\"102\" y1=\"40\" x2=\"120\" y2=\"40\"/><circle cx=\"90\" cy=\"40\" r=\"12\"/><line x1=\"81.6\" y1=\"31.6\" x2=\"98.4\" y2=\"48.4\"/><line x1=\"81.6\" y1=\"48.4\" x2=\"98.4\" y2=\"31.6\"/><text x=\"90\" y=\"18\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">B1</text><polyline points=\"120,40 150,40\"/><line x1=\"150\" y1=\"40\" x2=\"178\" y2=\"40\"/><line x1=\"202\" y1=\"40\" x2=\"230\" y2=\"40\"/><circle cx=\"190\" cy=\"40\" r=\"12\"/><line x1=\"181.6\" y1=\"31.6\" x2=\"198.4\" y2=\"48.4\"/><line x1=\"181.6\" y1=\"48.4\" x2=\"198.4\" y2=\"31.6\"/><text x=\"190\" y=\"18\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">B2</text><polyline points=\"230,40 260,40\"/><line x1=\"260\" y1=\"40\" x2=\"278\" y2=\"40\"/><line x1=\"302\" y1=\"40\" x2=\"320\" y2=\"40\"/><circle cx=\"290\" cy=\"40\" r=\"12\"/><line x1=\"281.6\" y1=\"31.6\" x2=\"298.4\" y2=\"48.4\"/><line x1=\"281.6\" y1=\"48.4\" x2=\"298.4\" y2=\"31.6\"/><text x=\"290\" y=\"18\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">B3</text><polyline points=\"320,40 340,40 340,150 30,150 30,140\"/><polyline points=\"140,40 140,100 240,100 240,40\"/><circle cx=\"140\" cy=\"40\" r=\"3.5\" fill=\"currentColor\"/><circle cx=\"240\" cy=\"40\" r=\"3.5\" fill=\"currentColor\"/><text x=\"190\" y=\"114\" font-size=\"12\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">connecting wire</text></svg>",
+    "choices": [
+      "B2 becomes brighter, and B1 and B3 go out.",
+      "B2 goes out, and B1 and B3 become brighter.",
+      "All three bulbs go out.",
+      "B2 goes out, and B1 and B3 stay the same."
+    ],
+    "answerIndex": 1,
+    "explanation": "The wire has almost no resistance, so it **short-circuits** B2: current takes the wire instead of the bulb, and B2 goes out.\nThe circuit now has only two bulbs in series, so the total resistance drops from $3R$ to $2R$. The current rises from $\\frac{V}{3R}$ to $\\frac{V}{2R}$, so B1 and B3 become brighter.\n\"All three go out\" would happen if the wire **broke** the circuit (an open circuit), but a short gives current an easier path.",
+    "verified": true
+  },
+  {
+    "id": "ML-CIR-004",
+    "domain": "math-logic",
+    "subtopic": "Basic circuitry",
+    "difficulty": "easy",
+    "question": "In the circuit, switch S is open. Which lamps are lit?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-6 -6 372 212\" width=\"372\" height=\"212\" role=\"img\" aria-label=\"Circuit: a battery, then lamp L1, then two parallel branches. One branch has switch S (open) and lamp L2. The other branch has lamp L3.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"30\" y1=\"160\" x2=\"30\" y2=\"111\"/><line x1=\"30\" y1=\"99\" x2=\"30\" y2=\"50\"/><line x1=\"44\" y1=\"99\" x2=\"16\" y2=\"99\" stroke-width=\"2\"/><line x1=\"37\" y1=\"111\" x2=\"23\" y2=\"111\" stroke-width=\"4\"/><text x=\"14\" y=\"94\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">+</text><text x=\"14\" y=\"116\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">−</text><polyline points=\"30,50 30,20 60,20\"/><line x1=\"60\" y1=\"20\" x2=\"83\" y2=\"20\"/><line x1=\"107\" y1=\"20\" x2=\"130\" y2=\"20\"/><circle cx=\"95\" cy=\"20\" r=\"12\"/><line x1=\"86.6\" y1=\"11.6\" x2=\"103.4\" y2=\"28.4\"/><line x1=\"86.6\" y1=\"28.4\" x2=\"103.4\" y2=\"11.6\"/><text x=\"95\" y=\"-2\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">L1</text><polyline points=\"130,20 310,20\"/><polyline points=\"190,20 190,40\"/><line x1=\"190\" y1=\"40\" x2=\"190\" y2=\"55\"/><line x1=\"190\" y1=\"85\" x2=\"190\" y2=\"100\"/><circle cx=\"190\" cy=\"55\" r=\"2.5\" fill=\"currentColor\"/><circle cx=\"190\" cy=\"85\" r=\"2.5\" fill=\"currentColor\"/><line x1=\"190\" y1=\"55\" x2=\"202\" y2=\"83\"/><text x=\"176\" y=\"70\" font-size=\"13\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">S</text><line x1=\"190\" y1=\"100\" x2=\"190\" y2=\"118\"/><line x1=\"190\" y1=\"142\" x2=\"190\" y2=\"160\"/><circle cx=\"190\" cy=\"130\" r=\"12\"/><line x1=\"181.6\" y1=\"121.6\" x2=\"198.4\" y2=\"138.4\"/><line x1=\"181.6\" y1=\"138.4\" x2=\"198.4\" y2=\"121.6\"/><text x=\"176\" y=\"130\" font-size=\"13\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">L2</text><polyline points=\"190,160 190,180\"/><polyline points=\"310,20 310,70\"/><line x1=\"310\" y1=\"70\" x2=\"310\" y2=\"88\"/><line x1=\"310\" y1=\"112\" x2=\"310\" y2=\"130\"/><circle cx=\"310\" cy=\"100\" r=\"12\"/><line x1=\"301.6\" y1=\"91.6\" x2=\"318.4\" y2=\"108.4\"/><line x1=\"301.6\" y1=\"108.4\" x2=\"318.4\" y2=\"91.6\"/><text x=\"324\" y=\"100\" font-size=\"13\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">L3</text><polyline points=\"310,130 310,180\"/><circle cx=\"190\" cy=\"20\" r=\"3.5\" fill=\"currentColor\"/><circle cx=\"190\" cy=\"180\" r=\"3.5\" fill=\"currentColor\"/><polyline points=\"310,180 30,180 30,160\"/></svg>",
+    "choices": [
+      "L1, L2, and L3",
+      "L1 only",
+      "L3 only",
+      "L1 and L3 only"
+    ],
+    "answerIndex": 3,
+    "explanation": "The open switch breaks only the branch with L2, so L2 is off. The branch with L3 is still a complete path from the battery, through L1, through L3, and back. So L1 and L3 are lit.\n\"L3 only\" forgets that the current for L3 must also pass through L1, which is in the main line.",
+    "verified": true
+  },
+  {
+    "id": "ML-CIR-005",
+    "domain": "math-logic",
+    "subtopic": "Basic circuitry",
+    "difficulty": "easy",
+    "question": "Which diagram shows the correct way to measure the current through resistor R?",
+    "choices": [
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-4 -4 198 133\" width=\"198\" height=\"133\" role=\"img\" aria-label=\"Ammeter connected across R\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"20\" y1=\"100\" x2=\"20\" y2=\"71\"/><line x1=\"20\" y1=\"59\" x2=\"20\" y2=\"30\"/><line x1=\"34\" y1=\"59\" x2=\"6\" y2=\"59\" stroke-width=\"2\"/><line x1=\"27\" y1=\"71\" x2=\"13\" y2=\"71\" stroke-width=\"4\"/><polyline points=\"20,30 20,15\"/><polyline points=\"20,15 140,15 140,35\"/><line x1=\"140\" y1=\"35\" x2=\"140\" y2=\"45\"/><line x1=\"140\" y1=\"85\" x2=\"140\" y2=\"95\"/><polyline points=\"140,45 133,48.33 147,55 133,61.67 147,68.33 133,75 147,81.67 140,85\"/><text x=\"128\" y=\"65\" font-size=\"13\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">R</text><polyline points=\"140,95 140,115 20,115 20,100\"/><polyline points=\"140,25 170,25 170,40\"/><line x1=\"170\" y1=\"40\" x2=\"170\" y2=\"53\"/><line x1=\"170\" y1=\"77\" x2=\"170\" y2=\"90\"/><circle cx=\"170\" cy=\"65\" r=\"12\"/><text x=\"170\" y=\"65.5\" font-size=\"14\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">A</text><polyline points=\"170,90 170,105 140,105\"/><circle cx=\"140\" cy=\"25\" r=\"3.5\" fill=\"currentColor\"/><circle cx=\"140\" cy=\"105\" r=\"3.5\" fill=\"currentColor\"/></svg>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-4 -4 198 133\" width=\"198\" height=\"133\" role=\"img\" aria-label=\"Ammeter in series with R\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"20\" y1=\"100\" x2=\"20\" y2=\"71\"/><line x1=\"20\" y1=\"59\" x2=\"20\" y2=\"30\"/><line x1=\"34\" y1=\"59\" x2=\"6\" y2=\"59\" stroke-width=\"2\"/><line x1=\"27\" y1=\"71\" x2=\"13\" y2=\"71\" stroke-width=\"4\"/><polyline points=\"20,30 20,15\"/><polyline points=\"20,15 40,15\"/><line x1=\"40\" y1=\"15\" x2=\"53\" y2=\"15\"/><line x1=\"77\" y1=\"15\" x2=\"90\" y2=\"15\"/><circle cx=\"65\" cy=\"15\" r=\"12\"/><text x=\"65\" y=\"15.5\" font-size=\"14\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">A</text><polyline points=\"90,15 140,15 140,35\"/><line x1=\"140\" y1=\"35\" x2=\"140\" y2=\"45\"/><line x1=\"140\" y1=\"85\" x2=\"140\" y2=\"95\"/><polyline points=\"140,45 133,48.33 147,55 133,61.67 147,68.33 133,75 147,81.67 140,85\"/><text x=\"152\" y=\"65\" font-size=\"13\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">R</text><polyline points=\"140,95 140,115 20,115 20,100\"/></svg>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-4 -4 198 133\" width=\"198\" height=\"133\" role=\"img\" aria-label=\"Ammeter connected across the battery\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"20\" y1=\"100\" x2=\"20\" y2=\"71\"/><line x1=\"20\" y1=\"59\" x2=\"20\" y2=\"30\"/><line x1=\"34\" y1=\"59\" x2=\"6\" y2=\"59\" stroke-width=\"2\"/><line x1=\"27\" y1=\"71\" x2=\"13\" y2=\"71\" stroke-width=\"4\"/><polyline points=\"20,30 20,15\"/><polyline points=\"20,15 140,15 140,35\"/><line x1=\"140\" y1=\"35\" x2=\"140\" y2=\"45\"/><line x1=\"140\" y1=\"85\" x2=\"140\" y2=\"95\"/><polyline points=\"140,45 133,48.33 147,55 133,61.67 147,68.33 133,75 147,81.67 140,85\"/><text x=\"152\" y=\"65\" font-size=\"13\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">R</text><polyline points=\"140,95 140,115 20,115 20,100\"/><polyline points=\"20,15 70,15\"/><polyline points=\"70,15 70,40\"/><line x1=\"70\" y1=\"40\" x2=\"70\" y2=\"53\"/><line x1=\"70\" y1=\"77\" x2=\"70\" y2=\"90\"/><circle cx=\"70\" cy=\"65\" r=\"12\"/><text x=\"70\" y=\"65.5\" font-size=\"14\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">A</text><polyline points=\"70,90 70,115\"/><circle cx=\"70\" cy=\"15\" r=\"3.5\" fill=\"currentColor\"/><circle cx=\"70\" cy=\"115\" r=\"3.5\" fill=\"currentColor\"/></svg>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-4 -4 198 133\" width=\"198\" height=\"133\" role=\"img\" aria-label=\"Voltmeter in series with R\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"20\" y1=\"100\" x2=\"20\" y2=\"71\"/><line x1=\"20\" y1=\"59\" x2=\"20\" y2=\"30\"/><line x1=\"34\" y1=\"59\" x2=\"6\" y2=\"59\" stroke-width=\"2\"/><line x1=\"27\" y1=\"71\" x2=\"13\" y2=\"71\" stroke-width=\"4\"/><polyline points=\"20,30 20,15\"/><polyline points=\"20,15 40,15\"/><line x1=\"40\" y1=\"15\" x2=\"53\" y2=\"15\"/><line x1=\"77\" y1=\"15\" x2=\"90\" y2=\"15\"/><circle cx=\"65\" cy=\"15\" r=\"12\"/><text x=\"65\" y=\"15.5\" font-size=\"14\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">V</text><polyline points=\"90,15 140,15 140,35\"/><line x1=\"140\" y1=\"35\" x2=\"140\" y2=\"45\"/><line x1=\"140\" y1=\"85\" x2=\"140\" y2=\"95\"/><polyline points=\"140,45 133,48.33 147,55 133,61.67 147,68.33 133,75 147,81.67 140,85\"/><text x=\"152\" y=\"65\" font-size=\"13\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">R</text><polyline points=\"140,95 140,115 20,115 20,100\"/></svg>"
+    ],
+    "choiceLayout": "grid",
+    "answerIndex": 1,
+    "explanation": "An **ammeter (A)** measures current and must be connected **in series**, so the same current that goes through R also goes through the meter.\nAn ammeter connected across R or across the battery creates a near short circuit, because an ammeter has very low resistance. A voltmeter (V) measures voltage, not current, and has very high resistance, so in series it would nearly stop the current.",
+    "verified": true
+  },
+  {
+    "id": "ML-TT-001",
+    "domain": "math-logic",
+    "subtopic": "Truth tables",
+    "difficulty": "easy",
+    "question": "Which gate has this truth table?",
+    "figure": "<table><thead><tr><th>A</th><th>B</th><th>Y</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>1</td></tr><tr><td>0</td><td>1</td><td>0</td></tr><tr><td>1</td><td>0</td><td>0</td></tr><tr><td>1</td><td>1</td><td>0</td></tr></tbody></table>",
+    "choices": [
+      "XNOR",
+      "NAND",
+      "NOR",
+      "AND"
+    ],
+    "answerIndex": 2,
+    "explanation": "The output is 1 only when both inputs are 0. That is the opposite of OR (which is 0 only when both are 0), so the gate is **NOR**: $Y = \\overline{A + B}$.\nNAND is 0 only when both inputs are 1. XNOR is 1 when the inputs are equal, so it would also give 1 for $A = B = 1$.",
+    "verified": true
+  },
+  {
+    "id": "ML-TT-002",
+    "domain": "math-logic",
+    "subtopic": "Truth tables",
+    "difficulty": "medium",
+    "question": "Which expression matches this truth table?",
+    "figure": "<table><thead><tr><th>A</th><th>B</th><th>C</th><th>Y</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td><td>1</td></tr><tr><td>0</td><td>0</td><td>1</td><td>0</td></tr><tr><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>0</td><td>1</td><td>1</td><td>0</td></tr><tr><td>1</td><td>0</td><td>0</td><td>1</td></tr><tr><td>1</td><td>0</td><td>1</td><td>0</td></tr><tr><td>1</td><td>1</td><td>0</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td><td>1</td></tr></tbody></table>",
+    "choices": [
+      "$A + \\overline{C}$",
+      "$AB + \\overline{C}$",
+      "$B + \\overline{C}$",
+      "$\\overline{C}$"
+    ],
+    "answerIndex": 1,
+    "explanation": "$Y = 1$ in every row where $C = 0$, so the expression contains $\\overline{C}$. When $C = 1$, $Y = 1$ only in the last row, where $A = B = 1$. That adds the term $AB$. So $Y = AB + \\overline{C}$.\n$\\overline{C}$ alone misses the last row. $A + \\overline{C}$ gives 1 for $A = 1, B = 0, C = 1$, but the table shows 0 there.",
+    "verified": true
+  },
+  {
+    "id": "ML-TT-003",
+    "domain": "math-logic",
+    "subtopic": "Truth tables",
+    "difficulty": "medium",
+    "question": "The rows of a truth table are listed in the order $ABC = 000, 001, 010, 011, 100, 101, 110, 111$. What is the output column for $Y = A \\cdot B + C$, in that order?",
+    "choices": [
+      "0, 1, 0, 1, 0, 1, 1, 1",
+      "0, 0, 0, 0, 0, 0, 1, 1",
+      "0, 1, 1, 1, 1, 1, 1, 1",
+      "0, 1, 0, 1, 0, 1, 0, 1"
+    ],
+    "answerIndex": 0,
+    "explanation": "$Y = 1$ whenever $C = 1$ (rows 001, 011, 101, 111) **or** both $A$ and $B$ are 1 (rows 110, 111). Every other row is 0.\nResult: 0, 1, 0, 1, 0, 1, 1, 1. The choice ending in \"0, 1\" forgets the row $110$, where $AB = 1$. The choice with mostly 1s is $A + B + C$.",
+    "verified": true
+  },
+  {
+    "id": "ML-TT-004",
+    "domain": "math-logic",
+    "subtopic": "Truth tables",
+    "difficulty": "easy",
+    "question": "A logic circuit has 5 inputs. How many rows does its complete truth table have?",
+    "choices": [
+      "$32$",
+      "$10$",
+      "$25$",
+      "$16$"
+    ],
+    "answerIndex": 0,
+    "explanation": "Each input can be 0 or 1, so $n$ inputs give $2^n$ combinations: $2^5 = 32$ rows.\n$10 = 2 \\times 5$ and $25 = 5^2$ are common mix-ups. $16 = 2^4$ is the number for 4 inputs.",
+    "verified": true
+  },
+  {
+    "id": "ML-TT-005",
+    "domain": "math-logic",
+    "subtopic": "Truth tables",
+    "difficulty": "hard",
+    "question": "Which expression matches this truth table?",
+    "figure": "<table><thead><tr><th>A</th><th>B</th><th>C</th><th>Y</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>0</td><td>1</td><td>1</td><td>0</td></tr><tr><td>1</td><td>0</td><td>0</td><td>1</td></tr><tr><td>1</td><td>0</td><td>1</td><td>0</td></tr><tr><td>1</td><td>1</td><td>0</td><td>0</td></tr><tr><td>1</td><td>1</td><td>1</td><td>1</td></tr></tbody></table>",
+    "choices": [
+      "$ABC$",
+      "$\\overline{A \\oplus B \\oplus C}$",
+      "$A \\oplus B \\oplus C$",
+      "$A + B + C$"
+    ],
+    "answerIndex": 2,
+    "explanation": "Look at when $Y = 1$: rows 001, 010, 100, and 111. Each of these has an **odd** number of 1s (one or three). This is the odd-parity function, $A \\oplus B \\oplus C$.\n$\\overline{A \\oplus B \\oplus C}$ is the even-parity function, which is the exact opposite. $A + B + C$ would also give 1 for rows like 011, but the table shows 0 there.",
+    "verified": true
+  },
+  {
+    "id": "ML-BOOL-001",
+    "domain": "math-logic",
+    "subtopic": "Boolean algebra",
+    "difficulty": "easy",
+    "question": "Simplify: $A\\overline{B} + AB$",
+    "choices": [
+      "$A\\overline{B}$",
+      "$A$",
+      "$B$",
+      "$1$"
+    ],
+    "answerIndex": 1,
+    "explanation": "Factor out $A$: $A\\overline{B} + AB = A(\\overline{B} + B) = A \\cdot 1 = A$.\nThe answer $1$ comes from applying $\\overline{B} + B = 1$ but forgetting the factor $A$.",
+    "verified": true
+  },
+  {
+    "id": "ML-BOOL-002",
+    "domain": "math-logic",
+    "subtopic": "Boolean algebra",
+    "difficulty": "medium",
+    "question": "Simplify: $A + \\overline{A}B$",
+    "choices": [
+      "$A$",
+      "$AB$",
+      "$A + B$",
+      "$\\overline{A}B$"
+    ],
+    "answerIndex": 2,
+    "explanation": "Use the distributive law $X + YZ = (X + Y)(X + Z)$:\n$$A + \\overline{A}B = (A + \\overline{A})(A + B) = 1 \\cdot (A + B) = A + B$$\nCheck with a table: if $A = 0, B = 1$, the original gives $0 + 1 \\cdot 1 = 1$, so the answer cannot be $A$ or $AB$.",
+    "verified": true
+  },
+  {
+    "id": "ML-BOOL-003",
+    "domain": "math-logic",
+    "subtopic": "Boolean algebra",
+    "difficulty": "medium",
+    "question": "Which expression is equal to $\\overline{AB + C}$?",
+    "choices": [
+      "$\\overline{A} + \\overline{B} + \\overline{C}$",
+      "$\\overline{A}\\,\\overline{B} + \\overline{C}$",
+      "$\\overline{A}\\,\\overline{B}\\,\\overline{C}$",
+      "$(\\overline{A} + \\overline{B})\\,\\overline{C}$"
+    ],
+    "answerIndex": 3,
+    "explanation": "Apply De Morgan's law twice. First, the complement of an OR becomes an AND of complements:\n$$\\overline{AB + C} = \\overline{AB} \\cdot \\overline{C}$$\nThen $\\overline{AB} = \\overline{A} + \\overline{B}$. So the result is $(\\overline{A} + \\overline{B})\\,\\overline{C}$.\nA common mistake is to complement each letter but keep the operators the same, giving $\\overline{A}\\,\\overline{B} + \\overline{C}$. De Morgan's law also swaps AND and OR.",
+    "verified": true
+  },
+  {
+    "id": "ML-BOOL-004",
+    "domain": "math-logic",
+    "subtopic": "Boolean algebra",
+    "difficulty": "hard",
+    "question": "Simplify: $AB + \\overline{A}C + BC$",
+    "choices": [
+      "$AB + \\overline{A}C$",
+      "$A + C$",
+      "$B + C$",
+      "$AB + C$"
+    ],
+    "answerIndex": 0,
+    "explanation": "The term $BC$ is redundant (this is the **consensus theorem**). Expand it as $BC(A + \\overline{A}) = ABC + \\overline{A}BC$:\n$$AB + \\overline{A}C + ABC + \\overline{A}BC = AB(1 + C) + \\overline{A}C(1 + B) = AB + \\overline{A}C$$\n$AB + C$ is too big: with $A = 1, B = 0, C = 1$ it gives 1, but the original gives $0 + 0 + 0 = 0$.",
+    "verified": true
+  },
+  {
+    "id": "ML-BOOL-005",
+    "domain": "math-logic",
+    "subtopic": "Boolean algebra",
+    "difficulty": "medium",
+    "question": "The expression $(A + B)(\\overline{A} + \\overline{B})$ is equivalent to",
+    "choices": [
+      "$A + B$",
+      "$AB$",
+      "$A \\oplus B$",
+      "$\\overline{A \\oplus B}$"
+    ],
+    "answerIndex": 2,
+    "explanation": "Expand:\n$$(A + B)(\\overline{A} + \\overline{B}) = A\\overline{A} + A\\overline{B} + \\overline{A}B + B\\overline{B} = 0 + A\\overline{B} + \\overline{A}B + 0 = A\\overline{B} + \\overline{A}B$$\nThis is exactly XOR, $A \\oplus B$. The first factor says \"at least one is 1\"; the second says \"not both are 1\". Together: exactly one is 1.",
+    "verified": true
+  },
+  {
+    "id": "ML-BOOL-006",
+    "domain": "math-logic",
+    "subtopic": "Boolean algebra",
+    "difficulty": "hard",
+    "question": "A function of three variables is $F(A, B, C) = \\sum m(0, 2, 4, 6)$, where minterm numbers use $A$ as the most significant bit. What is its simplest form?",
+    "choices": [
+      "$\\overline{B}$",
+      "$\\overline{A} + \\overline{C}$",
+      "$\\overline{C}$",
+      "$\\overline{A}\\,\\overline{C}$"
+    ],
+    "answerIndex": 2,
+    "explanation": "Write the minterms in binary ($ABC$): $0 = 000$, $2 = 010$, $4 = 100$, $6 = 110$. In all four, $C = 0$, while $A$ and $B$ take every combination. So $F = \\overline{C}$.\nOn a K-map these four cells form one group of 4 where only $C$ stays constant. $\\overline{A}\\,\\overline{C}$ covers only minterms 0 and 2.",
+    "verified": true
+  }
+]

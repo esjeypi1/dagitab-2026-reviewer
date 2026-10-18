@@ -1,0 +1,904 @@
+[
+  {
+    "id": "TK-FLO-001",
+    "domain": "technical-knowledge",
+    "subtopic": "Flowcharts",
+    "difficulty": "easy",
+    "question": "What does this flowchart do?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-4 -4 373 298\" width=\"373\" height=\"298\" role=\"img\" aria-label=\"Flowchart: START, INPUT n, decision &quot;n MOD 2 = 0?&quot;. Yes leads to OUTPUT &quot;EVEN&quot;. No leads to OUTPUT &quot;ODD&quot;. Both lead to END.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"70\" y=\"8\" width=\"100\" height=\"30\" rx=\"15\"/><text x=\"120\" y=\"23\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">START</text><polygon points=\"52,60 212,60 188,92 28,92\"/><text x=\"120\" y=\"76\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">INPUT n</text><polygon points=\"120,114 205,142 120,170 35,142\"/><text x=\"120\" y=\"142\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">n MOD 2 = 0 ?</text><polygon points=\"52,192 212,192 188,224 28,224\"/><text x=\"120\" y=\"208\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">OUTPUT &quot;EVEN&quot;</text><polygon points=\"237,192 367,192 343,224 213,224\"/><text x=\"290\" y=\"208\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">OUTPUT &quot;ODD&quot;</text><rect x=\"70\" y=\"252\" width=\"100\" height=\"30\" rx=\"15\"/><text x=\"120\" y=\"267\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">END</text><polyline points=\"120,38 120,60\"/><polygon points=\"120,60 116.96,53.7 123.04,53.7\" fill=\"currentColor\" stroke-width=\"1\"/><polyline points=\"120,92 120,114\"/><polygon points=\"120,114 116.96,107.7 123.04,107.7\" fill=\"currentColor\" stroke-width=\"1\"/><polyline points=\"120,170 120,192\"/><polygon points=\"120,192 116.96,185.7 123.04,185.7\" fill=\"currentColor\" stroke-width=\"1\"/><polyline points=\"120,224 120,252\"/><polygon points=\"120,252 116.96,245.7 123.04,245.7\" fill=\"currentColor\" stroke-width=\"1\"/><text x=\"128\" y=\"179\" font-size=\"12\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">Yes</text><polyline points=\"205,142 290,142\"/><polyline points=\"290,142 290,192\"/><polygon points=\"290,192 286.96,185.7 293.04,185.7\" fill=\"currentColor\" stroke-width=\"1\"/><text x=\"213\" y=\"132\" font-size=\"12\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">No</text><polyline points=\"290,224 290,267\"/><polyline points=\"290,267 170,267\"/><polygon points=\"170,267 176.3,263.96 176.3,270.04\" fill=\"currentColor\" stroke-width=\"1\"/></svg>",
+    "choices": [
+      "It counts how many even numbers were entered.",
+      "It tells whether the input number is positive or negative.",
+      "It divides the input number by 2 and displays the result.",
+      "It tells whether the input number is even or odd."
+    ],
+    "answerIndex": 3,
+    "explanation": "$n \\text{ MOD } 2$ is the remainder when $n$ is divided by 2. It is 0 for even numbers and 1 for odd numbers. The decision sends even numbers to OUTPUT \"EVEN\" and the rest to OUTPUT \"ODD\".\nThe flowchart never displays $n \\div 2$; MOD gives a remainder, not a quotient.",
+    "verified": true
+  },
+  {
+    "id": "TK-FLO-002",
+    "domain": "technical-knowledge",
+    "subtopic": "Flowcharts",
+    "difficulty": "medium",
+    "question": "What is the output of this flowchart?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-4 -4 368 294\" width=\"368\" height=\"294\" role=\"img\" aria-label=\"Flowchart: set sum to 0 and i to 1. While i is at most 5, add i to sum and increase i by 2. When i is greater than 5, output sum.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"70\" y=\"8\" width=\"100\" height=\"30\" rx=\"15\"/><text x=\"120\" y=\"23\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">START</text><polyline points=\"120,38 120,60\"/><polygon points=\"120,60 116.96,53.7 123.04,53.7\" fill=\"currentColor\" stroke-width=\"1\"/><rect x=\"40\" y=\"60\" width=\"160\" height=\"32\"/><text x=\"120\" y=\"76\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">sum ← 0,  i ← 1</text><polyline points=\"120,92 120,114\"/><polygon points=\"120,114 116.96,107.7 123.04,107.7\" fill=\"currentColor\" stroke-width=\"1\"/><polygon points=\"120,114 205,142 120,170 35,142\"/><text x=\"120\" y=\"142\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">i ≤ 5 ?</text><polyline points=\"120,170 120,192\"/><polygon points=\"120,192 116.96,185.7 123.04,185.7\" fill=\"currentColor\" stroke-width=\"1\"/><text x=\"128\" y=\"179\" font-size=\"12\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">Yes</text><rect x=\"40\" y=\"192\" width=\"160\" height=\"32\"/><text x=\"120\" y=\"208\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">sum ← sum + i</text><polyline points=\"120,224 120,246\"/><polygon points=\"120,246 116.96,239.7 123.04,239.7\" fill=\"currentColor\" stroke-width=\"1\"/><rect x=\"40\" y=\"246\" width=\"160\" height=\"32\"/><text x=\"120\" y=\"262\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">i ← i + 2</text><polyline points=\"40,262 10,262 10,103\"/><polyline points=\"10,103 120,103\"/><polygon points=\"120,103 113.7,106.04 113.7,99.96\" fill=\"currentColor\" stroke-width=\"1\"/><polyline points=\"205,142 290,142\"/><text x=\"213\" y=\"132\" font-size=\"12\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">No</text><polyline points=\"290,142 290,170\"/><polygon points=\"290,170 286.96,163.7 293.04,163.7\" fill=\"currentColor\" stroke-width=\"1\"/><polygon points=\"242,170 362,170 338,202 218,202\"/><text x=\"290\" y=\"186\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">OUTPUT sum</text><polyline points=\"290,202 290,224\"/><polygon points=\"290,224 286.96,217.7 293.04,217.7\" fill=\"currentColor\" stroke-width=\"1\"/><rect x=\"240\" y=\"224\" width=\"100\" height=\"30\" rx=\"15\"/><text x=\"290\" y=\"239\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">END</text></svg>",
+    "choices": [
+      "$5$",
+      "$16$",
+      "$9$",
+      "$15$"
+    ],
+    "answerIndex": 2,
+    "explanation": "Trace the loop. $i$ goes up by 2 each time:\n- $i = 1$: sum $= 1$\n- $i = 3$: sum $= 4$\n- $i = 5$: sum $= 9$\n- $i = 7$: $7 \\le 5$ is false, so output sum $= 9$.\n\n$15$ adds every number from 1 to 5, ignoring the step of 2. $16$ adds one extra pass ($1 + 3 + 5 + 7$).",
+    "verified": true
+  },
+  {
+    "id": "TK-FLO-003",
+    "domain": "technical-knowledge",
+    "subtopic": "Flowcharts",
+    "difficulty": "easy",
+    "question": "If the inputs are $A = 4$, $B = 9$, $C = 7$, what does this flowchart output?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-4 -4 358 466\" width=\"358\" height=\"466\" role=\"img\" aria-label=\"Flowchart: input A, B, C. Set M to A. If B is greater than M, set M to B. If C is greater than M, set M to C. Output M.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"70\" y=\"8\" width=\"100\" height=\"30\" rx=\"15\"/><text x=\"120\" y=\"23\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">START</text><polygon points=\"52,60 212,60 188,92 28,92\"/><text x=\"120\" y=\"76\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">INPUT A, B, C</text><rect x=\"40\" y=\"114\" width=\"160\" height=\"32\"/><text x=\"120\" y=\"130\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">M ← A</text><polygon points=\"120,168 205,196 120,224 35,196\"/><text x=\"120\" y=\"196\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">B &gt; M ?</text><rect x=\"240\" y=\"180\" width=\"100\" height=\"32\"/><text x=\"290\" y=\"196\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">M ← B</text><polygon points=\"120,268 205,296 120,324 35,296\"/><text x=\"120\" y=\"296\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">C &gt; M ?</text><rect x=\"240\" y=\"280\" width=\"100\" height=\"32\"/><text x=\"290\" y=\"296\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">M ← C</text><polygon points=\"52,368 212,368 188,400 28,400\"/><text x=\"120\" y=\"384\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">OUTPUT M</text><rect x=\"70\" y=\"422\" width=\"100\" height=\"30\" rx=\"15\"/><text x=\"120\" y=\"437\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">END</text><polyline points=\"120,38 120,60\"/><polygon points=\"120,60 116.96,53.7 123.04,53.7\" fill=\"currentColor\" stroke-width=\"1\"/><polyline points=\"120,92 120,114\"/><polygon points=\"120,114 116.96,107.7 123.04,107.7\" fill=\"currentColor\" stroke-width=\"1\"/><polyline points=\"120,146 120,168\"/><polygon points=\"120,168 116.96,161.7 123.04,161.7\" fill=\"currentColor\" stroke-width=\"1\"/><polyline points=\"120,224 120,268\"/><polygon points=\"120,268 116.96,261.7 123.04,261.7\" fill=\"currentColor\" stroke-width=\"1\"/><polyline points=\"120,324 120,368\"/><polygon points=\"120,368 116.96,361.7 123.04,361.7\" fill=\"currentColor\" stroke-width=\"1\"/><polyline points=\"120,400 120,422\"/><polygon points=\"120,422 116.96,415.7 123.04,415.7\" fill=\"currentColor\" stroke-width=\"1\"/><polyline points=\"205,196 240,196\"/><polygon points=\"240,196 233.7,199.04 233.7,192.96\" fill=\"currentColor\" stroke-width=\"1\"/><text x=\"213\" y=\"186\" font-size=\"12\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">Yes</text><polyline points=\"290,212 290,235\"/><polyline points=\"290,235 120,235\"/><polygon points=\"120,235 126.3,231.96 126.3,238.04\" fill=\"currentColor\" stroke-width=\"1\"/><text x=\"112\" y=\"233\" font-size=\"12\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">No</text><polyline points=\"205,296 240,296\"/><polygon points=\"240,296 233.7,299.04 233.7,292.96\" fill=\"currentColor\" stroke-width=\"1\"/><text x=\"213\" y=\"286\" font-size=\"12\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">Yes</text><polyline points=\"290,312 290,335\"/><polyline points=\"290,335 120,335\"/><polygon points=\"120,335 126.3,331.96 126.3,338.04\" fill=\"currentColor\" stroke-width=\"1\"/><text x=\"112\" y=\"333\" font-size=\"12\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">No</text></svg>",
+    "choices": [
+      "$9$",
+      "$7$",
+      "$20$",
+      "$4$"
+    ],
+    "answerIndex": 0,
+    "explanation": "Start with $M = 4$. Is $B = 9 > 4$? Yes, so $M = 9$. Is $C = 7 > 9$? No, so $M$ stays 9. Output: 9.\nThe flowchart finds the **largest** of the three numbers. $7$ is what you get if you forget that $M$ was already updated to 9.",
+    "verified": true
+  },
+  {
+    "id": "TK-FLO-004",
+    "domain": "technical-knowledge",
+    "subtopic": "Flowcharts",
+    "difficulty": "medium",
+    "question": "This flowchart should compute $n!$ (for example, $5! = 1 \\times 2 \\times 3 \\times 4 \\times 5 = 120$). What should replace the box marked \"?\"",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-4 -4 368 348\" width=\"368\" height=\"348\" role=\"img\" aria-label=\"Flowchart: input n, set f to 1 and i to 1. While i is at most n, do a missing step marked with a question mark, then increase i by 1. Finally output f.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"70\" y=\"8\" width=\"100\" height=\"30\" rx=\"15\"/><text x=\"120\" y=\"23\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">START</text><polyline points=\"120,38 120,60\"/><polygon points=\"120,60 116.96,53.7 123.04,53.7\" fill=\"currentColor\" stroke-width=\"1\"/><polygon points=\"52,60 212,60 188,92 28,92\"/><text x=\"120\" y=\"76\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">INPUT n</text><polyline points=\"120,92 120,114\"/><polygon points=\"120,114 116.96,107.7 123.04,107.7\" fill=\"currentColor\" stroke-width=\"1\"/><rect x=\"40\" y=\"114\" width=\"160\" height=\"32\"/><text x=\"120\" y=\"130\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">f ← 1,  i ← 1</text><polyline points=\"120,146 120,168\"/><polygon points=\"120,168 116.96,161.7 123.04,161.7\" fill=\"currentColor\" stroke-width=\"1\"/><polygon points=\"120,168 205,196 120,224 35,196\"/><text x=\"120\" y=\"196\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">i ≤ n ?</text><polyline points=\"120,224 120,246\"/><polygon points=\"120,246 116.96,239.7 123.04,239.7\" fill=\"currentColor\" stroke-width=\"1\"/><text x=\"128\" y=\"233\" font-size=\"12\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">Yes</text><rect x=\"40\" y=\"246\" width=\"160\" height=\"32\"/><text x=\"120\" y=\"262\" font-size=\"18\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">?</text><polyline points=\"120,278 120,300\"/><polygon points=\"120,300 116.96,293.7 123.04,293.7\" fill=\"currentColor\" stroke-width=\"1\"/><rect x=\"40\" y=\"300\" width=\"160\" height=\"32\"/><text x=\"120\" y=\"316\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">i ← i + 1</text><polyline points=\"40,316 10,316 10,157\"/><polyline points=\"10,157 120,157\"/><polygon points=\"120,157 113.7,160.04 113.7,153.96\" fill=\"currentColor\" stroke-width=\"1\"/><polyline points=\"205,196 290,196\"/><text x=\"213\" y=\"186\" font-size=\"12\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">No</text><polyline points=\"290,196 290,224\"/><polygon points=\"290,224 286.96,217.7 293.04,217.7\" fill=\"currentColor\" stroke-width=\"1\"/><polygon points=\"242,224 362,224 338,256 218,256\"/><text x=\"290\" y=\"240\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">OUTPUT f</text><polyline points=\"290,256 290,278\"/><polygon points=\"290,278 286.96,271.7 293.04,271.7\" fill=\"currentColor\" stroke-width=\"1\"/><rect x=\"240\" y=\"278\" width=\"100\" height=\"30\" rx=\"15\"/><text x=\"290\" y=\"293\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">END</text></svg>",
+    "choices": [
+      "$f \\leftarrow i$",
+      "$f \\leftarrow f \\times i$",
+      "$f \\leftarrow f + i$",
+      "$i \\leftarrow i \\times f$"
+    ],
+    "answerIndex": 1,
+    "explanation": "$f$ starts at 1 and must be multiplied by $1, 2, 3, \\dots, n$ in turn, so the step is $f \\leftarrow f \\times i$. For $n = 5$: $1 \\to 1 \\to 2 \\to 6 \\to 24 \\to 120$.\n$f \\leftarrow f + i$ adds instead, giving $1 + 1 + 2 + 3 + 4 + 5 = 16$. $f \\leftarrow i$ just copies the last value, giving 5. $i \\leftarrow i \\times f$ changes the counter and breaks the loop.",
+    "verified": true
+  },
+  {
+    "id": "TK-FLO-005",
+    "domain": "technical-knowledge",
+    "subtopic": "Flowcharts",
+    "difficulty": "easy",
+    "question": "Which flowchart symbol is used for a **decision** (a yes or no question)?",
+    "choices": [
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 120 80\" width=\"120\" height=\"80\" role=\"img\" aria-label=\"Diamond\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"60,10 105,40 60,70 15,40\"/><text x=\"60\" y=\"40\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\"></text></svg>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 120 80\" width=\"120\" height=\"80\" role=\"img\" aria-label=\"Parallelogram\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"32,20 112,20 88,60 8,60\"/><text x=\"60\" y=\"40\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\"></text></svg>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 120 80\" width=\"120\" height=\"80\" role=\"img\" aria-label=\"Rectangle\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"15\" y=\"20\" width=\"90\" height=\"40\"/><text x=\"60\" y=\"40\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\"></text></svg>",
+      "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 120 80\" width=\"120\" height=\"80\" role=\"img\" aria-label=\"Rounded rectangle\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"15\" y=\"23\" width=\"90\" height=\"34\" rx=\"17\"/><text x=\"60\" y=\"40\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\"></text></svg>"
+    ],
+    "choiceLayout": "grid",
+    "answerIndex": 0,
+    "explanation": "A **diamond** shows a decision, with one arrow for each answer (Yes/No).\nThe parallelogram is for input and output, the rectangle is for a process (a calculation or assignment), and the rounded rectangle (oval) marks START and END.",
+    "verified": true
+  },
+  {
+    "id": "TK-FLO-006",
+    "domain": "technical-knowledge",
+    "subtopic": "Flowcharts",
+    "difficulty": "medium",
+    "question": "How many times is the OUTPUT step carried out?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-4 -4 368 294\" width=\"368\" height=\"294\" role=\"img\" aria-label=\"Flowchart: set i to 10. While i is greater than 1, output i and then set i to i DIV 2.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"70\" y=\"8\" width=\"100\" height=\"30\" rx=\"15\"/><text x=\"120\" y=\"23\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">START</text><polyline points=\"120,38 120,60\"/><polygon points=\"120,60 116.96,53.7 123.04,53.7\" fill=\"currentColor\" stroke-width=\"1\"/><rect x=\"40\" y=\"60\" width=\"160\" height=\"32\"/><text x=\"120\" y=\"76\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">i ← 10</text><polyline points=\"120,92 120,114\"/><polygon points=\"120,114 116.96,107.7 123.04,107.7\" fill=\"currentColor\" stroke-width=\"1\"/><polygon points=\"120,114 205,142 120,170 35,142\"/><text x=\"120\" y=\"142\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">i &gt; 1 ?</text><polyline points=\"120,170 120,192\"/><polygon points=\"120,192 116.96,185.7 123.04,185.7\" fill=\"currentColor\" stroke-width=\"1\"/><text x=\"128\" y=\"179\" font-size=\"12\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">Yes</text><polygon points=\"52,192 212,192 188,224 28,224\"/><text x=\"120\" y=\"208\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">OUTPUT i</text><polyline points=\"120,224 120,246\"/><polygon points=\"120,246 116.96,239.7 123.04,239.7\" fill=\"currentColor\" stroke-width=\"1\"/><rect x=\"40\" y=\"246\" width=\"160\" height=\"32\"/><text x=\"120\" y=\"262\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">i ← i DIV 2</text><polyline points=\"40,262 10,262 10,103\"/><polyline points=\"10,103 120,103\"/><polygon points=\"120,103 113.7,106.04 113.7,99.96\" fill=\"currentColor\" stroke-width=\"1\"/><polyline points=\"205,142 290,142\"/><text x=\"213\" y=\"132\" font-size=\"12\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">No</text><polyline points=\"290,142 290,170\"/><polygon points=\"290,170 286.96,163.7 293.04,163.7\" fill=\"currentColor\" stroke-width=\"1\"/><rect x=\"240\" y=\"170\" width=\"100\" height=\"30\" rx=\"15\"/><text x=\"290\" y=\"185\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">END</text></svg>",
+    "choices": [
+      "$4$",
+      "$5$",
+      "$3$",
+      "$9$"
+    ],
+    "answerIndex": 2,
+    "explanation": "DIV gives the whole-number quotient. Trace:\n- $i = 10$: output 10, then $i = 5$\n- $i = 5$: output 5, then $i = 2$\n- $i = 2$: output 2, then $i = 1$\n- $i = 1$: $1 > 1$ is false, so the loop ends.\n\nOUTPUT runs **3** times. Choosing 4 assumes 1 is also output, but the check happens **before** the output.",
+    "verified": true
+  },
+  {
+    "id": "TK-FLO-007",
+    "domain": "technical-knowledge",
+    "subtopic": "Flowcharts",
+    "difficulty": "medium",
+    "question": "A student enters a score of 75. What does this flowchart output?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-4 -4 400 368\" width=\"400\" height=\"368\" role=\"img\" aria-label=\"Flowchart: input score. If score &gt; 90, output &quot;A&quot;. Otherwise, if score &gt; 75, output &quot;B&quot;. Otherwise output &quot;C&quot;. Then END.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"70\" y=\"8\" width=\"100\" height=\"30\" rx=\"15\"/><text x=\"120\" y=\"23\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">START</text><polygon points=\"52,60 212,60 188,92 28,92\"/><text x=\"120\" y=\"76\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">INPUT score</text><polygon points=\"120,114 205,142 120,170 35,142\"/><text x=\"120\" y=\"142\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">score &gt; 90 ?</text><polygon points=\"262,126 372,126 348,158 238,158\"/><text x=\"305\" y=\"142\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">OUTPUT &quot;A&quot;</text><polygon points=\"120,192 205,220 120,248 35,220\"/><text x=\"120\" y=\"220\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">score &gt; 75 ?</text><polygon points=\"262,204 372,204 348,236 238,236\"/><text x=\"305\" y=\"220\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">OUTPUT &quot;B&quot;</text><polygon points=\"77,270 187,270 163,302 53,302\"/><text x=\"120\" y=\"286\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">OUTPUT &quot;C&quot;</text><rect x=\"70\" y=\"324\" width=\"100\" height=\"30\" rx=\"15\"/><text x=\"120\" y=\"339\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">END</text><polyline points=\"120,38 120,60\"/><polygon points=\"120,60 116.96,53.7 123.04,53.7\" fill=\"currentColor\" stroke-width=\"1\"/><polyline points=\"120,92 120,114\"/><polygon points=\"120,114 116.96,107.7 123.04,107.7\" fill=\"currentColor\" stroke-width=\"1\"/><polyline points=\"120,170 120,192\"/><polygon points=\"120,192 116.96,185.7 123.04,185.7\" fill=\"currentColor\" stroke-width=\"1\"/><polyline points=\"120,248 120,270\"/><polygon points=\"120,270 116.96,263.7 123.04,263.7\" fill=\"currentColor\" stroke-width=\"1\"/><polyline points=\"120,302 120,324\"/><polygon points=\"120,324 116.96,317.7 123.04,317.7\" fill=\"currentColor\" stroke-width=\"1\"/><polyline points=\"205,142 250,142\"/><polygon points=\"250,142 243.7,145.04 243.7,138.96\" fill=\"currentColor\" stroke-width=\"1\"/><text x=\"213\" y=\"132\" font-size=\"12\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">Yes</text><text x=\"112\" y=\"179\" font-size=\"12\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">No</text><polyline points=\"205,220 250,220\"/><polygon points=\"250,220 243.7,223.04 243.7,216.96\" fill=\"currentColor\" stroke-width=\"1\"/><text x=\"213\" y=\"210\" font-size=\"12\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">Yes</text><text x=\"112\" y=\"257\" font-size=\"12\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">No</text><polyline points=\"365,142 385,142 385,339\"/><polyline points=\"365,220 385,220\"/><circle cx=\"385\" cy=\"220\" r=\"3\" fill=\"currentColor\"/><polyline points=\"385,339 170,339\"/><polygon points=\"170,339 176.3,335.96 176.3,342.04\" fill=\"currentColor\" stroke-width=\"1\"/></svg>",
+    "choices": [
+      "Nothing is output.",
+      "\"B\"",
+      "\"A\"",
+      "\"C\""
+    ],
+    "answerIndex": 3,
+    "explanation": "Check each decision exactly as written. Is $75 > 90$? No. Is $75 > 75$? **No**, because 75 is equal to 75, not greater. So the flowchart outputs \"C\".\nChoosing \"B\" reads the condition as $\\ge$ (greater than or equal to). In flowcharts and code, $>$ and $\\ge$ give different results at the boundary.",
+    "verified": true
+  },
+  {
+    "id": "TK-FLO-008",
+    "domain": "technical-knowledge",
+    "subtopic": "Flowcharts",
+    "difficulty": "hard",
+    "question": "What is the output when the input is $n = 472$?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-4 -4 368 348\" width=\"368\" height=\"348\" role=\"img\" aria-label=\"Flowchart: input n and set s to 0. While n is greater than 0, add n MOD 10 to s and set n to n DIV 10. Then output s.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"70\" y=\"8\" width=\"100\" height=\"30\" rx=\"15\"/><text x=\"120\" y=\"23\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">START</text><polyline points=\"120,38 120,60\"/><polygon points=\"120,60 116.96,53.7 123.04,53.7\" fill=\"currentColor\" stroke-width=\"1\"/><polygon points=\"52,60 212,60 188,92 28,92\"/><text x=\"120\" y=\"76\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">INPUT n</text><polyline points=\"120,92 120,114\"/><polygon points=\"120,114 116.96,107.7 123.04,107.7\" fill=\"currentColor\" stroke-width=\"1\"/><rect x=\"40\" y=\"114\" width=\"160\" height=\"32\"/><text x=\"120\" y=\"130\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">s ← 0</text><polyline points=\"120,146 120,168\"/><polygon points=\"120,168 116.96,161.7 123.04,161.7\" fill=\"currentColor\" stroke-width=\"1\"/><polygon points=\"120,168 205,196 120,224 35,196\"/><text x=\"120\" y=\"196\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">n &gt; 0 ?</text><polyline points=\"120,224 120,246\"/><polygon points=\"120,246 116.96,239.7 123.04,239.7\" fill=\"currentColor\" stroke-width=\"1\"/><text x=\"128\" y=\"233\" font-size=\"12\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">Yes</text><rect x=\"40\" y=\"246\" width=\"160\" height=\"32\"/><text x=\"120\" y=\"262\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">s ← s + (n MOD 10)</text><polyline points=\"120,278 120,300\"/><polygon points=\"120,300 116.96,293.7 123.04,293.7\" fill=\"currentColor\" stroke-width=\"1\"/><rect x=\"40\" y=\"300\" width=\"160\" height=\"32\"/><text x=\"120\" y=\"316\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">n ← n DIV 10</text><polyline points=\"40,316 10,316 10,157\"/><polyline points=\"10,157 120,157\"/><polygon points=\"120,157 113.7,160.04 113.7,153.96\" fill=\"currentColor\" stroke-width=\"1\"/><polyline points=\"205,196 290,196\"/><text x=\"213\" y=\"186\" font-size=\"12\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">No</text><polyline points=\"290,196 290,224\"/><polygon points=\"290,224 286.96,217.7 293.04,217.7\" fill=\"currentColor\" stroke-width=\"1\"/><polygon points=\"242,224 362,224 338,256 218,256\"/><text x=\"290\" y=\"240\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">OUTPUT s</text><polyline points=\"290,256 290,278\"/><polygon points=\"290,278 286.96,271.7 293.04,271.7\" fill=\"currentColor\" stroke-width=\"1\"/><rect x=\"240\" y=\"278\" width=\"100\" height=\"30\" rx=\"15\"/><text x=\"290\" y=\"293\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">END</text></svg>",
+    "choices": [
+      "$13$",
+      "$2$",
+      "$274$",
+      "$472$"
+    ],
+    "answerIndex": 0,
+    "explanation": "$n \\text{ MOD } 10$ is the last digit and $n \\text{ DIV } 10$ removes the last digit.\n- $n = 472$: $s = 0 + 2 = 2$, $n = 47$\n- $n = 47$: $s = 2 + 7 = 9$, $n = 4$\n- $n = 4$: $s = 9 + 4 = 13$, $n = 0$\n- $n = 0$: stop and output 13.\n\nThe flowchart adds the digits. $274$ would come from building the reversed number, which this flowchart does not do.",
+    "verified": true
+  },
+  {
+    "id": "TK-FLO-009",
+    "domain": "technical-knowledge",
+    "subtopic": "Flowcharts",
+    "difficulty": "medium",
+    "question": "What is the output of this flowchart?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-4 -4 368 346\" width=\"368\" height=\"346\" role=\"img\" aria-label=\"Flowchart: set x to 1. Multiply x by 3. If x is not greater than 50, go back and multiply again. When x is greater than 50, output x.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"70\" y=\"8\" width=\"100\" height=\"30\" rx=\"15\"/><text x=\"120\" y=\"23\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">START</text><polyline points=\"120,38 120,60\"/><polygon points=\"120,60 116.96,53.7 123.04,53.7\" fill=\"currentColor\" stroke-width=\"1\"/><rect x=\"40\" y=\"60\" width=\"160\" height=\"32\"/><text x=\"120\" y=\"76\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">x ← 1</text><polyline points=\"120,92 120,114\"/><polygon points=\"120,114 116.96,107.7 123.04,107.7\" fill=\"currentColor\" stroke-width=\"1\"/><rect x=\"40\" y=\"114\" width=\"160\" height=\"32\"/><text x=\"120\" y=\"130\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">x ← x × 3</text><polyline points=\"120,146 120,168\"/><polygon points=\"120,168 116.96,161.7 123.04,161.7\" fill=\"currentColor\" stroke-width=\"1\"/><polygon points=\"120,168 205,196 120,224 35,196\"/><text x=\"120\" y=\"196\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">x &gt; 50 ?</text><polyline points=\"35,196 10,196 10,103\"/><polyline points=\"10,103 120,103\"/><polygon points=\"120,103 113.7,106.04 113.7,99.96\" fill=\"currentColor\" stroke-width=\"1\"/><text x=\"29\" y=\"186\" font-size=\"12\" text-anchor=\"end\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">No</text><polyline points=\"120,224 120,246\"/><polygon points=\"120,246 116.96,239.7 123.04,239.7\" fill=\"currentColor\" stroke-width=\"1\"/><text x=\"128\" y=\"233\" font-size=\"12\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">Yes</text><polygon points=\"52,246 212,246 188,278 28,278\"/><text x=\"120\" y=\"262\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">OUTPUT x</text><polyline points=\"120,278 120,300\"/><polygon points=\"120,300 116.96,293.7 123.04,293.7\" fill=\"currentColor\" stroke-width=\"1\"/><rect x=\"70\" y=\"300\" width=\"100\" height=\"30\" rx=\"15\"/><text x=\"120\" y=\"315\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">END</text></svg>",
+    "choices": [
+      "$81$",
+      "$243$",
+      "$54$",
+      "$27$"
+    ],
+    "answerIndex": 0,
+    "explanation": "The multiplication happens **before** the check. $x$ goes $1 \\to 3 \\to 9 \\to 27 \\to 81$.\nAfter $x = 27$, the check $27 > 50$ is No, so it multiplies again to get 81. Now $81 > 50$ is Yes, so it outputs 81.\n$27$ stops one step too early. $243$ multiplies one extra time.",
+    "verified": true
+  },
+  {
+    "id": "TK-FLO-010",
+    "domain": "technical-knowledge",
+    "subtopic": "Flowcharts",
+    "difficulty": "easy",
+    "question": "The inputs are $A = 5$ and $B = 8$. What does this flowchart output?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-4 -4 268 376\" width=\"268\" height=\"376\" role=\"img\" aria-label=\"Flowchart: input A and B, then T gets A, A gets B, B gets T, then output A and B.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"80\" y=\"8\" width=\"100\" height=\"30\" rx=\"15\"/><text x=\"130\" y=\"23\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">START</text><polyline points=\"130,38 130,60\"/><polygon points=\"130,60 126.96,53.7 133.04,53.7\" fill=\"currentColor\" stroke-width=\"1\"/><polygon points=\"62,60 222,60 198,92 38,92\"/><text x=\"130\" y=\"76\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">INPUT A, B</text><polyline points=\"130,92 130,114\"/><polygon points=\"130,114 126.96,107.7 133.04,107.7\" fill=\"currentColor\" stroke-width=\"1\"/><rect x=\"50\" y=\"114\" width=\"160\" height=\"32\"/><text x=\"130\" y=\"130\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">T ← A</text><polyline points=\"130,146 130,168\"/><polygon points=\"130,168 126.96,161.7 133.04,161.7\" fill=\"currentColor\" stroke-width=\"1\"/><rect x=\"50\" y=\"168\" width=\"160\" height=\"32\"/><text x=\"130\" y=\"184\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">A ← B</text><polyline points=\"130,200 130,222\"/><polygon points=\"130,222 126.96,215.7 133.04,215.7\" fill=\"currentColor\" stroke-width=\"1\"/><rect x=\"50\" y=\"222\" width=\"160\" height=\"32\"/><text x=\"130\" y=\"238\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">B ← T</text><polyline points=\"130,254 130,276\"/><polygon points=\"130,276 126.96,269.7 133.04,269.7\" fill=\"currentColor\" stroke-width=\"1\"/><polygon points=\"62,276 222,276 198,308 38,308\"/><text x=\"130\" y=\"292\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">OUTPUT A, B</text><polyline points=\"130,308 130,330\"/><polygon points=\"130,330 126.96,323.7 133.04,323.7\" fill=\"currentColor\" stroke-width=\"1\"/><rect x=\"80\" y=\"330\" width=\"100\" height=\"30\" rx=\"15\"/><text x=\"130\" y=\"345\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">END</text></svg>",
+    "choices": [
+      "$5,\\ 5$",
+      "$8,\\ 5$",
+      "$8,\\ 8$",
+      "$5,\\ 8$"
+    ],
+    "answerIndex": 1,
+    "explanation": "The flowchart **swaps** the two values using a temporary variable $T$:\n$T = 5$, then $A = 8$, then $B = T = 5$. Output: $8, 5$.\nWithout $T$ (writing $A \\leftarrow B$ then $B \\leftarrow A$), both would end up as 8. That is why the temporary variable is needed.",
+    "verified": true
+  },
+  {
+    "id": "TK-FLO-011",
+    "domain": "technical-knowledge",
+    "subtopic": "Flowcharts",
+    "difficulty": "hard",
+    "question": "What is the output of this flowchart?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-4 -4 393 380\" width=\"393\" height=\"380\" role=\"img\" aria-label=\"Flowchart: set count to 0 and i to 1. While i is at most 20: if i MOD 3 = 0 then add 1 to count; then add 1 to i. When i exceeds 20, output count.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"70\" y=\"8\" width=\"100\" height=\"30\" rx=\"15\"/><text x=\"120\" y=\"23\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">START</text><rect x=\"40\" y=\"60\" width=\"160\" height=\"32\"/><text x=\"120\" y=\"76\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">count ← 0,  i ← 1</text><polygon points=\"120,114 205,142 120,170 35,142\"/><text x=\"120\" y=\"142\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">i ≤ 20 ?</text><polygon points=\"120,192 205,220 120,248 35,220\"/><text x=\"120\" y=\"220\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">i MOD 3 = 0 ?</text><rect x=\"40\" y=\"270\" width=\"160\" height=\"32\"/><text x=\"120\" y=\"286\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">count ← count + 1</text><rect x=\"40\" y=\"334\" width=\"160\" height=\"32\"/><text x=\"120\" y=\"350\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">i ← i + 1</text><polygon points=\"267,280 387,280 363,312 243,312\"/><text x=\"315\" y=\"296\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">OUTPUT count</text><rect x=\"265\" y=\"334\" width=\"100\" height=\"30\" rx=\"15\"/><text x=\"315\" y=\"349\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">END</text><polyline points=\"120,38 120,60\"/><polygon points=\"120,60 116.96,53.7 123.04,53.7\" fill=\"currentColor\" stroke-width=\"1\"/><polyline points=\"120,92 120,114\"/><polygon points=\"120,114 116.96,107.7 123.04,107.7\" fill=\"currentColor\" stroke-width=\"1\"/><polyline points=\"120,170 120,192\"/><polygon points=\"120,192 116.96,185.7 123.04,185.7\" fill=\"currentColor\" stroke-width=\"1\"/><polyline points=\"120,248 120,270\"/><polygon points=\"120,270 116.96,263.7 123.04,263.7\" fill=\"currentColor\" stroke-width=\"1\"/><polyline points=\"120,302 120,334\"/><polygon points=\"120,334 116.96,327.7 123.04,327.7\" fill=\"currentColor\" stroke-width=\"1\"/><text x=\"128\" y=\"179\" font-size=\"12\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">Yes</text><text x=\"128\" y=\"257\" font-size=\"12\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">Yes</text><polyline points=\"205,220 230,220 230,323\"/><polyline points=\"230,323 120,323\"/><polygon points=\"120,323 126.3,319.96 126.3,326.04\" fill=\"currentColor\" stroke-width=\"1\"/><text x=\"208\" y=\"210\" font-size=\"12\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">No</text><polyline points=\"40,350 10,350 10,103\"/><polyline points=\"10,103 120,103\"/><polygon points=\"120,103 113.7,106.04 113.7,99.96\" fill=\"currentColor\" stroke-width=\"1\"/><polyline points=\"205,142 315,142\"/><polyline points=\"315,142 315,280\"/><polygon points=\"315,280 311.96,273.7 318.04,273.7\" fill=\"currentColor\" stroke-width=\"1\"/><polyline points=\"315,312 315,334\"/><polygon points=\"315,334 311.96,327.7 318.04,327.7\" fill=\"currentColor\" stroke-width=\"1\"/><text x=\"213\" y=\"132\" font-size=\"12\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">No</text></svg>",
+    "choices": [
+      "$3$",
+      "$6$",
+      "$20$",
+      "$7$"
+    ],
+    "answerIndex": 1,
+    "explanation": "The loop checks $i = 1, 2, \\dots, 20$ and adds 1 to count whenever $i$ is divisible by 3: $3, 6, 9, 12, 15, 18$. That is **6** numbers.\n$7$ wrongly includes 21, but the loop stops when $i > 20$. $20$ counts every pass of the loop instead of only the multiples of 3.",
+    "verified": true
+  },
+  {
+    "id": "TK-PSE-001",
+    "domain": "technical-knowledge",
+    "subtopic": "Pseudocode matching",
+    "difficulty": "medium",
+    "question": "Which pseudocode correctly reads three numbers and outputs their average?",
+    "choices": [
+      "`INPUT a, b, c`\n`avg ← (a + b + c) / 3`\n`OUTPUT avg`",
+      "`INPUT a, b, c`\n`avg ← a + b + c / 3`\n`OUTPUT avg`",
+      "`INPUT a, b, c`\n`avg ← (a + b + c) * 3`\n`OUTPUT avg`",
+      "`INPUT a, b, c`\n`avg ← a / 3 + b + c`\n`OUTPUT avg`"
+    ],
+    "answerIndex": 0,
+    "explanation": "The average is the sum divided by 3, and the parentheses make sure the whole sum is divided.\nWithout parentheses, $a + b + c / 3$ divides only $c$ by 3, because division is done before addition. For $a = b = c = 3$, it gives $3 + 3 + 1 = 7$ instead of 3.",
+    "verified": true
+  },
+  {
+    "id": "TK-PSE-002",
+    "domain": "technical-knowledge",
+    "subtopic": "Pseudocode matching",
+    "difficulty": "medium",
+    "question": "What is the output of this pseudocode?",
+    "code": "count ← 0\nFOR i FROM 1 TO 4 DO\n    FOR j FROM 1 TO i DO\n        count ← count + 1\n    END FOR\nEND FOR\nOUTPUT count",
+    "choices": [
+      "$10$",
+      "$4$",
+      "$8$",
+      "$16$"
+    ],
+    "answerIndex": 0,
+    "explanation": "The inner loop runs $i$ times for each value of $i$:\n$$1 + 2 + 3 + 4 = 10$$\n$16 = 4 \\times 4$ assumes the inner loop always runs 4 times, but its upper limit is $i$, which changes.",
+    "verified": true
+  },
+  {
+    "id": "TK-PSE-003",
+    "domain": "technical-knowledge",
+    "subtopic": "Pseudocode matching",
+    "difficulty": "hard",
+    "question": "What is the output of this pseudocode?",
+    "code": "x ← 5\ny ← 3\nx ← x + y\ny ← x - y\nx ← x - y\nOUTPUT x, y",
+    "choices": [
+      "$5,\\ 3$",
+      "$3,\\ 3$",
+      "$3,\\ 5$",
+      "$8,\\ 5$"
+    ],
+    "answerIndex": 2,
+    "explanation": "Trace one line at a time, always using the **newest** values:\n- $x = 5 + 3 = 8$\n- $y = 8 - 3 = 5$\n- $x = 8 - 5 = 3$\n\nOutput: $3, 5$. The code swaps $x$ and $y$ without a temporary variable. $8, 5$ stops tracing one line early.",
+    "verified": true
+  },
+  {
+    "id": "TK-PSE-004",
+    "domain": "technical-knowledge",
+    "subtopic": "Pseudocode matching",
+    "difficulty": "medium",
+    "question": "Which pseudocode does the same thing as this flowchart?",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-4 -4 368 294\" width=\"368\" height=\"294\" role=\"img\" aria-label=\"Flowchart: set i to 1. If i &gt; 3, end. Otherwise output i, add 1 to i, and check again.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"70\" y=\"8\" width=\"100\" height=\"30\" rx=\"15\"/><text x=\"120\" y=\"23\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">START</text><polyline points=\"120,38 120,60\"/><polygon points=\"120,60 116.96,53.7 123.04,53.7\" fill=\"currentColor\" stroke-width=\"1\"/><rect x=\"40\" y=\"60\" width=\"160\" height=\"32\"/><text x=\"120\" y=\"76\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">i ← 1</text><polyline points=\"120,92 120,114\"/><polygon points=\"120,114 116.96,107.7 123.04,107.7\" fill=\"currentColor\" stroke-width=\"1\"/><polygon points=\"120,114 205,142 120,170 35,142\"/><text x=\"120\" y=\"142\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">i &gt; 3 ?</text><polyline points=\"120,170 120,192\"/><polygon points=\"120,192 116.96,185.7 123.04,185.7\" fill=\"currentColor\" stroke-width=\"1\"/><text x=\"128\" y=\"179\" font-size=\"12\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">No</text><polygon points=\"52,192 212,192 188,224 28,224\"/><text x=\"120\" y=\"208\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">OUTPUT i</text><polyline points=\"120,224 120,246\"/><polygon points=\"120,246 116.96,239.7 123.04,239.7\" fill=\"currentColor\" stroke-width=\"1\"/><rect x=\"40\" y=\"246\" width=\"160\" height=\"32\"/><text x=\"120\" y=\"262\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">i ← i + 1</text><polyline points=\"40,262 10,262 10,103\"/><polyline points=\"10,103 120,103\"/><polygon points=\"120,103 113.7,106.04 113.7,99.96\" fill=\"currentColor\" stroke-width=\"1\"/><polyline points=\"205,142 290,142\"/><text x=\"213\" y=\"132\" font-size=\"12\" text-anchor=\"start\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\" font-weight=\"bold\">Yes</text><polyline points=\"290,142 290,170\"/><polygon points=\"290,170 286.96,163.7 293.04,163.7\" fill=\"currentColor\" stroke-width=\"1\"/><rect x=\"240\" y=\"170\" width=\"100\" height=\"30\" rx=\"15\"/><text x=\"290\" y=\"185\" font-size=\"13\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">END</text></svg>",
+    "choices": [
+      "`i ← 1`\n`WHILE i > 3 DO`\n`    OUTPUT i`\n`    i ← i + 1`\n`END WHILE`",
+      "`i ← 1`\n`WHILE i ≤ 3 DO`\n`    OUTPUT i`\n`    i ← i + 1`\n`END WHILE`",
+      "`i ← 1`\n`WHILE i ≤ 3 DO`\n`    i ← i + 1`\n`    OUTPUT i`\n`END WHILE`",
+      "`i ← 1`\n`WHILE i < 3 DO`\n`    OUTPUT i`\n`    i ← i + 1`\n`END WHILE`"
+    ],
+    "answerIndex": 1,
+    "explanation": "The flowchart **leaves** the loop when $i > 3$, so it **stays** in the loop while $i \\le 3$. Inside, it outputs $i$ first, then adds 1. Output: 1, 2, 3.\nWHILE $i < 3$ stops too early (outputs only 1, 2). Putting $i \\leftarrow i + 1$ before OUTPUT gives 2, 3, 4. WHILE $i > 3$ never runs at all.",
+    "verified": true
+  },
+  {
+    "id": "TK-PSE-005",
+    "domain": "technical-knowledge",
+    "subtopic": "Pseudocode matching",
+    "difficulty": "medium",
+    "question": "What does this pseudocode output?",
+    "code": "FOR i FROM 1 TO 10 DO\n    IF i MOD 2 = 0 AND i MOD 3 = 0 THEN\n        OUTPUT i\n    END IF\nEND FOR",
+    "choices": [
+      "2, 4, 6, 8, 10",
+      "6, 12",
+      "6",
+      "2, 3, 4, 6, 8, 9, 10"
+    ],
+    "answerIndex": 2,
+    "explanation": "With AND, both conditions must be true: $i$ must be divisible by 2 **and** by 3, which means divisible by 6. From 1 to 10, only 6 works.\n\"2, 3, 4, 6, 8, 9, 10\" is what OR would give. \"6, 12\" goes past the loop's upper limit of 10.",
+    "verified": true
+  },
+  {
+    "id": "TK-PSE-006",
+    "domain": "technical-knowledge",
+    "subtopic": "Pseudocode matching",
+    "difficulty": "easy",
+    "question": "What is the output of this pseudocode?",
+    "code": "total ← 0\nFOR k FROM 1 TO 5 DO\n    total ← total + k * k\nEND FOR\nOUTPUT total",
+    "choices": [
+      "$25$",
+      "$15$",
+      "$55$",
+      "$225$"
+    ],
+    "answerIndex": 2,
+    "explanation": "The loop adds the squares: $1 + 4 + 9 + 16 + 25 = 55$.\n$15$ adds $k$ instead of $k^2$. $225 = 15^2$ squares the sum instead of summing the squares. $25$ is only the last square.",
+    "verified": true
+  },
+  {
+    "id": "TK-PSE-007",
+    "domain": "technical-knowledge",
+    "subtopic": "Pseudocode matching",
+    "difficulty": "medium",
+    "question": "What is the value of $f(4)$?",
+    "code": "FUNCTION f(n)\n    IF n ≤ 1 THEN\n        RETURN 1\n    ELSE\n        RETURN n * f(n - 1)\n    END IF\nEND FUNCTION",
+    "choices": [
+      "$10$",
+      "$120$",
+      "$4$",
+      "$24$"
+    ],
+    "answerIndex": 3,
+    "explanation": "The function calls itself with a smaller input until it reaches 1:\n$$f(4) = 4 \\cdot f(3) = 4 \\cdot 3 \\cdot f(2) = 4 \\cdot 3 \\cdot 2 \\cdot f(1) = 4 \\cdot 3 \\cdot 2 \\cdot 1 = 24$$\nThis is the factorial, $4!$. $10 = 4 + 3 + 2 + 1$ adds instead of multiplying. $120 = 5!$.",
+    "verified": true
+  },
+  {
+    "id": "TK-PSE-008",
+    "domain": "technical-knowledge",
+    "subtopic": "Pseudocode matching",
+    "difficulty": "hard",
+    "question": "This pseudocode is meant to find the largest number in list A. What does it actually output?",
+    "code": "A ← [-4, -9, -2, -7]\nmax ← 0\nFOR EACH x IN A DO\n    IF x > max THEN\n        max ← x\n    END IF\nEND FOR\nOUTPUT max",
+    "choices": [
+      "$-4$",
+      "$-9$",
+      "$0$",
+      "$-2$"
+    ],
+    "answerIndex": 2,
+    "explanation": "Every number in the list is negative, so none of them is greater than the starting value $\\text{max} = 0$. The IF is never true, and the output is 0, which is not even in the list.\nThe intended answer, $-2$, would come out only if max started at the first number in the list, $-4$. This is a classic bug: the starting value must come from the data.",
+    "verified": true
+  },
+  {
+    "id": "TK-PSE-009",
+    "domain": "technical-knowledge",
+    "subtopic": "Pseudocode matching",
+    "difficulty": "medium",
+    "question": "Which pseudocode outputs exactly 10, 8, 6, 4, 2 (in that order)?",
+    "choices": [
+      "`n ← 10`\n`WHILE n ≥ 0 DO`\n`    OUTPUT n`\n`    n ← n - 2`\n`END WHILE`",
+      "`n ← 10`\n`WHILE n > 0 DO`\n`    n ← n - 2`\n`    OUTPUT n`\n`END WHILE`",
+      "`n ← 10`\n`WHILE n > 0 DO`\n`    OUTPUT n`\n`    n ← n - 2`\n`END WHILE`",
+      "`n ← 10`\n`WHILE n > 2 DO`\n`    OUTPUT n`\n`    n ← n - 2`\n`END WHILE`"
+    ],
+    "answerIndex": 2,
+    "explanation": "Trace the version with WHILE $n > 0$ and OUTPUT before the subtraction: it outputs 10, 8, 6, 4, 2; then $n = 0$ and $0 > 0$ is false, so it stops.\nWHILE $n \\ge 0$ also outputs 0. WHILE $n > 2$ stops before outputting 2. Subtracting before OUTPUT gives 8, 6, 4, 2, 0.",
+    "verified": true
+  },
+  {
+    "id": "TK-PSE-010",
+    "domain": "technical-knowledge",
+    "subtopic": "Pseudocode matching",
+    "difficulty": "easy",
+    "question": "What is the output of this pseudocode?",
+    "code": "a ← 2\nREPEAT\n    a ← a * a\nUNTIL a > 100\nOUTPUT a",
+    "choices": [
+      "$100$",
+      "$256$",
+      "$16$",
+      "$128$"
+    ],
+    "answerIndex": 1,
+    "explanation": "Each pass squares $a$: $2 \\to 4 \\to 16 \\to 256$. After 16, the check $16 > 100$ is false, so it repeats once more to get 256, which is greater than 100.\n$128$ doubles instead of squaring. $100$ is just the limit in the condition.",
+    "verified": true
+  },
+  {
+    "id": "TK-PSE-011",
+    "domain": "technical-knowledge",
+    "subtopic": "Pseudocode matching",
+    "difficulty": "easy",
+    "question": "What is the output of this pseudocode?",
+    "code": "x ← 17\nOUTPUT x DIV 5, x MOD 5",
+    "choices": [
+      "$3,\\ 0.4$",
+      "$3,\\ 2$",
+      "$3.4,\\ 2$",
+      "$2,\\ 3$"
+    ],
+    "answerIndex": 1,
+    "explanation": "$17 = 5 \\times 3 + 2$. DIV gives the whole-number quotient, 3. MOD gives the remainder, 2.\n$3.4$ is ordinary division, which DIV does not do. $0.4$ is the decimal part, not the remainder.",
+    "verified": true
+  },
+  {
+    "id": "TK-PRG-001",
+    "domain": "technical-knowledge",
+    "subtopic": "Basic programming logic",
+    "difficulty": "medium",
+    "question": "For which values of the integer $x$ is the condition NOT (x < 3 OR x > 8) TRUE?",
+    "choices": [
+      "$x \\ge 3$",
+      "$x < 3$ or $x > 8$",
+      "$3 \\le x \\le 8$",
+      "$3 < x < 8$"
+    ],
+    "answerIndex": 2,
+    "explanation": "By De Morgan's law, NOT ($x < 3$ OR $x > 8$) is the same as ($x \\ge 3$ AND $x \\le 8$), which is $3 \\le x \\le 8$.\nWatch the boundaries: NOT ($x < 3$) is $x \\ge 3$, so 3 is included. The choice $3 < x < 8$ wrongly leaves out 3 and 8.",
+    "verified": true
+  },
+  {
+    "id": "TK-PRG-002",
+    "domain": "technical-knowledge",
+    "subtopic": "Basic programming logic",
+    "difficulty": "medium",
+    "question": "Using the usual order of operations (powers first, then $*$ and $/$ from left to right, then $+$ and $-$), what is the value of `2 + 3 * 4 ^ 2 / 8 - 1`?",
+    "choices": [
+      "$5.25$",
+      "$23.5$",
+      "$7$",
+      "$49$"
+    ],
+    "answerIndex": 2,
+    "explanation": "Power first: $4^2 = 16$. Then $*$ and $/$ left to right: $3 \\times 16 = 48$, then $48 \\div 8 = 6$. Finally $2 + 6 - 1 = 7$.\n$49$ comes from working strictly left to right: $((2 + 3) \\times 4)^2 \\div 8 - 1$. $23.5$ does $2 + 3 \\times 4 = 14$ first and then squares it.",
+    "verified": true
+  },
+  {
+    "id": "TK-PRG-003",
+    "domain": "technical-knowledge",
+    "subtopic": "Basic programming logic",
+    "difficulty": "easy",
+    "question": "A program needs a variable that stores whether a push button is currently pressed. Which data type fits best?",
+    "choices": [
+      "String",
+      "Boolean",
+      "Integer",
+      "Floating-point (real)"
+    ],
+    "answerIndex": 1,
+    "explanation": "A button is either pressed or not pressed: exactly two states. A **Boolean** stores TRUE or FALSE, which matches perfectly and uses the least memory.\nAn integer or string could be made to work (0/1 or \"yes\"/\"no\"), but they allow many meaningless values.",
+    "verified": true
+  },
+  {
+    "id": "TK-PRG-004",
+    "domain": "technical-knowledge",
+    "subtopic": "Basic programming logic",
+    "difficulty": "easy",
+    "question": "How many times does the body of the loop `FOR i FROM 3 TO 12 DO ... END FOR` run?",
+    "choices": [
+      "$9$",
+      "$11$",
+      "$10$",
+      "$12$"
+    ],
+    "answerIndex": 2,
+    "explanation": "When both ends are included, the count is $\\text{last} - \\text{first} + 1 = 12 - 3 + 1 = 10$.\n$9$ is the classic \"off-by-one\" mistake of computing only $12 - 3$. List them to check: 3, 4, 5, 6, 7, 8, 9, 10, 11, 12.",
+    "verified": true
+  },
+  {
+    "id": "TK-PRG-005",
+    "domain": "technical-knowledge",
+    "subtopic": "Basic programming logic",
+    "difficulty": "medium",
+    "question": "An array is `A = [5, 10, 15, 20, 25]`, and its first element is `A[0]`. What is the value of `A[A[0] - 3]`?",
+    "choices": [
+      "$20$",
+      "$2$",
+      "$15$",
+      "$10$"
+    ],
+    "answerIndex": 2,
+    "explanation": "Work from the inside out. $A[0] = 5$, so the index is $5 - 3 = 2$. With indexing that starts at 0, $A[2]$ is the **third** element: 15.\n$10$ treats index 2 as the second element (counting from 1). $2$ stops at the index and forgets to look it up.",
+    "verified": true
+  },
+  {
+    "id": "TK-PRG-006",
+    "domain": "technical-knowledge",
+    "subtopic": "Basic programming logic",
+    "difficulty": "medium",
+    "question": "A robot has two sensors, L and R, each TRUE when it detects an obstacle. The robot should beep only when **exactly one** sensor detects an obstacle. Which condition is correct?",
+    "choices": [
+      "L OR R",
+      "(L AND NOT R) OR (NOT L AND R)",
+      "NOT (L OR R)",
+      "L AND R"
+    ],
+    "answerIndex": 1,
+    "explanation": "\"Exactly one\" means: L is true and R is false, **or** L is false and R is true. That is the exclusive OR (XOR).\n\"L OR R\" also beeps when **both** sensors detect something. \"L AND R\" beeps only when both do. \"NOT (L OR R)\" beeps only when neither does.",
+    "verified": true
+  },
+  {
+    "id": "TK-PRG-007",
+    "domain": "technical-knowledge",
+    "subtopic": "Basic programming logic",
+    "difficulty": "medium",
+    "question": "What is the decimal number 45 written in binary?",
+    "choices": [
+      "$101101$",
+      "$101011$",
+      "$100101$",
+      "$110101$"
+    ],
+    "answerIndex": 0,
+    "explanation": "Break 45 into powers of 2: $45 = 32 + 8 + 4 + 1$.\n$$\\begin{array}{cccccc} 32 & 16 & 8 & 4 & 2 & 1 \\\\ 1 & 0 & 1 & 1 & 0 & 1 \\end{array}$$\nSo $45 = 101101_2$. $101011_2 = 43$ swaps two digits, and $100101_2 = 37$ misses the 8.",
+    "verified": true
+  },
+  {
+    "id": "TK-PRG-008",
+    "domain": "technical-knowledge",
+    "subtopic": "Basic programming logic",
+    "difficulty": "medium",
+    "question": "What is the hexadecimal number $2\\text{F}_{16}$ in decimal?",
+    "choices": [
+      "$32$",
+      "$37$",
+      "$47$",
+      "$215$"
+    ],
+    "answerIndex": 2,
+    "explanation": "In hexadecimal, F stands for 15, and each place is a power of 16:\n$$2\\text{F}_{16} = 2 \\times 16 + 15 \\times 1 = 32 + 15 = 47$$\n$215$ just writes \"2\" and \"15\" side by side. $37$ treats F as 5.",
+    "verified": true
+  },
+  {
+    "id": "TK-PRG-009",
+    "domain": "technical-knowledge",
+    "subtopic": "Basic programming logic",
+    "difficulty": "medium",
+    "question": "What is the sum of the binary numbers $1011_2 + 0110_2$?",
+    "choices": [
+      "$11101_2$",
+      "$10011_2$",
+      "$10001_2$",
+      "$1101_2$"
+    ],
+    "answerIndex": 2,
+    "explanation": "In decimal, $1011_2 = 11$ and $0110_2 = 6$, so the sum is $17 = 10001_2$.\nColumn by column from the right: $1 + 0 = 1$; $1 + 1 = 10$ (write 0, carry 1); $0 + 1 + 1 = 10$ (write 0, carry 1); $1 + 0 + 1 = 10$ (write 0, carry 1); then the carry 1.\n$1101_2$ forgets the carries (it uses OR on each column).",
+    "verified": true
+  },
+  {
+    "id": "TK-PRG-010",
+    "domain": "technical-knowledge",
+    "subtopic": "Basic programming logic",
+    "difficulty": "easy",
+    "question": "This pseudocode should output the sum of $n$ numbers entered by the user, but it gives a wrong answer. Which line has the bug?",
+    "code": "1  sum ← 0\n2  FOR i FROM 1 TO n DO\n3      INPUT x\n4      sum ← x\n5  END FOR\n6  OUTPUT sum",
+    "choices": [
+      "Line 2 should be `FOR i FROM 0 TO n DO`",
+      "Line 1 should be `sum ← 1`",
+      "Line 4 should be `sum ← sum + x`",
+      "Line 6 should be `OUTPUT x`"
+    ],
+    "answerIndex": 2,
+    "explanation": "Line 4 **replaces** sum with the newest number each time, so the program outputs only the last number entered. To add up all the numbers, it must keep the old total: $\\text{sum} \\leftarrow \\text{sum} + x$.\nStarting sum at 1 would make every answer 1 too big. Looping from 0 to $n$ would read $n + 1$ numbers.",
+    "verified": true
+  },
+  {
+    "id": "TK-PRG-011",
+    "domain": "technical-knowledge",
+    "subtopic": "Basic programming logic",
+    "difficulty": "hard",
+    "question": "Which condition is TRUE exactly when the year $y$ is a multiple of 4 but **not** a multiple of 100?",
+    "choices": [
+      "y MOD 4 = 0 AND y MOD 100 ≠ 0",
+      "y MOD 4 ≠ 0 AND y MOD 100 = 0",
+      "y MOD 100 = 0 AND y MOD 4 = 0",
+      "y MOD 4 = 0 OR y MOD 100 ≠ 0"
+    ],
+    "answerIndex": 0,
+    "explanation": "\"Multiple of 4\" is $y \\text{ MOD } 4 = 0$. \"Not a multiple of 100\" is $y \\text{ MOD } 100 \\ne 0$. \"But\" means both must hold, so join them with AND.\nTest: 2024 gives TRUE AND TRUE = TRUE. 1900 gives TRUE AND FALSE = FALSE. With OR, the year 2023 would wrongly give TRUE because $2023 \\text{ MOD } 100 \\ne 0$.",
+    "verified": true
+  },
+  {
+    "id": "TK-ROB-001",
+    "domain": "technical-knowledge",
+    "subtopic": "Core robotics concepts",
+    "difficulty": "easy",
+    "question": "Which sensor measures distance by sending out a sound pulse and timing how long the echo takes to return?",
+    "choices": [
+      "Light-dependent resistor (LDR)",
+      "Potentiometer",
+      "Thermistor",
+      "Ultrasonic sensor"
+    ],
+    "answerIndex": 3,
+    "explanation": "An **ultrasonic sensor** sends a high-pitched sound pulse and listens for the echo. Longer echo time means a farther object.\nAn LDR measures light, a potentiometer measures the position of a knob or shaft, and a thermistor measures temperature.",
+    "verified": true
+  },
+  {
+    "id": "TK-ROB-002",
+    "domain": "technical-knowledge",
+    "subtopic": "Core robotics concepts",
+    "difficulty": "medium",
+    "question": "An ultrasonic sensor receives an echo 2.0 ms after sending a pulse. If sound travels at 340 m/s, how far away is the object?",
+    "choices": [
+      "$0.68$ cm",
+      "$34$ cm",
+      "$68$ cm",
+      "$17$ cm"
+    ],
+    "answerIndex": 1,
+    "explanation": "In 2.0 ms the sound travels $340 \\times 0.002 = 0.68$ m. But that is the **round trip** (to the object and back), so the object is half as far:\n$$d = \\frac{0.68}{2} = 0.34 \\text{ m} = 34 \\text{ cm}$$\n$68$ cm forgets to divide by 2, the most common mistake with echo sensors.",
+    "verified": true
+  },
+  {
+    "id": "TK-ROB-003",
+    "domain": "technical-knowledge",
+    "subtopic": "Core robotics concepts",
+    "difficulty": "easy",
+    "question": "Which of the following is an **actuator**?",
+    "choices": [
+      "Ultrasonic sensor",
+      "Limit switch",
+      "Servo motor",
+      "Light-dependent resistor (LDR)"
+    ],
+    "answerIndex": 2,
+    "explanation": "An actuator **produces motion or action** from a control signal. A servo motor turns to a commanded angle, so it is an actuator.\nThe other three are **sensors**: they gather information (distance, light, contact) for the controller.",
+    "verified": true
+  },
+  {
+    "id": "TK-ROB-004",
+    "domain": "technical-knowledge",
+    "subtopic": "Core robotics concepts",
+    "difficulty": "medium",
+    "question": "A robot arm joint must turn to an exact angle, such as $90^\\circ$, and hold that position when commanded. Which component is the best choice?",
+    "choices": [
+      "Vibration motor",
+      "Buzzer",
+      "Ordinary DC motor with no feedback",
+      "Servo motor"
+    ],
+    "answerIndex": 3,
+    "explanation": "A hobby **servo motor** has a built-in position sensor and control circuit, so it moves to the commanded angle and holds it.\nAn ordinary DC motor just spins while powered; without a sensor, the controller cannot know or hold its angle. A vibration motor and a buzzer cannot position anything.",
+    "verified": true
+  },
+  {
+    "id": "TK-ROB-005",
+    "domain": "technical-knowledge",
+    "subtopic": "Core robotics concepts",
+    "difficulty": "medium",
+    "question": "A motor turning at 300 rpm has a 12-tooth gear that drives a 36-tooth gear attached to a wheel. How fast does the wheel turn?",
+    "choices": [
+      "$900$ rpm",
+      "$150$ rpm",
+      "$300$ rpm",
+      "$100$ rpm"
+    ],
+    "answerIndex": 3,
+    "explanation": "The teeth that pass each second must match. The big gear has 3 times as many teeth, so it turns $\\frac{1}{3}$ as fast:\n$$\\omega_{wheel} = 300 \\times \\frac{12}{36} = 100 \\text{ rpm}$$\n(In exchange, the torque is about 3 times larger.) $900$ rpm uses the ratio upside down: a small gear driving a big gear slows things down.",
+    "verified": true
+  },
+  {
+    "id": "TK-ROB-006",
+    "domain": "technical-knowledge",
+    "subtopic": "Core robotics concepts",
+    "difficulty": "medium",
+    "question": "A robot's wheel has a radius of 3 cm. How far does the robot move when the wheel makes 10 full turns without slipping?",
+    "choices": [
+      "$120\\pi$ cm",
+      "$30\\pi$ cm",
+      "$60\\pi$ cm",
+      "$90\\pi$ cm"
+    ],
+    "answerIndex": 2,
+    "explanation": "Each turn moves the robot one circumference: $C = 2\\pi r = 2\\pi(3) = 6\\pi$ cm. For 10 turns: $10 \\times 6\\pi = 60\\pi$ cm (about 188 cm).\n$30\\pi$ uses $\\pi r$ for the circumference. $90\\pi$ uses the area formula $\\pi r^2$. $120\\pi$ treats the radius as if it were the diameter.",
+    "verified": true
+  },
+  {
+    "id": "TK-ROB-007",
+    "domain": "technical-knowledge",
+    "subtopic": "Core robotics concepts",
+    "difficulty": "easy",
+    "question": "A line-following robot keeps reading its sensors and adjusts its steering whenever it drifts off the line. This is an example of",
+    "choices": [
+      "manual remote control",
+      "closed-loop (feedback) control",
+      "random motion",
+      "open-loop control"
+    ],
+    "answerIndex": 1,
+    "explanation": "In **closed-loop** control, the system measures its output (here, its position relative to the line) and uses that **feedback** to correct itself.\nOpen-loop control would run the motors with a fixed pattern and never check whether the robot is still on the line.",
+    "verified": true
+  },
+  {
+    "id": "TK-ROB-008",
+    "domain": "technical-knowledge",
+    "subtopic": "Core robotics concepts",
+    "difficulty": "medium",
+    "question": "A two-wheeled robot drives its **left** wheel forward and its **right** wheel backward at the same speed. What does the robot do?",
+    "choices": [
+      "It moves straight forward.",
+      "It moves straight backward.",
+      "It spins in place to the left (counterclockwise, seen from above).",
+      "It spins in place to the right (clockwise, seen from above)."
+    ],
+    "answerIndex": 3,
+    "explanation": "With equal and opposite wheel speeds, the robot's center stays put and it rotates. The left side moves forward while the right side moves back, so the robot turns toward the right: clockwise from above.\nTurning left in place needs the opposite: right wheel forward, left wheel backward.",
+    "verified": true
+  },
+  {
+    "id": "TK-ROB-009",
+    "domain": "technical-knowledge",
+    "subtopic": "Core robotics concepts",
+    "difficulty": "medium",
+    "question": "A microcontroller drives a motor with a 5-V PWM signal at a 25% duty cycle. What is the average voltage delivered?",
+    "choices": [
+      "$0.25$ V",
+      "$1.25$ V",
+      "$5$ V",
+      "$3.75$ V"
+    ],
+    "answerIndex": 1,
+    "explanation": "PWM switches the output fully on (5 V) and off (0 V) very quickly. A 25% duty cycle means it is on 25% of the time:\n$$V_{avg} = 0.25 \\times 5 = 1.25 \\text{ V}$$\n$3.75$ V is the average for a 75% duty cycle (the off time). This is how microcontrollers control motor speed and LED brightness.",
+    "verified": true
+  },
+  {
+    "id": "TK-ROB-010",
+    "domain": "technical-knowledge",
+    "subtopic": "Core robotics concepts",
+    "difficulty": "medium",
+    "question": "A robotic arm has these joints: the base rotates, the shoulder bends, the elbow bends, and the wrist rotates. Not counting the gripper, how many degrees of freedom does the arm have?",
+    "choices": [
+      "$5$",
+      "$4$",
+      "$6$",
+      "$3$"
+    ],
+    "answerIndex": 1,
+    "explanation": "Each joint that can move independently adds one degree of freedom (DOF). Base, shoulder, elbow, and wrist give **4** DOF.\n$5$ would also count the gripper, which the question excludes. $6$ DOF is what is needed to reach any position **and** orientation in space, but this arm has only 4 joints.",
+    "verified": true
+  },
+  {
+    "id": "TK-ROB-011",
+    "domain": "technical-knowledge",
+    "subtopic": "Core robotics concepts",
+    "difficulty": "medium",
+    "question": "A line-following robot has two downward-facing sensors, one on the left and one on the right of a black line. A sensor reads 1 when it is over the black line. If the **left** sensor reads 1 and the **right** sensor reads 0, what should the robot do to stay on the line?",
+    "choices": [
+      "Stop and reverse",
+      "Go straight",
+      "Turn right",
+      "Turn left"
+    ],
+    "answerIndex": 3,
+    "explanation": "The sensors normally sit on both sides of the line, reading 0. If the left sensor now sees the line, the line has moved under the robot's left side, meaning the robot has drifted to the **right**. To get back on the line, it must turn **left**.\nTurning right would move it even farther from the line.",
+    "verified": true
+  },
+  {
+    "id": "TK-SYS-001",
+    "domain": "technical-knowledge",
+    "subtopic": "System integration",
+    "difficulty": "easy",
+    "question": "In this obstacle-avoiding robot, which component belongs in the block marked \"?\"",
+    "figure": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-4 -4 428 98\" width=\"428\" height=\"98\" role=\"img\" aria-label=\"Block diagram: ultrasonic sensor, then an unknown block marked with a question mark, then a motor driver, then DC motors.\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"0\" y=\"20\" width=\"82\" height=\"50\" rx=\"6\"/><text x=\"41\" y=\"37.8\" font-size=\"12\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\"><tspan x=\"41\" y=\"37.8\">Ultrasonic</tspan><tspan x=\"41\" y=\"52.2\">sensor</tspan></text><polyline points=\"82,45 110,45\"/><polygon points=\"110,45 103.7,48.04 103.7,41.96\" fill=\"currentColor\" stroke-width=\"1\"/><rect x=\"112\" y=\"20\" width=\"82\" height=\"50\" rx=\"6\" stroke-dasharray=\"5 4\"/><text x=\"153\" y=\"45\" font-size=\"12\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\">?</text><polyline points=\"194,45 222,45\"/><polygon points=\"222,45 215.7,48.04 215.7,41.96\" fill=\"currentColor\" stroke-width=\"1\"/><rect x=\"224\" y=\"20\" width=\"82\" height=\"50\" rx=\"6\"/><text x=\"265\" y=\"37.8\" font-size=\"12\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\"><tspan x=\"265\" y=\"37.8\">Motor</tspan><tspan x=\"265\" y=\"52.2\">driver</tspan></text><polyline points=\"306,45 334,45\"/><polygon points=\"334,45 327.7,48.04 327.7,41.96\" fill=\"currentColor\" stroke-width=\"1\"/><rect x=\"336\" y=\"20\" width=\"82\" height=\"50\" rx=\"6\"/><text x=\"377\" y=\"37.8\" font-size=\"12\" text-anchor=\"middle\" dominant-baseline=\"central\" fill=\"currentColor\" stroke=\"none\"><tspan x=\"377\" y=\"37.8\">DC</tspan><tspan x=\"377\" y=\"52.2\">motors</tspan></text></svg>",
+    "choices": [
+      "Microcontroller",
+      "Battery",
+      "Light bulb",
+      "Second ultrasonic sensor"
+    ],
+    "answerIndex": 0,
+    "explanation": "A robot follows a **sense, think, act** pattern. The sensor gathers data, the **microcontroller** decides what to do (the \"think\" step), and the motor driver powers the motors to act.\nA battery supplies power to the system but does not process sensor signals or make decisions.",
+    "verified": true
+  },
+  {
+    "id": "TK-SYS-002",
+    "domain": "technical-knowledge",
+    "subtopic": "System integration",
+    "difficulty": "medium",
+    "question": "Why is a motor driver (such as an H-bridge) usually placed between a microcontroller and a DC motor?",
+    "choices": [
+      "The motor driver converts the motor's analog signal into digital data for the microcontroller.",
+      "The microcontroller pin cannot supply enough current for the motor, and the H-bridge also lets the motor run in both directions.",
+      "The motor driver measures the distance the robot has traveled.",
+      "The motor driver stores the program that controls the motor."
+    ],
+    "answerIndex": 1,
+    "explanation": "A microcontroller pin can safely give only a few tens of milliamperes, while a small DC motor may need hundreds of milliamperes or more. The driver uses the weak control signal to switch a stronger power supply. An H-bridge can also reverse the current through the motor, which reverses its direction.\nThe program is stored in the microcontroller, not the driver.",
+    "verified": true
+  },
+  {
+    "id": "TK-SYS-003",
+    "domain": "technical-knowledge",
+    "subtopic": "System integration",
+    "difficulty": "medium",
+    "question": "An LED needs about 2 V across it and a current of 20 mA. It will be powered from a 5-V microcontroller pin. What series resistor should be used?",
+    "choices": [
+      "$150\\ \\Omega$",
+      "$0.15\\ \\Omega$",
+      "$250\\ \\Omega$",
+      "$100\\ \\Omega$"
+    ],
+    "answerIndex": 0,
+    "explanation": "The resistor must drop the extra voltage: $5 - 2 = 3$ V. With 20 mA $= 0.020$ A flowing,\n$$R = \\frac{3}{0.020} = 150\\ \\Omega$$\n$250\\ \\Omega$ uses the full 5 V and ignores the LED's own voltage. $0.15\\ \\Omega$ forgets to change 20 mA into 0.020 A.",
+    "verified": true
+  },
+  {
+    "id": "TK-SYS-004",
+    "domain": "technical-knowledge",
+    "subtopic": "System integration",
+    "difficulty": "hard",
+    "question": "A push button is connected between a microcontroller input pin and ground (0 V). A pull-up resistor connects the same pin to 5 V. What does the pin read?",
+    "choices": [
+      "It changes randomly when the button is not pressed",
+      "HIGH when the button is not pressed, LOW when it is pressed",
+      "LOW when the button is not pressed, HIGH when it is pressed",
+      "Always HIGH"
+    ],
+    "answerIndex": 1,
+    "explanation": "When the button is open, no current flows through the pull-up resistor, so the pin sits at 5 V: **HIGH**. Pressing the button connects the pin directly to ground: **LOW**.\nSo this wiring is \"active low.\" Without the pull-up resistor, an unpressed pin would \"float\" and could read random values.",
+    "verified": true
+  },
+  {
+    "id": "TK-SYS-005",
+    "domain": "technical-knowledge",
+    "subtopic": "System integration",
+    "difficulty": "medium",
+    "question": "A 10-bit analog-to-digital converter (ADC) with a 5-V reference splits 0 to 5 V into 1024 steps. A sensor gives a reading of 512. About what voltage is the sensor producing?",
+    "choices": [
+      "$512$ V",
+      "$2.5$ V",
+      "$5$ V",
+      "$0.5$ V"
+    ],
+    "answerIndex": 1,
+    "explanation": "Each step is $\\frac{5}{1024}$ V, so\n$$V = 512 \\times \\frac{5}{1024} = \\frac{5}{2} = 2.5 \\text{ V}$$\nThe ADC reading is a **count**, not volts, so 512 V is impossible. Half of the full count (1024) means half of the reference voltage.",
+    "verified": true
+  },
+  {
+    "id": "TK-SYS-006",
+    "domain": "technical-knowledge",
+    "subtopic": "System integration",
+    "difficulty": "easy",
+    "question": "A robot draws an average of 500 mA from a 2000-mAh battery. Ideally, how long can it run on a full charge?",
+    "choices": [
+      "$4$ hours",
+      "$2.5$ hours",
+      "$1000$ hours",
+      "$0.25$ hours"
+    ],
+    "answerIndex": 0,
+    "explanation": "Running time $= \\frac{\\text{capacity}}{\\text{current}} = \\frac{2000 \\text{ mAh}}{500 \\text{ mA}} = 4$ h.\n$0.25$ h divides the wrong way. $1000$ multiplies and halves without reason. In real use the time is a bit shorter because of losses.",
+    "verified": true
+  },
+  {
+    "id": "TK-SYS-007",
+    "domain": "technical-knowledge",
+    "subtopic": "System integration",
+    "difficulty": "hard",
+    "question": "A microcontroller's analog input accepts at most 5 V. To monitor a 9-V battery, a voltage divider is used: resistor $R_1$ from the battery to the input pin, and $R_2$ from the pin to ground. Which pair brings 9 V down to 4.5 V?",
+    "choices": [
+      "$R_1 = 20\\text{ k}\\Omega,\\ R_2 = 10\\text{ k}\\Omega$",
+      "$R_1 = 10\\text{ k}\\Omega,\\ R_2 = 20\\text{ k}\\Omega$",
+      "$R_1 = 5\\text{ k}\\Omega,\\ R_2 = 10\\text{ k}\\Omega$",
+      "$R_1 = 10\\text{ k}\\Omega,\\ R_2 = 10\\text{ k}\\Omega$"
+    ],
+    "answerIndex": 3,
+    "explanation": "The pin voltage is $V_{pin} = 9 \\times \\frac{R_2}{R_1 + R_2}$. For 4.5 V (half of 9 V), the two resistors must be equal: $9 \\times \\frac{10}{20} = 4.5$ V.\n$10\\text{ k}/20\\text{ k}$ gives $9 \\times \\frac{20}{30} = 6$ V, which is above the 5-V limit and could damage the pin. $20\\text{ k}/10\\text{ k}$ gives 3 V, which is safe but not 4.5 V.",
+    "verified": true
+  },
+  {
+    "id": "TK-SYS-008",
+    "domain": "technical-knowledge",
+    "subtopic": "System integration",
+    "difficulty": "easy",
+    "question": "Which communication protocol uses two lines named SDA (data) and SCL (clock) and lets several devices share the same two wires?",
+    "choices": [
+      "PWM",
+      "I²C",
+      "SPI",
+      "UART"
+    ],
+    "answerIndex": 1,
+    "explanation": "**I²C** (Inter-Integrated Circuit) uses SDA and SCL, and each device on the bus has its own address.\nUART uses TX and RX lines. SPI uses MOSI, MISO, SCK, and a chip-select line for each device. PWM is a way to control power, not a communication protocol between chips.",
+    "verified": true
+  },
+  {
+    "id": "TK-SYS-009",
+    "domain": "technical-knowledge",
+    "subtopic": "System integration",
+    "difficulty": "medium",
+    "question": "A sensor is powered by a separate battery pack, and only its signal wire is connected to the microcontroller. The readings are erratic. What is the most likely cause?",
+    "choices": [
+      "The signal wire is too short.",
+      "The microcontroller is running its program too slowly.",
+      "The sensor's battery has too much charge.",
+      "The grounds of the two power supplies are not connected, so the signal has no common reference."
+    ],
+    "answerIndex": 3,
+    "explanation": "A voltage is always measured **between two points**. If the sensor's ground and the microcontroller's ground are not tied together, the microcontroller cannot tell what the signal voltage really is, so readings jump around.\nThe fix is to connect the grounds (a **common ground**), even when the circuits use different power supplies.",
+    "verified": true
+  },
+  {
+    "id": "TK-SYS-010",
+    "domain": "technical-knowledge",
+    "subtopic": "System integration",
+    "difficulty": "easy",
+    "question": "Which order best describes the main loop of a typical robot program?",
+    "choices": [
+      "Drive the actuators, read the sensors, then stop",
+      "Read the sensors, decide what to do, drive the actuators, then repeat",
+      "Read the sensors once, then drive the actuators forever",
+      "Decide what to do, read the sensors, then repeat"
+    ],
+    "answerIndex": 1,
+    "explanation": "Robots follow a **sense, think, act** cycle that repeats many times per second: read inputs, process them to choose an action, send outputs to motors or other actuators, and loop.\nDeciding before sensing means acting on old information. Reading the sensors only once means the robot can never react to changes.",
+    "verified": true
+  },
+  {
+    "id": "TK-SYS-011",
+    "domain": "technical-knowledge",
+    "subtopic": "System integration",
+    "difficulty": "medium",
+    "question": "Two identical 3.7-V, 2000-mAh lithium cells are connected **in series** to power a robot. What are the voltage and capacity of the pack?",
+    "choices": [
+      "7.4 V, 4000 mAh",
+      "3.7 V, 2000 mAh",
+      "7.4 V, 2000 mAh",
+      "3.7 V, 4000 mAh"
+    ],
+    "answerIndex": 2,
+    "explanation": "In **series**, voltages add while the same current flows through both cells, so the capacity stays the same: $3.7 + 3.7 = 7.4$ V at 2000 mAh.\n\"3.7 V, 4000 mAh\" describes the cells in **parallel**. \"7.4 V, 4000 mAh\" would double the stored energy, which two cells cannot do.",
+    "verified": true
+  }
+]

@@ -1,0 +1,68 @@
+{
+  "domains": [
+    {
+      "id": "math-logic",
+      "name": "Mathematics and Logic",
+      "short": "Math and Logic",
+      "file": "math-logic.json",
+      "idPrefix": "ML",
+      "subtopics": [
+        "Functions",
+        "Advanced algebra",
+        "General mathematics",
+        "Geometry",
+        "Trigonometry",
+        "Probability",
+        "Reading comprehension",
+        "Logic gates",
+        "Basic circuitry",
+        "Truth tables",
+        "Boolean algebra"
+      ]
+    },
+    {
+      "id": "physics-circuits",
+      "name": "Physics and Circuits",
+      "short": "Physics and Circuits",
+      "file": "physics-circuits.json",
+      "idPrefix": "PC",
+      "subtopics": [
+        "General mechanics",
+        "Dynamics",
+        "Kinematics",
+        "Electrical units",
+        "Ohm's Law",
+        "Kirchhoff's Current Law (KCL)",
+        "Kirchhoff's Voltage Law (KVL)",
+        "Series and parallel circuits",
+        "Electric power"
+      ]
+    },
+    {
+      "id": "technical-knowledge",
+      "name": "Technical Knowledge",
+      "short": "Technical Knowledge",
+      "file": "technical-knowledge.json",
+      "idPrefix": "TK",
+      "subtopics": [
+        "Flowcharts",
+        "Pseudocode matching",
+        "Basic programming logic",
+        "Core robotics concepts",
+        "System integration"
+      ]
+    },
+    {
+      "id": "abstract-reasoning",
+      "name": "Abstract Reasoning",
+      "short": "Abstract Reasoning",
+      "file": "abstract-reasoning.json",
+      "idPrefix": "AR",
+      "subtopics": [
+        "Visual comprehension",
+        "Spatial awareness",
+        "Pattern recognition"
+      ]
+    }
+  ]
+}

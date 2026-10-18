@@ -1,0 +1,22 @@
+{
+  "name": "dagitab-2026-reviewer",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Free practice reviewer for the Dagitab 2026 qualifying exam (unofficial).",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "validate": "node scripts/validate.js",
+    "verify": "node scripts/verify/index.js",
+    "check": "npm run validate && npm run verify"
+  },
+  "dependencies": {
+    "katex": "^0.19.0"
+  },
+  "devDependencies": {
+    "fast-xml-parser": "^5.11.2",
+    "vite": "^8.3.4"
+  }
+}
