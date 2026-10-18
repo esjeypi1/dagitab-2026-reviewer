@@ -28,7 +28,7 @@ An unofficial reviewer, not affiliated with or endorsed by the UP Engineering Ra
 ## Capabilities and Constraints
 
 - Static site (Vite + vanilla JS), deployed on Vercel from the public GitHub repo esjeypi1/dagitab-2026-reviewer.
-- 226 items in `src/data/*.json`, with KaTeX math, inline SVG figures, and HTML truth tables. Question and choice order is shuffled every session.
+- 470 items in `src/data/*.json`, with KaTeX math, inline SVG figures, and HTML truth tables. Question and choice order is shuffled every session.
 - Mock split lives in `src/config.js` (default 13/13/12/12).
 - Pseudocode uses a generic notation that students need a short guide for.
 
@@ -42,7 +42,7 @@ An unofficial reviewer, not affiliated with or endorsed by the UP Engineering Ra
 
 ## Evidence on Hand
 
-- The question bank (226 items) and its counts per domain and subtopic. No testimonials, pass rates, or user numbers exist; do not invent them.
+- The question bank (470 items) and its counts per domain and subtopic. No testimonials, pass rates, or user numbers exist; do not invent them.
 
 ## Product Principles
 

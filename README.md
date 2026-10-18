@@ -5,7 +5,7 @@ It is an unofficial reviewer and is not affiliated with or endorsed by the UP En
 
 - **Practice mode:** untimed, filter by domain and subtopic, instant feedback with a worked explanation, score breakdown at the end.
 - **Mock exam mode:** 50 items, 60-minute countdown, auto-submits at 00:00, skip/flag/jump between items, full review at the end.
-- **226 questions** in four domains (Mathematics and Logic, Physics and Circuits, Technical Knowledge, Abstract Reasoning). All are solvable without a calculator.
+- **470 questions** in four domains (Mathematics and Logic, Physics and Circuits, Technical Knowledge, Abstract Reasoning). All are solvable without a calculator.
 - Static site: no backend, no accounts, no cookies, no localStorage. Every visit starts fresh.
 
 Built with [Vite](https://vite.dev) and plain JavaScript (no framework), with [KaTeX](https://katex.org) for math.
@@ -209,7 +209,7 @@ in their current order; for a new checker you can skip the wrapper and use posit
 If you change a question's numbers or choices, update or delete its checker. Questions without a checker
 (reading passages, concepts, most abstract figures) are listed as "checked by hand".
 
-Current bank: 226 items, 150 with computed checks.
+Current bank: 470 items, 333 with computed checks.
 
 ---
 
