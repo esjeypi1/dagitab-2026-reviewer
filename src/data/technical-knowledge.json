@@ -512,7 +512,7 @@
       "$1101_2$"
     ],
     "answerIndex": 2,
-    "explanation": "In decimal, $1011_2 = 11$ and $0110_2 = 6$, so the sum is $17 = 10001_2$.\nColumn by column from the right: $1 + 0 = 1$; $1 + 1 = 10$ (write 0, carry 1); $0 + 1 + 1 = 10$ (write 0, carry 1); $1 + 0 + 1 = 10$ (write 0, carry 1); then the carry 1.\n$1101_2$ forgets the carries (it uses OR on each column).",
+    "explanation": "In decimal, $1011_2 = 11$ and $0110_2 = 6$, so the sum is $17 = 10001_2$.\nColumn by column from the right: $1 + 0 = 1$; $1 + 1 = 10$ (write 0, carry 1); $0 + 1 + 1 = 10$ (write 0, carry 1); $1 + 0 + 1 = 10$ (write 0, carry 1); then the carry 1.\n$1101_2$ adds each column but drops the carries.",
     "verified": true
   },
   {
@@ -641,7 +641,7 @@
       "$90\\pi$ cm"
     ],
     "answerIndex": 2,
-    "explanation": "Each turn moves the robot one circumference: $C = 2\\pi r = 2\\pi(3) = 6\\pi$ cm. For 10 turns: $10 \\times 6\\pi = 60\\pi$ cm (about 188 cm).\n$30\\pi$ uses $\\pi r$ for the circumference. $90\\pi$ uses the area formula $\\pi r^2$. $120\\pi$ treats the radius as if it were the diameter.",
+    "explanation": "Each turn moves the robot one circumference: $C = 2\\pi r = 2\\pi(3) = 6\\pi$ cm. For 10 turns: $10 \\times 6\\pi = 60\\pi$ cm (about 188 cm).\n$30\\pi$ uses $\\pi r$ for the circumference. $90\\pi$ uses the area formula $\\pi r^2$. $120\\pi$ puts the diameter ($6$ cm) into $2\\pi r$ in place of the radius.",
     "verified": true
   },
   {

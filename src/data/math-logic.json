@@ -1186,7 +1186,7 @@
       "$11$"
     ],
     "answerIndex": 3,
-    "explanation": "Distribute first: $3x - 6 = 2x + 5$. Subtract $2x$ and add $6$ to both sides: $x = 11$.\nThe choice $7$ forgets to multiply the $2$ by $3$ (writing $3x - 2$). The choice $\\frac{11}{5}$ adds $2x$ to both sides instead of subtracting it.",
+    "explanation": "Distribute first: $3x - 6 = 2x + 5$. Subtract $2x$ and add $6$ to both sides: $x = 11$.\nThe choice $7$ forgets to multiply the $2$ by $3$ (writing $3x - 2$). The choice $\\frac{11}{5}$ moves $2x$ to the left side without changing its sign ($5x = 11$).",
     "verified": true
   },
   {

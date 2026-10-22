@@ -732,7 +732,7 @@
       "$12\\ \\Omega$"
     ],
     "answerIndex": 3,
-    "explanation": "Work from the inside out. The $2\\ \\Omega$ and $4\\ \\Omega$ resistors are in series: $6\\ \\Omega$. That branch is in parallel with the other $6\\ \\Omega$ resistor: $6 \\parallel 6 = 3\\ \\Omega$. Then add the series resistors:\n$$R_{AB} = 4 + 3 + 5 = 12\\ \\Omega$$\n$21\\ \\Omega$ adds all five resistors. $11.4\\ \\Omega$ wrongly puts the $6\\ \\Omega$ in parallel with only the $2\\ \\Omega$ resistor.",
+    "explanation": "Work from the inside out. The $2\\ \\Omega$ and $4\\ \\Omega$ resistors are in series: $6\\ \\Omega$. That branch is in parallel with the other $6\\ \\Omega$ resistor: $6 \\parallel 6 = 3\\ \\Omega$. Then add the series resistors:\n$$R_{AB} = 4 + 3 + 5 = 12\\ \\Omega$$\n$21\\ \\Omega$ adds all five resistors. $11.4\\ \\Omega$ wrongly puts the $6\\ \\Omega$ in parallel with only the $4\\ \\Omega$ resistor, and $10.5\\ \\Omega$ with only the $2\\ \\Omega$ resistor.",
     "verified": true
   },
   {
@@ -2040,7 +2040,7 @@
       "$50$ kWh"
     ],
     "answerIndex": 0,
-    "explanation": "The LED uses $60 - 10 = 50$ W less power. Over 100 hours:\n$$50 \\text{ W} \\times 100 \\text{ h} = 5000 \\text{ Wh} = 5 \\text{ kWh}$$\nThe choice $6$ kWh is the energy the incandescent bulb uses, not the savings. The choice $50$ kWh forgets to divide by 1000.",
+    "explanation": "The LED uses $60 - 10 = 50$ W less power. Over 100 hours:\n$$50 \\text{ W} \\times 100 \\text{ h} = 5000 \\text{ Wh} = 5 \\text{ kWh}$$\nThe choice $6$ kWh is the energy the incandescent bulb uses, not the savings. The choice $50$ kWh divides $5000$ by $100$ instead of by $1000$.",
     "verified": true
   }
 ]
